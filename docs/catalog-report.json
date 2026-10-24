@@ -1,0 +1,7494 @@
+{
+  "upstream": "df06fa7b425cf5fd29485ff6591236b3557e3fac",
+  "inputCount": 3283,
+  "identities": 693,
+  "active": 3351,
+  "rejectedCount": 659,
+  "coverage": [
+    {
+      "name": "C",
+      "count": 11
+    },
+    {
+      "name": "Cm",
+      "count": 12
+    },
+    {
+      "name": "Cdim",
+      "count": 4
+    },
+    {
+      "name": "Cdim7",
+      "count": 4
+    },
+    {
+      "name": "Csus4",
+      "count": 7
+    },
+    {
+      "name": "Csus2",
+      "count": 4
+    },
+    {
+      "name": "C7sus4",
+      "count": 4
+    },
+    {
+      "name": "Caug",
+      "count": 11
+    },
+    {
+      "name": "C5",
+      "count": 3
+    },
+    {
+      "name": "C6",
+      "count": 4
+    },
+    {
+      "name": "C6/9",
+      "count": 3
+    },
+    {
+      "name": "C7",
+      "count": 4
+    },
+    {
+      "name": "C7b5",
+      "count": 4
+    },
+    {
+      "name": "C7/G",
+      "count": 3
+    },
+    {
+      "name": "C7#5",
+      "count": 4
+    },
+    {
+      "name": "C9",
+      "count": 3
+    },
+    {
+      "name": "C9b5",
+      "count": 4
+    },
+    {
+      "name": "C9#5",
+      "count": 4
+    },
+    {
+      "name": "C7b9",
+      "count": 4
+    },
+    {
+      "name": "C7#9",
+      "count": 4
+    },
+    {
+      "name": "C9#11",
+      "count": 2
+    },
+    {
+      "name": "C13",
+      "count": 1
+    },
+    {
+      "name": "Cmaj7",
+      "count": 5
+    },
+    {
+      "name": "Cmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Cmaj9",
+      "count": 4
+    },
+    {
+      "name": "Cmaj13",
+      "count": 1
+    },
+    {
+      "name": "Cm6",
+      "count": 4
+    },
+    {
+      "name": "Cm7",
+      "count": 29
+    },
+    {
+      "name": "Cm7b5",
+      "count": 4
+    },
+    {
+      "name": "Cm9",
+      "count": 4
+    },
+    {
+      "name": "Cm11",
+      "count": 3
+    },
+    {
+      "name": "CmMaj7",
+      "count": 4
+    },
+    {
+      "name": "CmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Cadd9",
+      "count": 8
+    },
+    {
+      "name": "Cmadd9",
+      "count": 4
+    },
+    {
+      "name": "Cm9/Eb",
+      "count": 2
+    },
+    {
+      "name": "Cm/A",
+      "count": 4
+    },
+    {
+      "name": "Cm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Cm/B",
+      "count": 4
+    },
+    {
+      "name": "Cm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Cm/Db",
+      "count": 4
+    },
+    {
+      "name": "Cm/D",
+      "count": 4
+    },
+    {
+      "name": "Cm/E",
+      "count": 4
+    },
+    {
+      "name": "Cm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Cm/F",
+      "count": 4
+    },
+    {
+      "name": "Cm/F#",
+      "count": 4
+    },
+    {
+      "name": "Cm/G",
+      "count": 4
+    },
+    {
+      "name": "C/A",
+      "count": 4
+    },
+    {
+      "name": "C/Ab",
+      "count": 4
+    },
+    {
+      "name": "C/B",
+      "count": 4
+    },
+    {
+      "name": "C/Bb",
+      "count": 4
+    },
+    {
+      "name": "C/Db",
+      "count": 4
+    },
+    {
+      "name": "C/D",
+      "count": 4
+    },
+    {
+      "name": "C/E",
+      "count": 4
+    },
+    {
+      "name": "C/Eb",
+      "count": 4
+    },
+    {
+      "name": "C/F",
+      "count": 4
+    },
+    {
+      "name": "C/F#",
+      "count": 4
+    },
+    {
+      "name": "C/G",
+      "count": 4
+    },
+    {
+      "name": "Db",
+      "count": 10
+    },
+    {
+      "name": "Dbm",
+      "count": 4
+    },
+    {
+      "name": "Dbdim",
+      "count": 4
+    },
+    {
+      "name": "Dbdim7",
+      "count": 4
+    },
+    {
+      "name": "Dbsus4",
+      "count": 13
+    },
+    {
+      "name": "Dbsus2",
+      "count": 3
+    },
+    {
+      "name": "Db7sus4",
+      "count": 4
+    },
+    {
+      "name": "Dbaug",
+      "count": 2
+    },
+    {
+      "name": "Db5",
+      "count": 3
+    },
+    {
+      "name": "Db6",
+      "count": 4
+    },
+    {
+      "name": "Db6/9",
+      "count": 4
+    },
+    {
+      "name": "Db7",
+      "count": 4
+    },
+    {
+      "name": "Db7b5",
+      "count": 3
+    },
+    {
+      "name": "Db7#5",
+      "count": 4
+    },
+    {
+      "name": "Db9",
+      "count": 4
+    },
+    {
+      "name": "Db9b5",
+      "count": 3
+    },
+    {
+      "name": "Db9#5",
+      "count": 4
+    },
+    {
+      "name": "Db7b9",
+      "count": 20
+    },
+    {
+      "name": "Db7#9",
+      "count": 4
+    },
+    {
+      "name": "Db9#11",
+      "count": 1
+    },
+    {
+      "name": "Db13",
+      "count": 1
+    },
+    {
+      "name": "Dbmaj7",
+      "count": 28
+    },
+    {
+      "name": "Dbmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Dbmaj9",
+      "count": 4
+    },
+    {
+      "name": "Dbmaj13",
+      "count": 1
+    },
+    {
+      "name": "Dbm6",
+      "count": 4
+    },
+    {
+      "name": "Dbm7",
+      "count": 31
+    },
+    {
+      "name": "Dbm7b5",
+      "count": 4
+    },
+    {
+      "name": "Dbm9",
+      "count": 4
+    },
+    {
+      "name": "Dbm11",
+      "count": 2
+    },
+    {
+      "name": "DbmMaj7",
+      "count": 4
+    },
+    {
+      "name": "DbmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Dbadd9",
+      "count": 4
+    },
+    {
+      "name": "Dbmadd9",
+      "count": 4
+    },
+    {
+      "name": "Dbm9/E",
+      "count": 2
+    },
+    {
+      "name": "Dbm/A",
+      "count": 4
+    },
+    {
+      "name": "Dbm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Dbm/B",
+      "count": 4
+    },
+    {
+      "name": "Dbm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Dbm/C",
+      "count": 4
+    },
+    {
+      "name": "Dbm/D",
+      "count": 4
+    },
+    {
+      "name": "Dbm/E",
+      "count": 4
+    },
+    {
+      "name": "Dbm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Dbm/F",
+      "count": 4
+    },
+    {
+      "name": "Dbm/F#",
+      "count": 4
+    },
+    {
+      "name": "Dbm/G",
+      "count": 4
+    },
+    {
+      "name": "Db/A",
+      "count": 4
+    },
+    {
+      "name": "Db/Ab",
+      "count": 4
+    },
+    {
+      "name": "Db/B",
+      "count": 4
+    },
+    {
+      "name": "Db/Bb",
+      "count": 4
+    },
+    {
+      "name": "Db/C",
+      "count": 4
+    },
+    {
+      "name": "Db/D",
+      "count": 4
+    },
+    {
+      "name": "Db/E",
+      "count": 4
+    },
+    {
+      "name": "Db/Eb",
+      "count": 4
+    },
+    {
+      "name": "Db/F",
+      "count": 3
+    },
+    {
+      "name": "Db/F#",
+      "count": 4
+    },
+    {
+      "name": "Db/G",
+      "count": 4
+    },
+    {
+      "name": "D",
+      "count": 11
+    },
+    {
+      "name": "Dm",
+      "count": 4
+    },
+    {
+      "name": "Ddim",
+      "count": 4
+    },
+    {
+      "name": "Ddim7",
+      "count": 4
+    },
+    {
+      "name": "Dsus4",
+      "count": 15
+    },
+    {
+      "name": "Dsus2",
+      "count": 4
+    },
+    {
+      "name": "D7sus4",
+      "count": 4
+    },
+    {
+      "name": "Daug",
+      "count": 4
+    },
+    {
+      "name": "D5",
+      "count": 3
+    },
+    {
+      "name": "D6",
+      "count": 4
+    },
+    {
+      "name": "D6/9",
+      "count": 4
+    },
+    {
+      "name": "D7",
+      "count": 12
+    },
+    {
+      "name": "D7b5",
+      "count": 4
+    },
+    {
+      "name": "D7#5",
+      "count": 4
+    },
+    {
+      "name": "D9",
+      "count": 15
+    },
+    {
+      "name": "D9b5",
+      "count": 12
+    },
+    {
+      "name": "D9#5",
+      "count": 4
+    },
+    {
+      "name": "D7b9",
+      "count": 4
+    },
+    {
+      "name": "D7#9",
+      "count": 3
+    },
+    {
+      "name": "D9#11",
+      "count": 2
+    },
+    {
+      "name": "D13",
+      "count": 1
+    },
+    {
+      "name": "Dmaj7",
+      "count": 24
+    },
+    {
+      "name": "Dmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Dmaj9",
+      "count": 3
+    },
+    {
+      "name": "Dmaj13",
+      "count": 2
+    },
+    {
+      "name": "Dm6",
+      "count": 4
+    },
+    {
+      "name": "Dm7",
+      "count": 5
+    },
+    {
+      "name": "Dm7b5",
+      "count": 4
+    },
+    {
+      "name": "Dm9",
+      "count": 4
+    },
+    {
+      "name": "Dm11",
+      "count": 3
+    },
+    {
+      "name": "DmMaj7",
+      "count": 3
+    },
+    {
+      "name": "DmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Dadd9",
+      "count": 4
+    },
+    {
+      "name": "Dmadd9",
+      "count": 4
+    },
+    {
+      "name": "Dm9/F",
+      "count": 3
+    },
+    {
+      "name": "Dm/A",
+      "count": 4
+    },
+    {
+      "name": "Dm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Dm/B",
+      "count": 4
+    },
+    {
+      "name": "Dm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Dm/C",
+      "count": 4
+    },
+    {
+      "name": "Dm/Db",
+      "count": 4
+    },
+    {
+      "name": "Dm/E",
+      "count": 4
+    },
+    {
+      "name": "Dm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Dm/F",
+      "count": 4
+    },
+    {
+      "name": "Dm/F#",
+      "count": 4
+    },
+    {
+      "name": "Dm/G",
+      "count": 4
+    },
+    {
+      "name": "D/A",
+      "count": 4
+    },
+    {
+      "name": "D/Ab",
+      "count": 4
+    },
+    {
+      "name": "D/B",
+      "count": 4
+    },
+    {
+      "name": "D/Bb",
+      "count": 4
+    },
+    {
+      "name": "D/C",
+      "count": 4
+    },
+    {
+      "name": "D/Db",
+      "count": 4
+    },
+    {
+      "name": "D/E",
+      "count": 4
+    },
+    {
+      "name": "D/Eb",
+      "count": 4
+    },
+    {
+      "name": "D/F",
+      "count": 4
+    },
+    {
+      "name": "D/F#",
+      "count": 3
+    },
+    {
+      "name": "D/G",
+      "count": 4
+    },
+    {
+      "name": "Eb",
+      "count": 10
+    },
+    {
+      "name": "Ebm",
+      "count": 4
+    },
+    {
+      "name": "Ebdim",
+      "count": 4
+    },
+    {
+      "name": "Ebdim7",
+      "count": 4
+    },
+    {
+      "name": "Ebsus4",
+      "count": 7
+    },
+    {
+      "name": "Ebsus2",
+      "count": 4
+    },
+    {
+      "name": "Eb7sus4",
+      "count": 4
+    },
+    {
+      "name": "Ebaug",
+      "count": 4
+    },
+    {
+      "name": "Eb5",
+      "count": 3
+    },
+    {
+      "name": "Eb6",
+      "count": 4
+    },
+    {
+      "name": "Eb6/9",
+      "count": 4
+    },
+    {
+      "name": "Eb7",
+      "count": 4
+    },
+    {
+      "name": "Eb7b5",
+      "count": 3
+    },
+    {
+      "name": "Eb7#5",
+      "count": 4
+    },
+    {
+      "name": "Eb9",
+      "count": 4
+    },
+    {
+      "name": "Eb9b5",
+      "count": 3
+    },
+    {
+      "name": "Eb9#5",
+      "count": 4
+    },
+    {
+      "name": "Eb7b9",
+      "count": 4
+    },
+    {
+      "name": "Eb7#9",
+      "count": 4
+    },
+    {
+      "name": "Eb9#11",
+      "count": 2
+    },
+    {
+      "name": "Ebmaj7",
+      "count": 4
+    },
+    {
+      "name": "Ebmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Ebmaj9",
+      "count": 4
+    },
+    {
+      "name": "Ebmaj13",
+      "count": 1
+    },
+    {
+      "name": "Ebm6",
+      "count": 4
+    },
+    {
+      "name": "Ebm7",
+      "count": 27
+    },
+    {
+      "name": "Ebm7b5",
+      "count": 21
+    },
+    {
+      "name": "Ebm9",
+      "count": 4
+    },
+    {
+      "name": "Ebm11",
+      "count": 3
+    },
+    {
+      "name": "EbmMaj7",
+      "count": 4
+    },
+    {
+      "name": "EbmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Ebadd9",
+      "count": 4
+    },
+    {
+      "name": "Ebmadd9",
+      "count": 4
+    },
+    {
+      "name": "Ebm9/F#",
+      "count": 2
+    },
+    {
+      "name": "Ebm/A",
+      "count": 4
+    },
+    {
+      "name": "Ebm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Ebm/B",
+      "count": 4
+    },
+    {
+      "name": "Ebm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Ebm/C",
+      "count": 4
+    },
+    {
+      "name": "Ebm/Db",
+      "count": 4
+    },
+    {
+      "name": "Ebm/D",
+      "count": 4
+    },
+    {
+      "name": "Ebm/E",
+      "count": 4
+    },
+    {
+      "name": "Ebm/F",
+      "count": 4
+    },
+    {
+      "name": "Ebm/F#",
+      "count": 4
+    },
+    {
+      "name": "Ebm/G",
+      "count": 4
+    },
+    {
+      "name": "Eb/A",
+      "count": 4
+    },
+    {
+      "name": "Eb/Ab",
+      "count": 4
+    },
+    {
+      "name": "Eb/B",
+      "count": 4
+    },
+    {
+      "name": "Eb/Bb",
+      "count": 4
+    },
+    {
+      "name": "Eb/C",
+      "count": 4
+    },
+    {
+      "name": "Eb/Db",
+      "count": 4
+    },
+    {
+      "name": "Eb/D",
+      "count": 4
+    },
+    {
+      "name": "Eb/E",
+      "count": 4
+    },
+    {
+      "name": "Eb/F",
+      "count": 4
+    },
+    {
+      "name": "Eb/F#",
+      "count": 4
+    },
+    {
+      "name": "Eb/G",
+      "count": 3
+    },
+    {
+      "name": "E",
+      "count": 12
+    },
+    {
+      "name": "Em",
+      "count": 4
+    },
+    {
+      "name": "Edim",
+      "count": 4
+    },
+    {
+      "name": "Edim7",
+      "count": 17
+    },
+    {
+      "name": "Esus4",
+      "count": 7
+    },
+    {
+      "name": "Esus2",
+      "count": 3
+    },
+    {
+      "name": "E7sus4",
+      "count": 4
+    },
+    {
+      "name": "Eaug",
+      "count": 3
+    },
+    {
+      "name": "E5",
+      "count": 4
+    },
+    {
+      "name": "E6",
+      "count": 4
+    },
+    {
+      "name": "E6/9",
+      "count": 4
+    },
+    {
+      "name": "E7",
+      "count": 12
+    },
+    {
+      "name": "E7b5",
+      "count": 4
+    },
+    {
+      "name": "E7#5",
+      "count": 4
+    },
+    {
+      "name": "E9",
+      "count": 4
+    },
+    {
+      "name": "E9b5",
+      "count": 4
+    },
+    {
+      "name": "E9#5",
+      "count": 4
+    },
+    {
+      "name": "E7b9",
+      "count": 4
+    },
+    {
+      "name": "E7#9",
+      "count": 4
+    },
+    {
+      "name": "E9#11",
+      "count": 2
+    },
+    {
+      "name": "Emaj7",
+      "count": 27
+    },
+    {
+      "name": "Emaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Emaj9",
+      "count": 17
+    },
+    {
+      "name": "Emaj13",
+      "count": 2
+    },
+    {
+      "name": "Em6",
+      "count": 4
+    },
+    {
+      "name": "Em7",
+      "count": 33
+    },
+    {
+      "name": "Em7b5",
+      "count": 24
+    },
+    {
+      "name": "Em9",
+      "count": 4
+    },
+    {
+      "name": "Em11",
+      "count": 3
+    },
+    {
+      "name": "EmMaj7",
+      "count": 4
+    },
+    {
+      "name": "EmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Eadd9",
+      "count": 4
+    },
+    {
+      "name": "Em9/G",
+      "count": 3
+    },
+    {
+      "name": "Em/A",
+      "count": 4
+    },
+    {
+      "name": "Em/Ab",
+      "count": 4
+    },
+    {
+      "name": "Em/B",
+      "count": 4
+    },
+    {
+      "name": "Em/Bb",
+      "count": 4
+    },
+    {
+      "name": "Em/C",
+      "count": 4
+    },
+    {
+      "name": "Em/Db",
+      "count": 4
+    },
+    {
+      "name": "Em/D",
+      "count": 4
+    },
+    {
+      "name": "Em/Eb",
+      "count": 4
+    },
+    {
+      "name": "Em/F",
+      "count": 4
+    },
+    {
+      "name": "Em/F#",
+      "count": 4
+    },
+    {
+      "name": "Em/G",
+      "count": 4
+    },
+    {
+      "name": "E/A",
+      "count": 4
+    },
+    {
+      "name": "E/Ab",
+      "count": 4
+    },
+    {
+      "name": "E/B",
+      "count": 4
+    },
+    {
+      "name": "E/Bb",
+      "count": 4
+    },
+    {
+      "name": "E/C",
+      "count": 4
+    },
+    {
+      "name": "E/Db",
+      "count": 4
+    },
+    {
+      "name": "E/D",
+      "count": 4
+    },
+    {
+      "name": "E/Eb",
+      "count": 4
+    },
+    {
+      "name": "E/F",
+      "count": 4
+    },
+    {
+      "name": "E/F#",
+      "count": 4
+    },
+    {
+      "name": "E/G",
+      "count": 4
+    },
+    {
+      "name": "F",
+      "count": 12
+    },
+    {
+      "name": "Fm",
+      "count": 4
+    },
+    {
+      "name": "Fdim",
+      "count": 4
+    },
+    {
+      "name": "Fdim7",
+      "count": 4
+    },
+    {
+      "name": "Fsus4",
+      "count": 6
+    },
+    {
+      "name": "Fsus2",
+      "count": 4
+    },
+    {
+      "name": "F7sus4",
+      "count": 4
+    },
+    {
+      "name": "Faug",
+      "count": 4
+    },
+    {
+      "name": "F5",
+      "count": 3
+    },
+    {
+      "name": "F6",
+      "count": 4
+    },
+    {
+      "name": "F6/9",
+      "count": 4
+    },
+    {
+      "name": "F7",
+      "count": 4
+    },
+    {
+      "name": "F7b5",
+      "count": 4
+    },
+    {
+      "name": "F7#5",
+      "count": 4
+    },
+    {
+      "name": "F9",
+      "count": 4
+    },
+    {
+      "name": "F9b5",
+      "count": 3
+    },
+    {
+      "name": "F9#5",
+      "count": 4
+    },
+    {
+      "name": "F7b9",
+      "count": 4
+    },
+    {
+      "name": "F7#9",
+      "count": 4
+    },
+    {
+      "name": "F9#11",
+      "count": 2
+    },
+    {
+      "name": "Fmaj7",
+      "count": 4
+    },
+    {
+      "name": "Fmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Fmaj9",
+      "count": 4
+    },
+    {
+      "name": "Fmaj11",
+      "count": 1
+    },
+    {
+      "name": "Fmaj13",
+      "count": 1
+    },
+    {
+      "name": "Fm6",
+      "count": 4
+    },
+    {
+      "name": "Fm7",
+      "count": 28
+    },
+    {
+      "name": "Fm7b5",
+      "count": 4
+    },
+    {
+      "name": "Fm9",
+      "count": 4
+    },
+    {
+      "name": "Fm11",
+      "count": 3
+    },
+    {
+      "name": "FmMaj7",
+      "count": 4
+    },
+    {
+      "name": "FmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Fadd9",
+      "count": 4
+    },
+    {
+      "name": "Fmadd9",
+      "count": 4
+    },
+    {
+      "name": "Fm9/Ab",
+      "count": 2
+    },
+    {
+      "name": "Fm/A",
+      "count": 4
+    },
+    {
+      "name": "Fm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Fm/B",
+      "count": 4
+    },
+    {
+      "name": "Fm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Fm/C",
+      "count": 4
+    },
+    {
+      "name": "Fm/Db",
+      "count": 4
+    },
+    {
+      "name": "Fm/D",
+      "count": 4
+    },
+    {
+      "name": "Fm/E",
+      "count": 4
+    },
+    {
+      "name": "Fm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Fm/F#",
+      "count": 4
+    },
+    {
+      "name": "Fm/G",
+      "count": 4
+    },
+    {
+      "name": "F/A",
+      "count": 4
+    },
+    {
+      "name": "F/Ab",
+      "count": 4
+    },
+    {
+      "name": "F/B",
+      "count": 4
+    },
+    {
+      "name": "F/Bb",
+      "count": 4
+    },
+    {
+      "name": "F/C",
+      "count": 4
+    },
+    {
+      "name": "F/Db",
+      "count": 4
+    },
+    {
+      "name": "F/D",
+      "count": 4
+    },
+    {
+      "name": "F/E",
+      "count": 4
+    },
+    {
+      "name": "F/Eb",
+      "count": 4
+    },
+    {
+      "name": "F/F#",
+      "count": 4
+    },
+    {
+      "name": "F/G",
+      "count": 4
+    },
+    {
+      "name": "F#",
+      "count": 4
+    },
+    {
+      "name": "F#m",
+      "count": 4
+    },
+    {
+      "name": "F#dim",
+      "count": 4
+    },
+    {
+      "name": "F#dim7",
+      "count": 4
+    },
+    {
+      "name": "F#sus4",
+      "count": 7
+    },
+    {
+      "name": "F#sus2",
+      "count": 4
+    },
+    {
+      "name": "F#7sus4",
+      "count": 4
+    },
+    {
+      "name": "F#aug",
+      "count": 4
+    },
+    {
+      "name": "F#5",
+      "count": 3
+    },
+    {
+      "name": "F#6",
+      "count": 4
+    },
+    {
+      "name": "F#6/9",
+      "count": 4
+    },
+    {
+      "name": "F#7",
+      "count": 4
+    },
+    {
+      "name": "F#7b5",
+      "count": 4
+    },
+    {
+      "name": "F#7#5",
+      "count": 4
+    },
+    {
+      "name": "F#9",
+      "count": 4
+    },
+    {
+      "name": "F#9b5",
+      "count": 4
+    },
+    {
+      "name": "F#9#5",
+      "count": 4
+    },
+    {
+      "name": "F#7b9",
+      "count": 4
+    },
+    {
+      "name": "F#7#9",
+      "count": 4
+    },
+    {
+      "name": "F#9#11",
+      "count": 2
+    },
+    {
+      "name": "F#maj7",
+      "count": 29
+    },
+    {
+      "name": "F#maj7#5",
+      "count": 4
+    },
+    {
+      "name": "F#maj9",
+      "count": 4
+    },
+    {
+      "name": "F#maj13",
+      "count": 1
+    },
+    {
+      "name": "F#m6",
+      "count": 4
+    },
+    {
+      "name": "F#m7",
+      "count": 31
+    },
+    {
+      "name": "F#m7b5",
+      "count": 4
+    },
+    {
+      "name": "F#m9",
+      "count": 4
+    },
+    {
+      "name": "F#m11",
+      "count": 3
+    },
+    {
+      "name": "F#mMaj7",
+      "count": 4
+    },
+    {
+      "name": "F#mMaj9",
+      "count": 4
+    },
+    {
+      "name": "F#add9",
+      "count": 4
+    },
+    {
+      "name": "F#madd9",
+      "count": 4
+    },
+    {
+      "name": "F#m9/E",
+      "count": 2
+    },
+    {
+      "name": "F#m9/A",
+      "count": 2
+    },
+    {
+      "name": "F#m/A",
+      "count": 4
+    },
+    {
+      "name": "F#m/Ab",
+      "count": 4
+    },
+    {
+      "name": "F#m/B",
+      "count": 4
+    },
+    {
+      "name": "F#m/Bb",
+      "count": 4
+    },
+    {
+      "name": "F#m/C",
+      "count": 4
+    },
+    {
+      "name": "F#m/Db",
+      "count": 4
+    },
+    {
+      "name": "F#m/D",
+      "count": 4
+    },
+    {
+      "name": "F#m/E",
+      "count": 4
+    },
+    {
+      "name": "F#m/Eb",
+      "count": 4
+    },
+    {
+      "name": "F#m/F",
+      "count": 4
+    },
+    {
+      "name": "F#m/G",
+      "count": 4
+    },
+    {
+      "name": "F#/A",
+      "count": 4
+    },
+    {
+      "name": "F#/Ab",
+      "count": 4
+    },
+    {
+      "name": "F#/B",
+      "count": 4
+    },
+    {
+      "name": "F#/Bb",
+      "count": 3
+    },
+    {
+      "name": "F#/C",
+      "count": 4
+    },
+    {
+      "name": "F#/Db",
+      "count": 4
+    },
+    {
+      "name": "F#/D",
+      "count": 4
+    },
+    {
+      "name": "F#/E",
+      "count": 4
+    },
+    {
+      "name": "F#/Eb",
+      "count": 4
+    },
+    {
+      "name": "F#/F",
+      "count": 4
+    },
+    {
+      "name": "F#/G",
+      "count": 4
+    },
+    {
+      "name": "G",
+      "count": 12
+    },
+    {
+      "name": "Gm",
+      "count": 4
+    },
+    {
+      "name": "Gdim",
+      "count": 3
+    },
+    {
+      "name": "Gdim7",
+      "count": 4
+    },
+    {
+      "name": "Gsus4",
+      "count": 13
+    },
+    {
+      "name": "Gsus2",
+      "count": 4
+    },
+    {
+      "name": "G7sus4",
+      "count": 4
+    },
+    {
+      "name": "Gaug",
+      "count": 4
+    },
+    {
+      "name": "G5",
+      "count": 3
+    },
+    {
+      "name": "G6",
+      "count": 4
+    },
+    {
+      "name": "G6/9",
+      "count": 4
+    },
+    {
+      "name": "G7",
+      "count": 4
+    },
+    {
+      "name": "G7b5",
+      "count": 4
+    },
+    {
+      "name": "G7#5",
+      "count": 4
+    },
+    {
+      "name": "G9",
+      "count": 4
+    },
+    {
+      "name": "G9b5",
+      "count": 4
+    },
+    {
+      "name": "G9#5",
+      "count": 4
+    },
+    {
+      "name": "G7b9",
+      "count": 4
+    },
+    {
+      "name": "G7#9",
+      "count": 4
+    },
+    {
+      "name": "G9#11",
+      "count": 2
+    },
+    {
+      "name": "G13",
+      "count": 3
+    },
+    {
+      "name": "Gmaj7",
+      "count": 4
+    },
+    {
+      "name": "Gmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Gmaj9",
+      "count": 4
+    },
+    {
+      "name": "Gm6",
+      "count": 4
+    },
+    {
+      "name": "Gm7",
+      "count": 31
+    },
+    {
+      "name": "Gm7b5",
+      "count": 4
+    },
+    {
+      "name": "Gm9",
+      "count": 4
+    },
+    {
+      "name": "Gm11",
+      "count": 2
+    },
+    {
+      "name": "GmMaj7",
+      "count": 4
+    },
+    {
+      "name": "GmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Gadd9",
+      "count": 3
+    },
+    {
+      "name": "Gmadd9",
+      "count": 4
+    },
+    {
+      "name": "Gm9/Bb",
+      "count": 2
+    },
+    {
+      "name": "Gm/A",
+      "count": 4
+    },
+    {
+      "name": "Gm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Gm/B",
+      "count": 4
+    },
+    {
+      "name": "Gm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Gm/C",
+      "count": 4
+    },
+    {
+      "name": "Gm/Db",
+      "count": 4
+    },
+    {
+      "name": "Gm/D",
+      "count": 4
+    },
+    {
+      "name": "Gm/E",
+      "count": 4
+    },
+    {
+      "name": "Gm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Gm/F",
+      "count": 4
+    },
+    {
+      "name": "Gm/F#",
+      "count": 4
+    },
+    {
+      "name": "G/A",
+      "count": 4
+    },
+    {
+      "name": "G/Ab",
+      "count": 4
+    },
+    {
+      "name": "G/B",
+      "count": 4
+    },
+    {
+      "name": "G/Bb",
+      "count": 4
+    },
+    {
+      "name": "G/C",
+      "count": 4
+    },
+    {
+      "name": "G/Db",
+      "count": 4
+    },
+    {
+      "name": "G/D",
+      "count": 4
+    },
+    {
+      "name": "G/E",
+      "count": 4
+    },
+    {
+      "name": "G/Eb",
+      "count": 4
+    },
+    {
+      "name": "G/F",
+      "count": 4
+    },
+    {
+      "name": "G/F#",
+      "count": 4
+    },
+    {
+      "name": "Ab",
+      "count": 4
+    },
+    {
+      "name": "Abm",
+      "count": 4
+    },
+    {
+      "name": "Abdim",
+      "count": 4
+    },
+    {
+      "name": "Abdim7",
+      "count": 4
+    },
+    {
+      "name": "Absus4",
+      "count": 7
+    },
+    {
+      "name": "Absus2",
+      "count": 4
+    },
+    {
+      "name": "Ab7sus4",
+      "count": 4
+    },
+    {
+      "name": "Abaug",
+      "count": 4
+    },
+    {
+      "name": "Ab5",
+      "count": 3
+    },
+    {
+      "name": "Ab6",
+      "count": 4
+    },
+    {
+      "name": "Ab6/9",
+      "count": 4
+    },
+    {
+      "name": "Ab7",
+      "count": 12
+    },
+    {
+      "name": "Ab7b5",
+      "count": 4
+    },
+    {
+      "name": "Ab7#5",
+      "count": 4
+    },
+    {
+      "name": "Ab9",
+      "count": 4
+    },
+    {
+      "name": "Ab9b5",
+      "count": 4
+    },
+    {
+      "name": "Ab9#5",
+      "count": 4
+    },
+    {
+      "name": "Ab7b9",
+      "count": 3
+    },
+    {
+      "name": "Ab7#9",
+      "count": 4
+    },
+    {
+      "name": "Ab9#11",
+      "count": 1
+    },
+    {
+      "name": "Ab13",
+      "count": 1
+    },
+    {
+      "name": "Abmaj7",
+      "count": 4
+    },
+    {
+      "name": "Abmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Abmaj9",
+      "count": 4
+    },
+    {
+      "name": "Abmaj13",
+      "count": 1
+    },
+    {
+      "name": "Abm6",
+      "count": 4
+    },
+    {
+      "name": "Abm7",
+      "count": 28
+    },
+    {
+      "name": "Abm7b5",
+      "count": 4
+    },
+    {
+      "name": "Abm9",
+      "count": 4
+    },
+    {
+      "name": "Abm11",
+      "count": 2
+    },
+    {
+      "name": "AbmMaj7",
+      "count": 4
+    },
+    {
+      "name": "AbmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Abadd9",
+      "count": 4
+    },
+    {
+      "name": "Abmadd9",
+      "count": 4
+    },
+    {
+      "name": "Abm9/B",
+      "count": 2
+    },
+    {
+      "name": "Abm/A",
+      "count": 4
+    },
+    {
+      "name": "Abm/B",
+      "count": 4
+    },
+    {
+      "name": "Abm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Abm/C",
+      "count": 4
+    },
+    {
+      "name": "Abm/Db",
+      "count": 4
+    },
+    {
+      "name": "Abm/D",
+      "count": 4
+    },
+    {
+      "name": "Abm/E",
+      "count": 4
+    },
+    {
+      "name": "Abm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Abm/F",
+      "count": 4
+    },
+    {
+      "name": "Abm/F#",
+      "count": 4
+    },
+    {
+      "name": "Abm/G",
+      "count": 4
+    },
+    {
+      "name": "Ab/A",
+      "count": 4
+    },
+    {
+      "name": "Ab/B",
+      "count": 4
+    },
+    {
+      "name": "Ab/Bb",
+      "count": 4
+    },
+    {
+      "name": "Ab/C",
+      "count": 3
+    },
+    {
+      "name": "Ab/Db",
+      "count": 4
+    },
+    {
+      "name": "Ab/D",
+      "count": 4
+    },
+    {
+      "name": "Ab/E",
+      "count": 4
+    },
+    {
+      "name": "Ab/Eb",
+      "count": 4
+    },
+    {
+      "name": "Ab/F",
+      "count": 4
+    },
+    {
+      "name": "Ab/F#",
+      "count": 4
+    },
+    {
+      "name": "Ab/G",
+      "count": 4
+    },
+    {
+      "name": "A",
+      "count": 11
+    },
+    {
+      "name": "Am",
+      "count": 4
+    },
+    {
+      "name": "Adim",
+      "count": 3
+    },
+    {
+      "name": "Adim7",
+      "count": 4
+    },
+    {
+      "name": "Asus4",
+      "count": 7
+    },
+    {
+      "name": "Asus2",
+      "count": 4
+    },
+    {
+      "name": "A7sus4",
+      "count": 18
+    },
+    {
+      "name": "Aaug",
+      "count": 4
+    },
+    {
+      "name": "A5",
+      "count": 3
+    },
+    {
+      "name": "A6",
+      "count": 4
+    },
+    {
+      "name": "A6/9",
+      "count": 4
+    },
+    {
+      "name": "A7",
+      "count": 12
+    },
+    {
+      "name": "A7b5",
+      "count": 4
+    },
+    {
+      "name": "A7#5",
+      "count": 4
+    },
+    {
+      "name": "A9",
+      "count": 4
+    },
+    {
+      "name": "A9b5",
+      "count": 4
+    },
+    {
+      "name": "A9#5",
+      "count": 4
+    },
+    {
+      "name": "A7b9",
+      "count": 4
+    },
+    {
+      "name": "A7#9",
+      "count": 4
+    },
+    {
+      "name": "A9#11",
+      "count": 2
+    },
+    {
+      "name": "Amaj7",
+      "count": 27
+    },
+    {
+      "name": "Amaj7#5",
+      "count": 3
+    },
+    {
+      "name": "Amaj9",
+      "count": 4
+    },
+    {
+      "name": "Amaj11",
+      "count": 2
+    },
+    {
+      "name": "Amaj13",
+      "count": 2
+    },
+    {
+      "name": "Am6",
+      "count": 15
+    },
+    {
+      "name": "Am7",
+      "count": 31
+    },
+    {
+      "name": "Am7b5",
+      "count": 4
+    },
+    {
+      "name": "Am9",
+      "count": 4
+    },
+    {
+      "name": "Am11",
+      "count": 3
+    },
+    {
+      "name": "AmMaj7",
+      "count": 4
+    },
+    {
+      "name": "AmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Aadd9",
+      "count": 8
+    },
+    {
+      "name": "Amadd9",
+      "count": 4
+    },
+    {
+      "name": "Am9/C",
+      "count": 2
+    },
+    {
+      "name": "Am/Ab",
+      "count": 4
+    },
+    {
+      "name": "Am/B",
+      "count": 4
+    },
+    {
+      "name": "Am/Bb",
+      "count": 4
+    },
+    {
+      "name": "Am/C",
+      "count": 5
+    },
+    {
+      "name": "Am/Db",
+      "count": 4
+    },
+    {
+      "name": "Am/D",
+      "count": 4
+    },
+    {
+      "name": "Am/E",
+      "count": 4
+    },
+    {
+      "name": "Am/Eb",
+      "count": 4
+    },
+    {
+      "name": "Am/F",
+      "count": 4
+    },
+    {
+      "name": "Am/F#",
+      "count": 4
+    },
+    {
+      "name": "Am/G",
+      "count": 4
+    },
+    {
+      "name": "A/Ab",
+      "count": 4
+    },
+    {
+      "name": "A/B",
+      "count": 4
+    },
+    {
+      "name": "A/Bb",
+      "count": 4
+    },
+    {
+      "name": "A/C",
+      "count": 4
+    },
+    {
+      "name": "A/Db",
+      "count": 3
+    },
+    {
+      "name": "A/D",
+      "count": 4
+    },
+    {
+      "name": "A/E",
+      "count": 4
+    },
+    {
+      "name": "A/Eb",
+      "count": 4
+    },
+    {
+      "name": "A/F",
+      "count": 4
+    },
+    {
+      "name": "A/F#",
+      "count": 4
+    },
+    {
+      "name": "A/G",
+      "count": 4
+    },
+    {
+      "name": "Bb",
+      "count": 12
+    },
+    {
+      "name": "Bbm",
+      "count": 4
+    },
+    {
+      "name": "Bbdim",
+      "count": 4
+    },
+    {
+      "name": "Bbdim7",
+      "count": 4
+    },
+    {
+      "name": "Bbsus4",
+      "count": 6
+    },
+    {
+      "name": "Bbsus2",
+      "count": 4
+    },
+    {
+      "name": "Bb7sus4",
+      "count": 4
+    },
+    {
+      "name": "Bbaug",
+      "count": 4
+    },
+    {
+      "name": "Bb5",
+      "count": 3
+    },
+    {
+      "name": "Bb6",
+      "count": 2
+    },
+    {
+      "name": "Bb6/9",
+      "count": 4
+    },
+    {
+      "name": "Bb7",
+      "count": 4
+    },
+    {
+      "name": "Bb7b5",
+      "count": 4
+    },
+    {
+      "name": "Bb7#5",
+      "count": 4
+    },
+    {
+      "name": "Bb9",
+      "count": 4
+    },
+    {
+      "name": "Bb9b5",
+      "count": 4
+    },
+    {
+      "name": "Bb9#5",
+      "count": 4
+    },
+    {
+      "name": "Bb7b9",
+      "count": 4
+    },
+    {
+      "name": "Bb7#9",
+      "count": 4
+    },
+    {
+      "name": "Bb9#11",
+      "count": 3
+    },
+    {
+      "name": "Bbmaj7",
+      "count": 4
+    },
+    {
+      "name": "Bbmaj7#5",
+      "count": 4
+    },
+    {
+      "name": "Bbmaj9",
+      "count": 4
+    },
+    {
+      "name": "Bbmaj11",
+      "count": 1
+    },
+    {
+      "name": "Bbmaj13",
+      "count": 1
+    },
+    {
+      "name": "Bbm6",
+      "count": 4
+    },
+    {
+      "name": "Bbm7",
+      "count": 4
+    },
+    {
+      "name": "Bbm7b5",
+      "count": 23
+    },
+    {
+      "name": "Bbm9",
+      "count": 4
+    },
+    {
+      "name": "Bbm11",
+      "count": 3
+    },
+    {
+      "name": "BbmMaj7",
+      "count": 4
+    },
+    {
+      "name": "BbmMaj9",
+      "count": 4
+    },
+    {
+      "name": "Bbadd9",
+      "count": 4
+    },
+    {
+      "name": "Bbmadd9",
+      "count": 4
+    },
+    {
+      "name": "Bbm9/Db",
+      "count": 2
+    },
+    {
+      "name": "Bbm/A",
+      "count": 4
+    },
+    {
+      "name": "Bbm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Bbm/B",
+      "count": 4
+    },
+    {
+      "name": "Bbm/C",
+      "count": 4
+    },
+    {
+      "name": "Bbm/Db",
+      "count": 4
+    },
+    {
+      "name": "Bbm/D",
+      "count": 4
+    },
+    {
+      "name": "Bbm/E",
+      "count": 4
+    },
+    {
+      "name": "Bbm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Bbm/F",
+      "count": 4
+    },
+    {
+      "name": "Bbm/F#",
+      "count": 4
+    },
+    {
+      "name": "Bbm/G",
+      "count": 4
+    },
+    {
+      "name": "Bb/A",
+      "count": 4
+    },
+    {
+      "name": "Bb/Ab",
+      "count": 4
+    },
+    {
+      "name": "Bb/B",
+      "count": 4
+    },
+    {
+      "name": "Bb/C",
+      "count": 4
+    },
+    {
+      "name": "Bb/Db",
+      "count": 4
+    },
+    {
+      "name": "Bb/D",
+      "count": 4
+    },
+    {
+      "name": "Bb/E",
+      "count": 4
+    },
+    {
+      "name": "Bb/Eb",
+      "count": 4
+    },
+    {
+      "name": "Bb/F",
+      "count": 4
+    },
+    {
+      "name": "Bb/F#",
+      "count": 4
+    },
+    {
+      "name": "Bb/G",
+      "count": 4
+    },
+    {
+      "name": "B",
+      "count": 10
+    },
+    {
+      "name": "Bm",
+      "count": 4
+    },
+    {
+      "name": "Bdim",
+      "count": 4
+    },
+    {
+      "name": "Bdim7",
+      "count": 4
+    },
+    {
+      "name": "Bsus4",
+      "count": 8
+    },
+    {
+      "name": "Bsus2",
+      "count": 4
+    },
+    {
+      "name": "B7sus4",
+      "count": 4
+    },
+    {
+      "name": "Baug",
+      "count": 3
+    },
+    {
+      "name": "B5",
+      "count": 3
+    },
+    {
+      "name": "B6",
+      "count": 4
+    },
+    {
+      "name": "B6/9",
+      "count": 4
+    },
+    {
+      "name": "B7",
+      "count": 12
+    },
+    {
+      "name": "B7b5",
+      "count": 4
+    },
+    {
+      "name": "B7#5",
+      "count": 3
+    },
+    {
+      "name": "B9",
+      "count": 4
+    },
+    {
+      "name": "B9b5",
+      "count": 4
+    },
+    {
+      "name": "B9#5",
+      "count": 4
+    },
+    {
+      "name": "B7b9",
+      "count": 4
+    },
+    {
+      "name": "B7#9",
+      "count": 4
+    },
+    {
+      "name": "B9#11",
+      "count": 1
+    },
+    {
+      "name": "B13",
+      "count": 1
+    },
+    {
+      "name": "Bmaj7",
+      "count": 4
+    },
+    {
+      "name": "Bmaj7#5",
+      "count": 3
+    },
+    {
+      "name": "Bmaj9",
+      "count": 4
+    },
+    {
+      "name": "Bmaj11",
+      "count": 1
+    },
+    {
+      "name": "Bmaj13",
+      "count": 1
+    },
+    {
+      "name": "Bm6",
+      "count": 14
+    },
+    {
+      "name": "Bm7",
+      "count": 30
+    },
+    {
+      "name": "Bm7b5",
+      "count": 4
+    },
+    {
+      "name": "Bm9",
+      "count": 4
+    },
+    {
+      "name": "Bm11",
+      "count": 3
+    },
+    {
+      "name": "BmMaj7",
+      "count": 4
+    },
+    {
+      "name": "BmMaj9",
+      "count": 3
+    },
+    {
+      "name": "Badd9",
+      "count": 4
+    },
+    {
+      "name": "Bmadd9",
+      "count": 4
+    },
+    {
+      "name": "Bm9/D",
+      "count": 2
+    },
+    {
+      "name": "Bm/A",
+      "count": 4
+    },
+    {
+      "name": "Bm/Ab",
+      "count": 4
+    },
+    {
+      "name": "Bm/Bb",
+      "count": 4
+    },
+    {
+      "name": "Bm/C",
+      "count": 4
+    },
+    {
+      "name": "Bm/Db",
+      "count": 4
+    },
+    {
+      "name": "Bm/D",
+      "count": 4
+    },
+    {
+      "name": "Bm/E",
+      "count": 4
+    },
+    {
+      "name": "Bm/Eb",
+      "count": 4
+    },
+    {
+      "name": "Bm/F",
+      "count": 4
+    },
+    {
+      "name": "Bm/F#",
+      "count": 4
+    },
+    {
+      "name": "Bm/G",
+      "count": 4
+    },
+    {
+      "name": "B/A",
+      "count": 4
+    },
+    {
+      "name": "B/Ab",
+      "count": 4
+    },
+    {
+      "name": "B/Bb",
+      "count": 4
+    },
+    {
+      "name": "B/C",
+      "count": 4
+    },
+    {
+      "name": "B/Db",
+      "count": 4
+    },
+    {
+      "name": "B/D",
+      "count": 4
+    },
+    {
+      "name": "B/E",
+      "count": 4
+    },
+    {
+      "name": "B/Eb",
+      "count": 4
+    },
+    {
+      "name": "B/F",
+      "count": 4
+    },
+    {
+      "name": "B/F#",
+      "count": 4
+    },
+    {
+      "name": "B/G",
+      "count": 4
+    },
+    {
+      "name": "F#m7/B",
+      "count": 9
+    },
+    {
+      "name": "Eadd9/Ab",
+      "count": 1
+    },
+    {
+      "name": "D7#11",
+      "count": 9
+    },
+    {
+      "name": "Dbm7/F#",
+      "count": 12
+    },
+    {
+      "name": "Ebm7/Ab",
+      "count": 8
+    },
+    {
+      "name": "Abm7/Db",
+      "count": 11
+    },
+    {
+      "name": "Amaj7/B",
+      "count": 4
+    },
+    {
+      "name": "Bm7/A",
+      "count": 8
+    },
+    {
+      "name": "E9/Ab",
+      "count": 6
+    },
+    {
+      "name": "Ab7/Eb",
+      "count": 3
+    },
+    {
+      "name": "Adim7/E",
+      "count": 0
+    }
+  ],
+  "rejected": [
+    {
+      "name": "Csus2sus4",
+      "pattern": "x33033",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Csus2sus4",
+      "pattern": "x30011",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Csus2sus4",
+      "pattern": "x33533",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Calt",
+      "pattern": "x32552",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Calt",
+      "pattern": "x34550",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Calt",
+      "pattern": "x:x:10:9:7:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Calt",
+      "pattern": "x:x:10:11:13:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C6/9",
+      "pattern": "x32233",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "C9",
+      "pattern": "032030",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C9",
+      "pattern": "8:10:8:7:8:10",
+      "reasons": [
+        "missing characteristic tone",
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "C11",
+      "pattern": "x32311",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C11",
+      "pattern": "x33353",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C11",
+      "pattern": "870066",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "C11",
+      "pattern": "888988",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C9#11",
+      "pattern": "x34353",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C9#11",
+      "pattern": "x:x:10:11:11:12",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C13",
+      "pattern": "x32355",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C13",
+      "pattern": "333355",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C13",
+      "pattern": "8:10:8:9:10:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj7b5",
+      "pattern": "x32402",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7b5",
+      "pattern": "x3445x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7b5",
+      "pattern": "879977",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7b5",
+      "pattern": "x:x:10:11:12:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7sus2",
+      "pattern": "x30413",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7sus2",
+      "pattern": "x30003",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7sus2",
+      "pattern": "x30403",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj7sus2",
+      "pattern": "x35433",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmaj11",
+      "pattern": "x32001",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj11",
+      "pattern": "x33000",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj11",
+      "pattern": "879060",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj11",
+      "pattern": "889988",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj13",
+      "pattern": "x32201",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj13",
+      "pattern": "x33455",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmaj13",
+      "pattern": "8:8:9:9:10:8",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cm6/9",
+      "pattern": "x31233",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cm6/9",
+      "pattern": "x30045",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cm6/9",
+      "pattern": "8677xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cm6/9",
+      "pattern": "x:10:10:8:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cm11",
+      "pattern": "x33343",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cmmaj7b5",
+      "pattern": "x3x442",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmmaj7b5",
+      "pattern": "x3444x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmmaj7b5",
+      "pattern": "8998x8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cmmaj7b5",
+      "pattern": "x:x:10:11:12:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "CmMaj11",
+      "pattern": "x31001",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "CmMaj11",
+      "pattern": "333443",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "CmMaj11",
+      "pattern": "8:8:9:8:8:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "CmMaj11",
+      "pattern": "x:x:10:10:12:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cadd11",
+      "pattern": "x32011",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cadd11",
+      "pattern": "87556x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cadd11",
+      "pattern": "8:7:10:10:x:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Cm9/Bb",
+      "pattern": "635333",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cm9/Bb",
+      "pattern": "635533",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cm9/Bb",
+      "pattern": "x:13:10:12:11:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Cm9/Bb",
+      "pattern": "63533x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#sus2",
+      "pattern": "96689x",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "C#sus4",
+      "pattern": "9x6679",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "C#sus2sus4",
+      "pattern": "x44644",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#sus2sus4",
+      "pattern": "9:9:11:11:9:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#alt",
+      "pattern": "x43021",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#alt",
+      "pattern": "x45063",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#alt",
+      "pattern": "x4566x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#alt",
+      "pattern": "x:x:11:10:8:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#aug",
+      "pattern": "x44422",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#aug",
+      "pattern": "446474",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#7b5",
+      "pattern": "x:x:12:13:13:14",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#11",
+      "pattern": "x43004",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#11",
+      "pattern": "x45464",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#11",
+      "pattern": "989889",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#11",
+      "pattern": "9:10:9:10:9:9",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#9#11",
+      "pattern": "x32003",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#9#11",
+      "pattern": "x45464",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#9#11",
+      "pattern": "9:10:9:10:9:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#13",
+      "pattern": "x43302",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#13",
+      "pattern": "444466",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#13",
+      "pattern": "9:9:9:10:11:11",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "C#maj7b5",
+      "pattern": "x43563",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7b5",
+      "pattern": "x4556x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7b5",
+      "pattern": "9:8:10:10:8:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7b5",
+      "pattern": "x:x:11:12:13:13",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7sus2",
+      "pattern": "x46544",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7sus2",
+      "pattern": "x:x:11:8:9:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7sus2",
+      "pattern": "x:x:11:13:13:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj7sus2",
+      "pattern": "x4111x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#maj11",
+      "pattern": "x43522",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#maj11",
+      "pattern": "444564",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#maj11",
+      "pattern": "98xx78",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#maj11",
+      "pattern": "9:9:10:10:9:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#maj13",
+      "pattern": "x41311",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "C#maj13",
+      "pattern": "x44566",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#maj13",
+      "pattern": "9:9:10:10:11:9",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#m6/9",
+      "pattern": "x41320",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#m6/9",
+      "pattern": "x4234x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#m6/9",
+      "pattern": "9788x0",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#m6/9",
+      "pattern": "x:11:11:9:11:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#m11",
+      "pattern": "x42422",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#m11",
+      "pattern": "x:x:11:11:12:12",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#mmaj7b5",
+      "pattern": "x42010",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mmaj7b5",
+      "pattern": "x4555x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mmaj7b5",
+      "pattern": "9:10:10:9:x:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mmaj7b5",
+      "pattern": "x:x:11:12:13:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mMaj11",
+      "pattern": "x42542",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mMaj11",
+      "pattern": "444554",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mMaj11",
+      "pattern": "9:9:10:9:9:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#mMaj11",
+      "pattern": "x:x:11:11:13:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#add11",
+      "pattern": "x43122",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#add11",
+      "pattern": "98667x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#add11",
+      "pattern": "9:8:11:11:x:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "C#m9/B",
+      "pattern": "746444",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#m9/B",
+      "pattern": "746644",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#m9/B",
+      "pattern": "x:14:11:13:12:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#m9/B",
+      "pattern": "74644x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "C#/F",
+      "pattern": "1xx121",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "Dsus2sus4",
+      "pattern": "x55755",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dsus2sus4",
+      "pattern": "x52233",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dsus2sus4",
+      "pattern": "10:10:12:12:10:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dalt",
+      "pattern": "xx0132",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dalt",
+      "pattern": "x54x34",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dalt",
+      "pattern": "x5677x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dalt",
+      "pattern": "x:11:0:11:9:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "D7#9",
+      "pattern": "0:0:0:10:7:8",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "D11",
+      "pattern": "xx0012",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D11",
+      "pattern": "x54533",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D11",
+      "pattern": "x55575",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D11",
+      "pattern": "x97788",
+      "reasons": [
+        "finger/fret mismatch",
+        "non-chord tone",
+        "missing characteristic tone",
+        "same finger at different frets",
+        "invalid barre"
+      ]
+    },
+    {
+      "name": "D9#11",
+      "pattern": "xx0112",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D9#11",
+      "pattern": "x90798",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D13",
+      "pattern": "xx0412",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D13",
+      "pattern": "555577",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D13",
+      "pattern": "10:x:10:11:12:x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj7b5",
+      "pattern": "xx0122",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7b5",
+      "pattern": "x5667x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7b5",
+      "pattern": "10:9:11:11:9:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7b5",
+      "pattern": "10:11:11:11:x:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7sus2",
+      "pattern": "xx0220",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7sus2",
+      "pattern": "xx0655",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7sus2",
+      "pattern": "x57655",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj7sus2",
+      "pattern": "x:x:0:9:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmaj9",
+      "pattern": "x5464x",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj11",
+      "pattern": "xx0022",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj11",
+      "pattern": "555675",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj11",
+      "pattern": "x90789",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj11",
+      "pattern": "10:10:11:11:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj13",
+      "pattern": "xx0422",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dmaj13",
+      "pattern": "x55677",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dm6/9",
+      "pattern": "x53200",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dm6/9",
+      "pattern": "x53450",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dm6/9",
+      "pattern": "x70767",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dm6/9",
+      "pattern": "x:12:12:10:12:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dm11",
+      "pattern": "xx0011",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "DmMaj7",
+      "pattern": "x53220",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Dmmaj7b5",
+      "pattern": "xx0121",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmmaj7b5",
+      "pattern": "45666x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmmaj7b5",
+      "pattern": "x5666x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dmmaj7b5",
+      "pattern": "10:11:11:10:x:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "DmMaj11",
+      "pattern": "xx0021",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "DmMaj11",
+      "pattern": "x53653",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "DmMaj11",
+      "pattern": "555775",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "DmMaj11",
+      "pattern": "10:10:11:10:10:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dadd11",
+      "pattern": "x54233",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dadd11",
+      "pattern": "x:x:0:11:8:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dadd11",
+      "pattern": "10:9:7:7:8:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dadd11",
+      "pattern": "10:9:12:12:x:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Dm9/C",
+      "pattern": "x30210",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dm9/C",
+      "pattern": "x30230",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dm9/C",
+      "pattern": "857555",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Dm9/C",
+      "pattern": "857755",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "D/F#",
+      "pattern": "2xx232",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "Ebsus2sus4",
+      "pattern": "x66866",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebsus2sus4",
+      "pattern": "x63344",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebsus2sus4",
+      "pattern": "11:11:13:13:11:13",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebalt",
+      "pattern": "xx1243",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebalt",
+      "pattern": "x65045",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebalt",
+      "pattern": "x6708x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebalt",
+      "pattern": "11:10:x:12:10:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Eb7b5",
+      "pattern": "x67686",
+      "reasons": [
+        "finger/fret mismatch",
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Eb9b5",
+      "pattern": "11:10:11:10:10:11",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "Eb11",
+      "pattern": "111123",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Eb11",
+      "pattern": "x65644",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb11",
+      "pattern": "066686",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb11",
+      "pattern": "11:11:11:12:11:11",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb9#11",
+      "pattern": "xx1223",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb9#11",
+      "pattern": "x6768x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb13",
+      "pattern": "x65688",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb13",
+      "pattern": "666688",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb13",
+      "pattern": "11:10:10:0:9:9",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb13",
+      "pattern": "11:11:11:12:13:13",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Ebmaj7b5",
+      "pattern": "xx1233",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7b5",
+      "pattern": "x67786",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7b5",
+      "pattern": "11:10:12:12:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7b5",
+      "pattern": "11:12:12:12:x:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7sus2",
+      "pattern": "xx1331",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7sus2",
+      "pattern": "x68766",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7sus2",
+      "pattern": "x:x:13:10:11:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj7sus2",
+      "pattern": "x6333x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmaj11",
+      "pattern": "xx1133",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmaj11",
+      "pattern": "x65744",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmaj11",
+      "pattern": "666786",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmaj11",
+      "pattern": "11:11:12:12:11:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmaj13",
+      "pattern": "x3103x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmaj13",
+      "pattern": "x65533",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmaj13",
+      "pattern": "x66788",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebm6/9",
+      "pattern": "2x1311",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebm6/9",
+      "pattern": "x6456x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebm6/9",
+      "pattern": "11:9:10:10:9:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebm6/9",
+      "pattern": "x:x:13:11:13:13",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebm11",
+      "pattern": "xx1122",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebmmaj7b5",
+      "pattern": "xx1232",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmmaj7b5",
+      "pattern": "56777x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmmaj7b5",
+      "pattern": "x6777x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebmmaj7b5",
+      "pattern": "11:12:12:11:x:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EbmMaj11",
+      "pattern": "x11132",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EbmMaj11",
+      "pattern": "x64764",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EbmMaj11",
+      "pattern": "666776",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EbmMaj11",
+      "pattern": "11:11:12:11:11:13",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebadd11",
+      "pattern": "xx1044",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebadd11",
+      "pattern": "x65344",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebadd11",
+      "pattern": "11:10:8:8:9:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebadd11",
+      "pattern": "11:10:13:13:x:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ebm9/C#",
+      "pattern": "x41321",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebm9/C#",
+      "pattern": "968666",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebm9/C#",
+      "pattern": "968866",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ebm9/C#",
+      "pattern": "96866x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Eb/G",
+      "pattern": "3xx343",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "Esus2",
+      "pattern": "12:14:14:x:12:14",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "Esus2sus4",
+      "pattern": "002202",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Esus2sus4",
+      "pattern": "022202",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Esus2sus4",
+      "pattern": "x77977",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Esus2sus4",
+      "pattern": "x74455",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ealt",
+      "pattern": "0121xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ealt",
+      "pattern": "xx2354",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ealt",
+      "pattern": "076x56",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ealt",
+      "pattern": "078990",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Eaug",
+      "pattern": "x:7:10:9:9:x",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "E11",
+      "pattern": "000100",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E11",
+      "pattern": "004434",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "E11",
+      "pattern": "x76755",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E11",
+      "pattern": "x77797",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E9#11",
+      "pattern": "010100",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E9#11",
+      "pattern": "050354",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E13",
+      "pattern": "020120",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E13",
+      "pattern": "000122",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "E13",
+      "pattern": "056650",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E13",
+      "pattern": "777799",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emaj7b5",
+      "pattern": "011140",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7b5",
+      "pattern": "xx2344",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7b5",
+      "pattern": "x7889x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7b5",
+      "pattern": "0:11:13:13:11:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7sus2",
+      "pattern": "022442",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7sus2",
+      "pattern": "024442",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7sus2",
+      "pattern": "xx2442",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj7sus2",
+      "pattern": "064447",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emaj11",
+      "pattern": "001100",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emaj11",
+      "pattern": "006445",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emaj11",
+      "pattern": "777897",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emaj11",
+      "pattern": "0:11:9:9:10:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emaj13",
+      "pattern": "x76644",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emaj13",
+      "pattern": "x77899",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Em7",
+      "pattern": "0x000x",
+      "reasons": [
+        "finger/fret mismatch",
+        "invalid barre"
+      ]
+    },
+    {
+      "name": "Em6/9",
+      "pattern": "022022",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Em6/9",
+      "pattern": "3x2422",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Em6/9",
+      "pattern": "x75677",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Em6/9",
+      "pattern": "0:10:11:11:12:0",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Em11",
+      "pattern": "005430",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emmaj7b5",
+      "pattern": "0110x0",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emmaj7b5",
+      "pattern": "xx2343",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emmaj7b5",
+      "pattern": "67888x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emmaj7b5",
+      "pattern": "x7888x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EmMaj11",
+      "pattern": "001002",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EmMaj11",
+      "pattern": "x22243",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EmMaj11",
+      "pattern": "x75875",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "EmMaj11",
+      "pattern": "777887",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Eadd11",
+      "pattern": "022254",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Eadd11",
+      "pattern": "076455",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Eadd11",
+      "pattern": "x76455",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Eadd11",
+      "pattern": "077997",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Emadd9",
+      "pattern": "xx3113",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emadd9",
+      "pattern": "x8658x",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emadd9",
+      "pattern": "x86068",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Emadd9",
+      "pattern": "x:8:10:0:9:8",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Em9/D",
+      "pattern": "x52432",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Em9/D",
+      "pattern": "10:7:9:7:7:7",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Em9/D",
+      "pattern": "10:7:9:9:7:7",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Em9/D",
+      "pattern": "10:7:9:7:7:x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "E/Ab",
+      "pattern": "4xx454",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "F",
+      "pattern": "xx3211",
+      "reasons": [
+        "finger/fret mismatch",
+        "missing barre"
+      ]
+    },
+    {
+      "name": "Fsus2sus4",
+      "pattern": "113313",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fsus2sus4",
+      "pattern": "x:8:8:10:8:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fsus2sus4",
+      "pattern": "x85566",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Falt",
+      "pattern": "12320x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Falt",
+      "pattern": "xx3405",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Falt",
+      "pattern": "x:8:9:10:10:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Falt",
+      "pattern": "13:12:x:14:12:13",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F9b5",
+      "pattern": "13:12:13:0:0:13",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "F11",
+      "pattern": "111211",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F11",
+      "pattern": "333345",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "F11",
+      "pattern": "x87866",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F11",
+      "pattern": "x:8:8:8:10:8",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F9#11",
+      "pattern": "xx3445",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F9#11",
+      "pattern": "x:8:9:8:10:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F13",
+      "pattern": "131231",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F13",
+      "pattern": "111233",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "F13",
+      "pattern": "x:8:7:8:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F13",
+      "pattern": "8:8:8:8:10:10",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmaj7b5",
+      "pattern": "102200",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7b5",
+      "pattern": "xx3455",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7b5",
+      "pattern": "x:8:9:9:10:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7b5",
+      "pattern": "13:12:14:14:12:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7sus2",
+      "pattern": "xx3010",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7sus2",
+      "pattern": "xx3553",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7sus2",
+      "pattern": "x:8:10:9:8:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj7sus2",
+      "pattern": "x8555x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmaj11",
+      "pattern": "112211",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmaj11",
+      "pattern": "xx3355",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmaj11",
+      "pattern": "8:8:8:9:10:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmaj13",
+      "pattern": "xx3230",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmaj13",
+      "pattern": "x87755",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmaj13",
+      "pattern": "x:8:8:9:10:10",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fm6/9",
+      "pattern": "133133",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fm6/9",
+      "pattern": "4x3533",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fm6/9",
+      "pattern": "x8678x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fm6/9",
+      "pattern": "13:11:12:0:13:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fm11",
+      "pattern": "xx3344",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fmmaj7b5",
+      "pattern": "122100",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmmaj7b5",
+      "pattern": "xx3454",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmmaj7b5",
+      "pattern": "78999x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fmmaj7b5",
+      "pattern": "x8999x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "FmMaj11",
+      "pattern": "112113",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "FmMaj11",
+      "pattern": "x33354",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "FmMaj11",
+      "pattern": "x86986",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "FmMaj11",
+      "pattern": "888998",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fadd11",
+      "pattern": "x87566",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fadd11",
+      "pattern": "13:12:10:10:11:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Fm9/Eb",
+      "pattern": "x63543",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fm9/Eb",
+      "pattern": "11:8:10:8:8:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fm9/Eb",
+      "pattern": "11:8:10:10:8:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Fm9/Eb",
+      "pattern": "11:8:10:8:8:x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#sus2sus4",
+      "pattern": "224424",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#sus2sus4",
+      "pattern": "x:9:9:11:9:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#sus2sus4",
+      "pattern": "x96677",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#alt",
+      "pattern": "xx4312",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#alt",
+      "pattern": "2343x2",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#alt",
+      "pattern": "xx4576",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#alt",
+      "pattern": "x:9:10:11:11:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#11",
+      "pattern": "212100",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "F#11",
+      "pattern": "444456",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "F#11",
+      "pattern": "x98977",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#11",
+      "pattern": "x:9:9:9:11:9",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#9#11",
+      "pattern": "xx4556",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#9#11",
+      "pattern": "x:9:10:9:11:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#13",
+      "pattern": "221300",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#13",
+      "pattern": "222344",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "F#13",
+      "pattern": "x98870",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#13",
+      "pattern": "9:9:9:9:11:11",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj7b5",
+      "pattern": "213311",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7b5",
+      "pattern": "xx4566",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7b5",
+      "pattern": "x:9:8:10:11:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7b5",
+      "pattern": "x:9:10:10:11:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7sus2",
+      "pattern": "xx4121",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7sus2",
+      "pattern": "xx4664",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7sus2",
+      "pattern": "x:9:11:10:9:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj7sus2",
+      "pattern": "x9666x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#maj11",
+      "pattern": "223322",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj11",
+      "pattern": "xx4466",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj11",
+      "pattern": "x:9:8:10:0:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj11",
+      "pattern": "9:9:9:10:11:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj13",
+      "pattern": "x64466",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj13",
+      "pattern": "x98866",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#maj13",
+      "pattern": "x:9:9:10:11:11",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#m6/9",
+      "pattern": "201122",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#m6/9",
+      "pattern": "244244",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#m6/9",
+      "pattern": "544644",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#m6/9",
+      "pattern": "x9789x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#m11",
+      "pattern": "xx4455",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#mmaj7b5",
+      "pattern": "2332x2",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mmaj7b5",
+      "pattern": "xx4565",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mmaj7b5",
+      "pattern": "8:9:10:10:10:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mmaj7b5",
+      "pattern": "x:9:10:10:10:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mMaj11",
+      "pattern": "223224",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mMaj11",
+      "pattern": "x44465",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mMaj11",
+      "pattern": "x:9:7:10:9:7",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#mMaj11",
+      "pattern": "9:9:9:10:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#add11",
+      "pattern": "x98677",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#add11",
+      "pattern": "21430x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#add11",
+      "pattern": "24430x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#add11",
+      "pattern": "14:13:11:11:12:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "F#m9/E",
+      "pattern": "x74654",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#m9/E",
+      "pattern": "12:9:11:9:9:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "F#/Bb",
+      "pattern": "6xx676",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "Gdim",
+      "pattern": "x:10:8:x:8:9",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "Gsus2sus4",
+      "pattern": "33021x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gsus2sus4",
+      "pattern": "33023x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gsus2sus4",
+      "pattern": "300213",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gsus2sus4",
+      "pattern": "335535",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gsus2sus4",
+      "pattern": "x:10:10:12:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Galt",
+      "pattern": "32x023",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Galt",
+      "pattern": "xx5607",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Galt",
+      "pattern": "x:10:9:0:0:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Galt",
+      "pattern": "x:10:11:12:12:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "G11",
+      "pattern": "320011",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "G11",
+      "pattern": "555567",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "G11",
+      "pattern": "x:10:9:10:8:8",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "G11",
+      "pattern": "x:10:10:10:12:10",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "G9#11",
+      "pattern": "xx5667",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "G9#11",
+      "pattern": "x:10:11:10:12:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "G13",
+      "pattern": "353453",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj7b5",
+      "pattern": "324422",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7b5",
+      "pattern": "3444xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7b5",
+      "pattern": "xx5677",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7b5",
+      "pattern": "x:10:11:11:12:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7sus2",
+      "pattern": "300032",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7sus2",
+      "pattern": "300232",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7sus2",
+      "pattern": "304032",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj7sus2",
+      "pattern": "304232",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmaj11",
+      "pattern": "320012",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj11",
+      "pattern": "334433",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj11",
+      "pattern": "xx9078",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj11",
+      "pattern": "10:10:10:11:12:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj13",
+      "pattern": "322232",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "Gmaj13",
+      "pattern": "334453",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj13",
+      "pattern": "x:10:9:9:7:7",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmaj13",
+      "pattern": "x:10:10:11:12:12",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gm6/9",
+      "pattern": "310230",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gm6/9",
+      "pattern": "x55355",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gm6/9",
+      "pattern": "655755",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gm6/9",
+      "pattern": "x:10:8:9:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gm11",
+      "pattern": "3x331x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gm11",
+      "pattern": "xx5577",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gmmaj7b5",
+      "pattern": "3443x3",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmmaj7b5",
+      "pattern": "xx5676",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmmaj7b5",
+      "pattern": "9:10:11:11:11:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gmmaj7b5",
+      "pattern": "x:10:11:11:11:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "GmMaj11",
+      "pattern": "334335",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "GmMaj11",
+      "pattern": "x55576",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "GmMaj11",
+      "pattern": "x:10:8:11:10:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "GmMaj11",
+      "pattern": "10:10:10:11:11:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gadd9",
+      "pattern": "xx3214",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gadd11",
+      "pattern": "320013",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gadd11",
+      "pattern": "x:10:9:7:8:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gadd11",
+      "pattern": "32001x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gadd11",
+      "pattern": "32041x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Gm9/F",
+      "pattern": "x85765",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gm9/F",
+      "pattern": "13:10:12:10:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gm9/F",
+      "pattern": "13:10:12:12:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Gm9/F",
+      "pattern": "13:10:12:10:10:x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abalt",
+      "pattern": "xx6534",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abalt",
+      "pattern": "xx6798",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abalt",
+      "pattern": "x:11:10:13:13:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abalt",
+      "pattern": "x:11:12:13:13:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ab7b9",
+      "pattern": "xx4545",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets",
+        "invalid barre"
+      ]
+    },
+    {
+      "name": "Ab11",
+      "pattern": "444544",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab11",
+      "pattern": "666678",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Ab11",
+      "pattern": "x:11:10:11:9:9",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab11",
+      "pattern": "x:11:11:11:13:11",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab9#11",
+      "pattern": "4x453x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab9#11",
+      "pattern": "xx6778",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab9#11",
+      "pattern": "x:11:12:11:13:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab13",
+      "pattern": "464564",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab13",
+      "pattern": "444566",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Ab13",
+      "pattern": "x:11:10:11:13:13",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj7b5",
+      "pattern": "435533",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7b5",
+      "pattern": "4555xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7b5",
+      "pattern": "006788",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7b5",
+      "pattern": "x:11:12:12:13:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7sus2",
+      "pattern": "xx6343",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7sus2",
+      "pattern": "xx6886",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7sus2",
+      "pattern": "x:11:13:12:11:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj7sus2",
+      "pattern": "x:11:8:8:8:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmaj11",
+      "pattern": "43102x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj11",
+      "pattern": "445544",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj11",
+      "pattern": "xx6688",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj11",
+      "pattern": "11:11:11:12:13:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj13",
+      "pattern": "445564",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj13",
+      "pattern": "x:11:10:10:8:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abmaj13",
+      "pattern": "x:11:11:12:13:13",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abm6/9",
+      "pattern": "4x3446",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abm6/9",
+      "pattern": "466466",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abm6/9",
+      "pattern": "766866",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abm6/9",
+      "pattern": "x:11:9:10:11:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abm11",
+      "pattern": "xx6677",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abm11",
+      "pattern": "x:11:9:11:11:9",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "Abmmaj7b5",
+      "pattern": "4554x4",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmmaj7b5",
+      "pattern": "xx6787",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmmaj7b5",
+      "pattern": "10:11:12:12:12:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abmmaj7b5",
+      "pattern": "x:11:12:12:12:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AbmMaj11",
+      "pattern": "445446",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AbmMaj11",
+      "pattern": "x66687",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AbmMaj11",
+      "pattern": "x:11:9:12:11:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AbmMaj11",
+      "pattern": "11:11:11:12:12:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abadd11",
+      "pattern": "x:11:10:8:9:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abadd11",
+      "pattern": "43112x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abadd11",
+      "pattern": "4366xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Abm9/F#",
+      "pattern": "x96876",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abm9/F#",
+      "pattern": "14:11:13:11:11:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abm9/F#",
+      "pattern": "14:11:13:13:11:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Abm9/F#",
+      "pattern": "14:11:13:11:11:x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ab/C",
+      "pattern": "8xx898",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "Adim",
+      "pattern": "53x43x",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Asus2sus4",
+      "pattern": "x00200",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Asus2sus4",
+      "pattern": "557757",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Asus2sus4",
+      "pattern": "5524xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aalt",
+      "pattern": "x0122x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aalt",
+      "pattern": "x07645",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aalt",
+      "pattern": "x:0:11:8:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aalt",
+      "pattern": "x:12:13:14:14:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "A11",
+      "pattern": "x00020",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A11",
+      "pattern": "540003",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "A11",
+      "pattern": "555655",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A11",
+      "pattern": "777789",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "A9#11",
+      "pattern": "x01020",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A9#11",
+      "pattern": "xx7889",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A13",
+      "pattern": "x02022",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A13",
+      "pattern": "544030",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A13",
+      "pattern": "575675",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A13",
+      "pattern": "x:12:11:12:14:14",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Amaj7b5",
+      "pattern": "x01124",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7b5",
+      "pattern": "x01224",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7b5",
+      "pattern": "5666xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7b5",
+      "pattern": "x07899",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7#5",
+      "pattern": "9:12:11:10:9:9",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "Amaj7sus2",
+      "pattern": "x02100",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7sus2",
+      "pattern": "x02104",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7sus2",
+      "pattern": "x02204",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj7sus2",
+      "pattern": "x02404",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Amaj11",
+      "pattern": "x00120",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Amaj11",
+      "pattern": "x00224",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Amaj13",
+      "pattern": "x02122",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Amaj13",
+      "pattern": "x:12:11:11:9:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Am6/9",
+      "pattern": "x04500",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Am6/9",
+      "pattern": "577577",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Am6/9",
+      "pattern": "807977",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Am6/9",
+      "pattern": "x:12:10:11:12:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Am11",
+      "pattern": "x00010",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Ammaj7b5",
+      "pattern": "x01114",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ammaj7b5",
+      "pattern": "5665x5",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ammaj7b5",
+      "pattern": "xx7898",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Ammaj7b5",
+      "pattern": "11:12:13:13:13:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AmMaj11",
+      "pattern": "x00110",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AmMaj11",
+      "pattern": "556557",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AmMaj11",
+      "pattern": "x07798",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "AmMaj11",
+      "pattern": "x:12:10:13:12:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aadd11",
+      "pattern": "x:0:7:7:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aadd11",
+      "pattern": "x:0:11:9:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aadd11",
+      "pattern": "x:0:12:9:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Aadd11",
+      "pattern": "x:12:11:9:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Am9/G",
+      "pattern": "302000",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Am9/G",
+      "pattern": "302003",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Am9/G",
+      "pattern": "302200",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Am9/G",
+      "pattern": "302400",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "A/C#",
+      "pattern": "9:x:x:9:10:9",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "Bbsus2sus4",
+      "pattern": "x11311",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbsus2sus4",
+      "pattern": "668868",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbsus2sus4",
+      "pattern": "6635xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbalt",
+      "pattern": "x12330",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbalt",
+      "pattern": "670750",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbalt",
+      "pattern": "6707x6",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbalt",
+      "pattern": "x:x:8:9:11:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bb6",
+      "pattern": "68x786",
+      "reasons": [
+        "finger/fret mismatch"
+      ]
+    },
+    {
+      "name": "Bb6",
+      "pattern": "x:13:11:11:10:x",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bb11",
+      "pattern": "x11131",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bb11",
+      "pattern": "650544",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Bb11",
+      "pattern": "8:8:8:8:9:10",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Bb11",
+      "pattern": "x:13:12:13:11:11",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bb9#11",
+      "pattern": "x:x:8:9:9:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bb13",
+      "pattern": "x10133",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bb13",
+      "pattern": "650044",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bb13",
+      "pattern": "666788",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Bb13",
+      "pattern": "x:13:12:13:15:15",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmaj7b5",
+      "pattern": "x1223x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7b5",
+      "pattern": "657755",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7b5",
+      "pattern": "6777x0",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7b5",
+      "pattern": "x:x:8:9:10:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7sus2",
+      "pattern": "x13211",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7sus2",
+      "pattern": "xx8565",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7sus2",
+      "pattern": "x:x:8:10:10:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj7sus2",
+      "pattern": "x1321x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmaj11",
+      "pattern": "x11231",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmaj11",
+      "pattern": "667766",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmaj11",
+      "pattern": "x:x:8:8:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmaj13",
+      "pattern": "x11233",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmaj13",
+      "pattern": "667786",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmaj13",
+      "pattern": "x:13:12:12:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbm7",
+      "pattern": "5x555x",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbm6/9",
+      "pattern": "6x5668",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbm6/9",
+      "pattern": "6x8688",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbm6/9",
+      "pattern": "9:x:8:10:8:8",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbm6/9",
+      "pattern": "x:13:11:12:13:x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbm11",
+      "pattern": "xx8899",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbmmaj7b5",
+      "pattern": "x12220",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmmaj7b5",
+      "pattern": "67x655",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmmaj7b5",
+      "pattern": "6776x6",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbmmaj7b5",
+      "pattern": "x:x:8:9:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BbmMaj11",
+      "pattern": "x11221",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BbmMaj11",
+      "pattern": "667668",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BbmMaj11",
+      "pattern": "x:8:8:8:10:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BbmMaj11",
+      "pattern": "x:13:11:14:13:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbadd11",
+      "pattern": "x:13:12:10:11:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbadd11",
+      "pattern": "x1034x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbadd11",
+      "pattern": "65334x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbadd11",
+      "pattern": "6588xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bbm9/Ab",
+      "pattern": "413111",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbm9/Ab",
+      "pattern": "413311",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbm9/Ab",
+      "pattern": "x:11:8:10:9:8",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bbm9/Ab",
+      "pattern": "41311x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bsus2sus4",
+      "pattern": "x22422",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bsus2sus4",
+      "pattern": "779979",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bsus2sus4",
+      "pattern": "7746xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Balt",
+      "pattern": "x2344x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Balt",
+      "pattern": "xx9867",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Balt",
+      "pattern": "78980x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Balt",
+      "pattern": "x:x:9:10:0:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Baug",
+      "pattern": "x:14:13:12:12:0",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "B7#5",
+      "pattern": "x25243",
+      "reasons": [
+        "finger/fret mismatch",
+        "same finger at different frets"
+      ]
+    },
+    {
+      "name": "B11",
+      "pattern": "x21200",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B11",
+      "pattern": "222242",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B11",
+      "pattern": "777877",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B11",
+      "pattern": "9:9:9:9:10:11",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "B9#11",
+      "pattern": "x23242",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B9#11",
+      "pattern": "7x786x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B9#11",
+      "pattern": "x:x:9:10:10:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B13",
+      "pattern": "x21244",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B13",
+      "pattern": "222244",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "B13",
+      "pattern": "777899",
+      "reasons": [
+        "non-chord tone"
+      ]
+    },
+    {
+      "name": "Bmaj7b5",
+      "pattern": "x2334x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7b5",
+      "pattern": "768866",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7b5",
+      "pattern": "78880x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7b5",
+      "pattern": "x:x:9:10:11:11",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7#5",
+      "pattern": "76808x",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "Bmaj7sus2",
+      "pattern": "x24322",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7sus2",
+      "pattern": "xx9676",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7sus2",
+      "pattern": "x:x:9:11:11:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj7sus2",
+      "pattern": "x2432x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmaj11",
+      "pattern": "x21300",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bmaj11",
+      "pattern": "222342",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bmaj11",
+      "pattern": "x:x:9:9:11:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bmaj13",
+      "pattern": "x22344",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bmaj13",
+      "pattern": "778897",
+      "reasons": [
+        "non-chord tone",
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bmaj13",
+      "pattern": "x:14:13:13:11:11",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bm6/9",
+      "pattern": "x20122",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bm6/9",
+      "pattern": "x56677",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bm6/9",
+      "pattern": "799799",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bm6/9",
+      "pattern": "10:x:9:11:9:9",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bm11",
+      "pattern": "x:x:9:9:10:10",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bmmaj7b5",
+      "pattern": "x2333x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmmaj7b5",
+      "pattern": "78x766",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmmaj7b5",
+      "pattern": "7887x7",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bmmaj7b5",
+      "pattern": "x:x:9:10:11:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BmMaj9",
+      "pattern": "x:14:12:15:14:x",
+      "reasons": [
+        "barre crosses open/lower string"
+      ]
+    },
+    {
+      "name": "BmMaj11",
+      "pattern": "x20320",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BmMaj11",
+      "pattern": "222332",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BmMaj11",
+      "pattern": "778779",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "BmMaj11",
+      "pattern": "x:9:9:9:11:10",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Badd11",
+      "pattern": "x21400",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Badd11",
+      "pattern": "x:14:13:11:12:12",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Badd11",
+      "pattern": "76445x",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Badd11",
+      "pattern": "7699xx",
+      "reasons": [
+        "unknown chord quality"
+      ]
+    },
+    {
+      "name": "Bm9/A",
+      "pattern": "524222",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bm9/A",
+      "pattern": "524422",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bm9/A",
+      "pattern": "x:12:9:11:10:9",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    },
+    {
+      "name": "Bm9/A",
+      "pattern": "52422x",
+      "reasons": [
+        "missing characteristic tone"
+      ]
+    }
+  ]
+}

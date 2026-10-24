@@ -1,0 +1,25 @@
+{
+  "forms": 3351,
+  "identities": 693,
+  "requiredCodeCount": 144,
+  "practice": [
+    {
+      "title": "お願い！シンデレラ（移調−1）",
+      "codes": 22,
+      "soundingChords": 21,
+      "unsupported": [],
+      "unsupportedRate": 0
+    },
+    {
+      "title": "夕映えプレゼント",
+      "codes": 61,
+      "soundingChords": 60,
+      "unsupported": [
+        "A#7(#5,#11)",
+        "Adim7/E"
+      ],
+      "unsupportedRate": 0.03333333333333333
+    }
+  ],
+  "errors": []
+}

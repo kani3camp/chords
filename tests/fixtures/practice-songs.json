@@ -1,0 +1,20 @@
+[
+  {
+    "title":"お願い！シンデレラ（移調−1）",
+    "source":"https://ja.chordwiki.org/wiki.cgi?c=view&key=-1&symbol=&t=お願い！シンデレラ",
+    "reviewed":"2026-10-24",
+    "method":"曲全体の表示からコード名のみ初出順で照合。歌詞・コード進行は保存しない。",
+    "mode":"shape","sourceShift":-1,"capo":1,
+    "codes":"C,D,G,Em7,Gsus4,Am7,Bm7,A7sus4,D7,B7,A7,F#m7,Bb,A,Cm,D#,F,Gm7,Fm7,Dsus4,N.C.,Cadd9",
+    "maxUnsupported":0
+  },
+  {
+    "title":"夕映えプレゼント",
+    "source":"https://ja.chordwiki.org/wiki/夕映えプレゼント",
+    "reviewed":"2026-10-24",
+    "method":"曲全体の表示からコード名のみ初出順で照合。テンション表記も改名しない。歌詞・コード進行は保存しない。",
+    "mode":"shape","sourceShift":0,"capo":0,
+    "codes":"A,G#7,C#m7,B,A#m7b5,F#m7,D9,A/B,E,Bm7,E7,AM7,E/G#,A#7(#5,#11),EM7,F#m7/B,E/B,Aadd9,Eadd9/G#,D7(#11),B7,Cm7,A#dim,N.C.,EM7(9),C#m7/F#,Am6,G#m7,D7b5(9),C#7(b9),C#sus4,C#,G#/B#,Bm6,F#/A#,C#/E#,A/E,DM7,F#M7,Fm7,D#m7,D#m7/G#,C#M7,G#m7/C#,Edim7,C,D/C,AM7/B,Bm7/A,E9/G#,Em/G,G#7/D#,Gm7,D,Caug,D#m7b5,E/D,A/C#,Am/C,Em7b5,Adim7/E",
+    "maxUnsupported":2
+  }
+]

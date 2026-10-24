@@ -1,0 +1,48 @@
+name: Quality checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm test:catalog
+      - run: pnpm catalog:diff
+      - run: pnpm test:url-compat
+      - run: pnpm measure:url
+      - run: pnpm build
+      - name: Validate Cloudflare deployment configuration without deploying
+        run: pnpm deploy:check
+        env:
+          CLOUDFLARE_SEND_METRICS: 'false'
+      - run: pnpm exec playwright install --with-deps chromium webkit msedge
+      - run: pnpm test:e2e --workers 2
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-test-evidence
+          path: |
+            playwright-report/
+            docs/screenshots/
+            docs/coverage.json
+            docs/url-measurements.json
+          retention-days: 14

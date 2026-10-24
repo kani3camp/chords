@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "guitar-chords",
+  "compatibility_date": "2026-10-24",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "chords.kani3camp.com", "custom_domain": true }],
+  "assets": { "directory": "./dist", "not_found_handling": "single-page-application" }
+}
