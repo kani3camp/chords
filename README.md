@@ -36,6 +36,7 @@ pnpm catalog:diff
 pnpm measure:url
 pnpm build
 pnpm exec playwright install chromium webkit
+pnpm test:ogp
 pnpm test:e2e
 pnpm deploy:check
 ```
@@ -46,17 +47,18 @@ GitHub Actionsの「Quality checks」は `main` へのpush、pull request、手�
 
 実行結果・検証の範囲は `docs/verification.md`、収録範囲は `docs/coverage.json`、全フォームの監査・隔離結果は `docs/catalog-report.json`。フォームDBの再生成方法は `docs/data-provenance.md`。
 
+SNS共有カードはルートHTMLのWorkerで生成します。`pnpm build && pnpm dev:worker` でローカル確認、`pnpm test:ogp` でWrangler実ランタイムのHTTP・PNG・安全性・URL復元を自動検証します。Vite previewでは動的OGPを生成しません。設計、AC-68〜76対応、共通画像の再生成・本番確認手順は `docs/ogp.md` を参照してください。
+
 ## Cloudflareへデプロイする場合
 
-**このリポジトリ作成時点ではデプロイ・DNS変更は行っていません。** `wrangler.jsonc` はWorkers Static AssetsとCustom Domain `chords.kani3camp.com` に設定済みです。
+`wrangler.jsonc` はWorkers Static Assets、ルートHTMLのOGP WorkerとCustom Domain `chords.kani3camp.com` に設定済みです。本番への変更はCI成功後のmainマージからWorkers Buildsで自動配信します。
 
 ```sh
 pnpm build
-pnpm exec wrangler login
-pnpm exec wrangler deploy
+pnpm deploy:check
 ```
 
-`deploy:check` はdry-runで外部配信を行いません。実デプロイ時には対象のCloudflareアカウントを選び、既存の同名DNSレコードとの競合を確認してください。
+`deploy:check` はdry-runとWorkerのサイズ・依存検査で、外部配信を行いません。
 
 Workers Buildsで自動配信する場合はGitHub `kani3camp/chords` の `main` を接続し、次の設定を使います。
 

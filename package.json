@@ -15,12 +15,14 @@
     "test:catalog": "tsx scripts/validate-catalog.ts",
     "test:url-compat": "vitest run tests/url.test.ts",
     "test:e2e": "playwright test",
+    "test:ogp": "playwright test --config playwright.ogp.config.ts",
+    "dev:worker": "wrangler dev --local --ip 127.0.0.1 --port 8787",
     "build": "pnpm typecheck && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "measure:url": "tsx scripts/measure-url.ts",
     "catalog:import": "tsx scripts/import-chords.ts",
     "catalog:diff": "tsx scripts/catalog-diff.ts",
-    "deploy:check": "wrangler deploy --dry-run --outdir .cache/worker"
+    "deploy:check": "wrangler deploy --dry-run --outdir .cache/worker && node scripts/check-worker-bundle.mjs"
   },
   "dependencies": {
     "@tonaljs/chord-type": "5.2.1",

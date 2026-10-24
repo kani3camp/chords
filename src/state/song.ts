@@ -1,3 +1,5 @@
+import { validateSong } from './song-fields';
+export { validateSong } from './song-fields';
 import { canonicalName, identity, parseChord, parseInput, transpose, type Token } from '../domain/chords';
 import { candidates, defaultForm, matchVoicing } from '../catalog';
 import type { Voicing } from '../catalog/schema';
@@ -20,16 +22,6 @@ export function resolve(s: Song, prefs: Preferences, previous: Record<string,str
     if (value !== undefined) forms[k] = value;
   }
   return {...s, forms};
-}
-export function validateSong(s: Song) {
-  if (!['shape','sound'].includes(s.mode)) throw new Error('入力モードが不正です。');
-  if (!['first','name'].includes(s.sort)) throw new Error('並び順が不正です。');
-  if (!Number.isInteger(s.capo) || s.capo < 0 || s.capo > 12) throw new Error('カポは0〜12の整数で指定してください。');
-  if (![s.shift,s.sourceShift].every(v=>Number.isInteger(v) && Math.abs(v)<=24)) throw new Error('追加移調・元サイト移調はそれぞれ−24〜＋24の整数で指定してください。');
-  if (s.src) {
-    let url: URL; try { url = new URL(s.src); } catch { throw new Error('出典URLは完全なHTTP(S)のURLで入力してください。'); }
-    if (!['https:','http:'].includes(url.protocol) || url.username || url.password) throw new Error('出典URLは認証情報を含まないHTTP(S)のみ使用できます。');
-  }
 }
 export function buildIncoming(tokens: Token[], base: Song, prefs: Preferences, extra: Token[] = [], previous: Record<string,string> = {}): Incoming {
   const song = {...base, codes:[...new Set(tokens.map(t=>t.name))], forms:{}};
