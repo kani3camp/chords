@@ -34,6 +34,8 @@ jobs:
         env:
           CLOUDFLARE_SEND_METRICS: 'false'
       - run: pnpm exec playwright install --with-deps chromium webkit msedge
+      - name: Verify OGP HTTP responses in the local Workers runtime
+        run: pnpm test:ogp
       - run: pnpm test:e2e --workers 2
       - name: Upload test evidence
         if: always()
@@ -45,4 +47,5 @@ jobs:
             docs/screenshots/
             docs/coverage.json
             docs/url-measurements.json
+            .cache/ogp-report.json
           retention-days: 14
