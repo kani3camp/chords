@@ -3,6 +3,7 @@ import { execFileSync } from 'node:child_process';
 import { identity, parseChord, pattern } from '../src/domain/chords';
 import { nameFromKey, validateVoicing } from '../src/catalog/validation';
 import type { Catalog, Voicing } from '../src/catalog/schema';
+import personalDefaults from '../src/catalog/personal-defaults.json';
 
 const PIN = 'df06fa7b425cf5fd29485ff6591236b3557e3fac';
 const root = '.cache/chords-db';
@@ -82,6 +83,18 @@ for(const [key,forms] of Object.entries(previous))for(const old of forms) {
   if(catalog[key]?.some(v=>v.pattern===old.pattern))continue;
   const reasons=validateVoicing(nameFromKey(key),old);
   (catalog[key]??=[]).push({...old,status:reasons.length?'invalid':'legacy',...(reasons.length?{reason:reasons.join('; ')}:{})});
+}
+// Explicit owner preferences from the 2026-10-25 reference image. Reorder existing
+// audited candidates, preserving every position and its representative fingering.
+for(const [name,tab] of Object.entries(personalDefaults)) {
+  const c=parseChord(name);
+  if(!c?.known)throw new Error(`Unknown personal preset: ${name}`);
+  const key=identity(c);const forms=catalog[key]??[];
+  const selected=forms.find(v=>v.pattern===tab&&v.status==='active');
+  if(!selected)throw new Error(`Personal preset is not an active registered candidate: ${name}@${tab}`);
+  const reasons=validateVoicing(name,selected);
+  if(reasons.length)throw new Error(`Invalid personal preset ${name}@${tab}: ${reasons.join(', ')}`);
+  catalog[key]=[selected,...forms.filter(v=>v.pattern!==tab)];
 }
 const sorted = Object.fromEntries(Object.entries(catalog).sort(([a],[b])=>a.localeCompare(b)));
 mkdirSync('src/catalog/generated',{recursive:true}); mkdirSync('licenses',{recursive:true});

@@ -27,6 +27,10 @@ export default function App({controller}:{controller:Controller}) {
   const [copyFallback,setCopyFallback]=useState(false);
   const [loading,setLoading]=useState(false);
   const s=st.pending?.incoming.song??st.song;
+  const songTitle=s?.title.trim();
+  useEffect(()=>{
+    document.title=songTitle?`${songTitle}｜ギターコード一覧`:'ギターコード一覧｜練習ワークスペース';
+  },[songTitle]);
   const rows=s?cards(s,st.pending?.incoming.conflicts):[];
   const locked=!!st.pending;
   const diff=st.pending?differences(st.pending.incoming,st.prefs):[];

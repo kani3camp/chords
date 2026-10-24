@@ -4,6 +4,7 @@ async function apply(page:Page,input='C,Am7,G,Fmaj7') {await page.getByLabel('�
 test('input, voicing, preference deletion, copy and reload',async({page,context,browserName})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await expect(page.getByRole('heading',{level:1})).toContainText('一画面に');
+  await expect(page).toHaveTitle('ギターコード一覧｜練習ワークスペース');
   await apply(page);await expect(page.getByTestId('chord-card')).toHaveCount(4);
   const c=page.getByTestId('chord-card').filter({has:page.getByRole('heading',{name:'C',exact:true})});
   await c.getByRole('button').click();await expect(page.getByRole('dialog')).toBeVisible();
@@ -59,10 +60,15 @@ test('unsupported names and patterns stay visible and never receive fabricated d
   await expect(rows.nth(4)).toContainText('N.C.');
 });
 test('browser history separates songs and keeps same-song edits in place',async({page})=>{
-  await page.goto('/');await apply(page,'C,G');await page.getByRole('button',{name:'別の曲を入力する',exact:false}).click();
-  await apply(page,'Am,Dm');await page.getByLabel('カポ',{exact:true}).selectOption('2');
+  await page.goto('/');await page.getByLabel('曲名（任意）',{exact:true}).fill('最初の曲');await apply(page,'C,G');
+  await page.getByRole('button',{name:'別の曲を入力する',exact:false}).click();
+  await expect(page).toHaveTitle('最初の曲｜ギターコード一覧');
+  await apply(page,'Am,Dm');await expect(page).toHaveTitle('ギターコード一覧｜練習ワークスペース');
+  await page.getByLabel('カポ',{exact:true}).selectOption('2');
   await page.goBack();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('C');
+  await expect(page).toHaveTitle('最初の曲｜ギターコード一覧');
   await page.goForward();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('Am');await expect(page.getByLabel('カポ',{exact:true})).toHaveValue('2');
+  await expect(page).toHaveTitle('ギターコード一覧｜練習ワークスペース');
 });
 test('enharmonic cards share changes without collapsing the original spelling',async({page})=>{
   await page.goto('/');await apply(page,'Db,C#');await expect(page.getByTestId('chord-card')).toHaveCount(2);
@@ -92,6 +98,15 @@ test('catalog loads on demand and input is stable during the first asynchronous 
   await expect(page.getByTestId('chord-card')).toHaveCount(2);
   expect(new URL(page.url()).searchParams.get('codes')).toBe('C,G');expect(requests).toBe(1);
 });
+test('personal site defaults are available without browser preferences',async({page})=>{
+  await page.goto('/');await apply(page,'Gm,Cm,C7sus4');
+  const rows=page.getByTestId('chord-card');await expect(rows).toHaveCount(3);
+  for(const [index,tab] of ['355333','335543','335363'].entries())await expect(rows.nth(index).getByRole('img')).toHaveAccessibleName(new RegExp(tab));
+  await expect(page.getByRole('button',{name:'好みの押さえ方 0',exact:true})).toBeVisible();
+  expect(new URL(page.url()).searchParams.get('forms')).toBe('Gm@355333,Cm@335543,C7sus4@335363');
+  await page.reload();await expect(page.getByRole('dialog')).toHaveCount(0);
+  for(const [index,tab] of ['355333','335543','335363'].entries())await expect(rows.nth(index).getByRole('img')).toHaveAccessibleName(new RegExp(tab));
+});
 for(const fixture of practice)test(`full practice-song input and form selection: ${fixture.title}`,async({page})=>{
   const externalRequests:string[]=[];
   page.on('request',r=>{if(r.url().startsWith('https://ja.chordwiki.org'))externalRequests.push(r.url());});
@@ -101,11 +116,13 @@ for(const fixture of practice)test(`full practice-song input and form selection:
   await apply(page,fixture.codes);
   await expect(page.getByTestId('chord-card')).toHaveCount(fixture.codes.split(/,(?![^()]*\))/).length);
   await expect(page.getByRole('heading',{level:1})).toHaveText(fixture.title);
+  await expect(page).toHaveTitle(`${fixture.title}｜ギターコード一覧`);
   await expect(page.getByRole('link',{name:'元のコード譜を開く'})).toHaveAttribute('rel','noopener noreferrer');
   expect(await page.getByTestId('chord-card').filter({has:page.locator('.missing')}).count()).toBe(fixture.maxUnsupported+1);
   await page.getByTestId('chord-card').first().getByRole('button').click();
   await page.getByRole('dialog').getByRole('radio').nth(1).check();
   await page.getByRole('button',{name:'この押さえ方を使う'}).click();
   await page.reload();await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page).toHaveTitle(`${fixture.title}｜ギターコード一覧`);
   expect(externalRequests).toEqual([]);
 });

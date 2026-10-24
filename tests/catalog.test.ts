@@ -1,5 +1,5 @@
 import { describe,expect,it } from 'vitest';
-import { catalog,matchVoicing } from '../src/catalog';
+import { catalog,defaultForm,matchVoicing } from '../src/catalog';
 import { validateVoicing } from '../src/catalog/validation';
 import type { Catalog,Voicing } from '../src/catalog/schema';
 import { identity,parseChord,parsePattern } from '../src/domain/chords';
@@ -26,6 +26,22 @@ describe('independent music checks',()=>{
     const current=catalog['0||'][0];
     const fixture:Catalog={'0||':[{...current,status:'legacy'}]};expect(matchVoicing('0||',current.pattern,fixture)?.status).toBe('legacy');
     const invalid:Catalog={'0||':[{...current,status:'invalid',reason:'Regression fixture'}]};expect(matchVoicing('0||',current.pattern,invalid)?.status).toBe('invalid');
+  });
+});
+
+describe('owner default presets from the 2026-10-25 screenshot',()=>{
+  it.each([
+    ['Gm','355333','310033',[1,3,4,1,1,1]],
+    ['Cm','335543','x31013',[1,1,3,4,2,1]],
+    ['C7sus4','335363','x33311',[1,1,3,1,4,1]],
+  ] as [string,string,string,number[]][])('%s uses the requested shape and retains old URLs',(name,selected,old,fingers)=>{
+    const key=identity(parseChord(name)!);
+    const fresh=fromInput(name,emptySong(),{}).song;
+    expect(defaultForm(key)).toBe(selected);
+    expect(cards(fresh)[0].voicing).toMatchObject({pattern:selected,fingers,barres:[{fret:3,from:0,to:5,finger:1}]});
+    const original=parseUrl(`https://chords.kani3camp.com/?v=1&codes=${name}&mode=shape&forms=${name}@${old}`,{})!.song;
+    expect(cards(original)[0].voicing?.pattern).toBe(old);
+    expect(parseUrl(serialize(original,'https://chords.kani3camp.com/'),{})!.song).toEqual(original);
   });
 });
 describe('AC-65 full-song distinct chord fixtures',()=>{
