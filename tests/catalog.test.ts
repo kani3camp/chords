@@ -12,6 +12,7 @@ describe('independent music checks',()=>{
     ['C','x32010',[0,4,7],null],['C','8:10:10:9:8:8',[0,4,7],null],
     ['Dsus2','xx0230',[2,4,9],null],['G','320003',[2,7,11],null],
     ['E/G#','4x2100',[4,8,11],8],['Bm7b5','x2323x',[2,5,9,11],null],
+    ['B','x24442',[3,6,11],11],['B','224442',[3,6,11],6],
   ] as [string,string,number[],number|null][])('%s@%s matches independent MIDI facts',(name,tab,expected,bass)=>{
     const fret=parsePattern(tab);const midi=fret.flatMap((f,i)=>f<0?[]:[[40,45,50,55,59,64][i]+f]);
     expect([...new Set(midi.map(n=>n%12))].sort((a,b)=>a-b)).toEqual(expected);
@@ -41,6 +42,24 @@ describe('owner default presets from the 2026-10-25 screenshot',()=>{
     expect(cards(fresh)[0].voicing).toMatchObject({pattern:selected,fingers,barres:[{fret:3,from:0,to:5,finger:1}]});
     const original=parseUrl(`https://chords.kani3camp.com/?v=1&codes=${name}&mode=shape&forms=${name}@${old}`,{})!.song;
     expect(cards(original)[0].voicing?.pattern).toBe(old);
+    expect(parseUrl(serialize(original,'https://chords.kani3camp.com/'),{})!.song).toEqual(original);
+  });
+});
+describe('B major root-position preset',()=>{
+  it('defaults to x24442 and preserves legacy links selecting 224442',()=>{
+    const key=identity(parseChord('B')!);
+    const fresh=fromInput('B',emptySong(),{}).song;
+    const voicing=cards(fresh)[0].voicing!;
+    expect(defaultForm(key)).toBe('x24442');
+    expect(voicing).toMatchObject({
+      pattern:'x24442',frets:[-1,2,4,4,4,2],
+      fingers:[0,1,2,3,4,1],
+      barres:[{fret:2,from:1,to:5,finger:1}],status:'active',
+    });
+    expect(validateVoicing('B',voicing)).toEqual([]);
+    expect(matchVoicing(key,'224442')?.status).toBe('active');
+    const original=parseUrl('https://chords.kani3camp.com/?v=1&codes=B&mode=shape&forms=B@224442',{})!.song;
+    expect(cards(original)[0].voicing?.pattern).toBe('224442');
     expect(parseUrl(serialize(original,'https://chords.kani3camp.com/'),{})!.song).toEqual(original);
   });
 });

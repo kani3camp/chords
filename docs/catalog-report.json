@@ -2,7 +2,7 @@
   "upstream": "df06fa7b425cf5fd29485ff6591236b3557e3fac",
   "inputCount": 3283,
   "identities": 693,
-  "active": 3351,
+  "active": 3352,
   "rejectedCount": 659,
   "coverage": [
     {
@@ -2503,7 +2503,7 @@
     },
     {
       "name": "B",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Bm",

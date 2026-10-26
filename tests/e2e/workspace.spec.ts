@@ -98,6 +98,15 @@ test('catalog loads on demand and input is stable during the first asynchronous 
   await expect(page.getByTestId('chord-card')).toHaveCount(2);
   expect(new URL(page.url()).searchParams.get('codes')).toBe('C,G');expect(requests).toBe(1);
 });
+test('B major defaults to muted sixth string and retains explicit six-string voicing',async({page})=>{
+  await page.goto('/');await apply(page,'B');
+  const card=page.getByTestId('chord-card');
+  await expect(card.getByRole('img')).toHaveAccessibleName(/B コード図 x24442/);
+  await expect(card.locator('svg .open-mark')).toHaveText(['×']);
+  expect(new URL(page.url()).searchParams.get('forms')).toBe('B@x24442');
+  await page.goto('/?v=1&codes=B&mode=shape&forms=B@224442');
+  await expect(card.getByRole('img')).toHaveAccessibleName(/B コード図 224442/);
+});
 test('personal site defaults are available without browser preferences',async({page})=>{
   await page.goto('/');await apply(page,'Gm,Cm,C7sus4');
   const rows=page.getByTestId('chord-card');await expect(rows).toHaveCount(3);

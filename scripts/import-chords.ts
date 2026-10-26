@@ -40,13 +40,14 @@ for (const entries of Object.values(db.chords)) for (const e of entries) {
     if (!list.some(x => x.pattern === v.pattern)) list.push(v);
   }
 }
-// Audited open voicings from the user-supplied design. These are stable defaults.
+// Audited practical voicings, including the root-position B major shape.
+// These are stable defaults and retain existing published candidates.
 const defaults: [string,string,string][] = [
   ['C','x32010','032010'], ['Am7','x02010','002010'], ['G','320003','210003'],
   ['Fmaj7','xx3210','003210'], ['Bm7b5','x2323x','013240'], ['E/G#','4x2100','302100'],
   ['Dm7','xx0211','000211'], ['G7','320001','320001'], ['Cmaj7','x32000','032000'],
   ['Em7','022030','012030'], ['A7','x02020','002030'], ['D7','xx0212','000213'],
-  ['B7','x21202','021304'], ['Fadd9','xx3213','003214'], ['Gsus4','330013','230014']
+  ['B7','x21202','021304'], ['B','x24442','012341'], ['Fadd9','xx3213','003214'], ['Gsus4','330013','230014']
 ];
 for (const [name, tab, fingerString] of defaults) {
   const c = parseChord(name)!;
@@ -57,7 +58,7 @@ for (const [name, tab, fingerString] of defaults) {
     const ids = fingers.flatMap((f,i)=>f === finger ? [i] : []);
     if (ids.length > 1) barres.push({fret:frets[ids[0]],from:ids[0],to:ids.at(-1)!,finger});
   }
-  const v: Voicing = { frets, fingers, barres, pattern:tab, status:'active',source:'audited-design-v1' };
+  const v: Voicing = { frets, fingers, barres, pattern:tab, status:'active',source:name === 'B' ? 'audited-standard-v1' : 'audited-design-v1' };
   const errors = validateVoicing(name,v);
   if (errors.length) throw new Error(`${name}: ${errors.join(',')}`);
   catalog[identity(c)] = [v,...(catalog[identity(c)] ?? []).filter(x=>x.pattern!==tab)];
