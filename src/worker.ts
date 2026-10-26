@@ -1,4 +1,5 @@
-import { metadata, socialTags } from './ogp';
+import { CARD_IMAGE_PATH, metadata, socialTags } from './ogp';
+import { renderCardImage, type CardEnv } from './og-card';
 
 // Minimal runtime surface; DOM types remain isolated from Workers' global types.
 interface Element {
@@ -13,11 +14,12 @@ declare const HTMLRewriter: {
     transform(response: Response): Response;
   };
 };
-type Env = { ASSETS: { fetch(request: Request): Promise<Response> } };
+type Env = CardEnv;
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+    if (url.pathname === CARD_IMAGE_PATH && ['GET','HEAD'].includes(request.method)) return renderCardImage(request, env);
     if (url.pathname !== '/' || !['GET','HEAD'].includes(request.method)) return env.ASSETS.fetch(request);
     // A static shell's validators/ranges cannot validate a query-specific HTML document.
     const assetRequest = new Request(request.url, { method:'GET', headers:request.headers });
