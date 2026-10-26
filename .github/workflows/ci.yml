@@ -50,3 +50,17 @@ jobs:
             docs/url-measurements.json
             .cache/ogp-report.json
           retention-days: 14
+
+  production-ogp:
+    name: Production OGP smoke after deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify Cloudflare deployed real Japanese song card PNG
+        run: node scripts/check-production-og-image.mjs
