@@ -21,7 +21,7 @@ export type CardEnv = {
 };
 
 const glyphUnits = (value: string) => [...value].reduce((width, character) =>
-  width + (/^[\x00-\x7f]$/.test(character) ? (/[ ilI.'!,]/.test(character) ? 0.3 : 0.57) : 1), 0);
+  width + (character.codePointAt(0)! < 128 ? (/[ ilI.'!,]/.test(character) ? 0.3 : 0.57) : 1), 0);
 
 /** Keep all text inside the left side of the original 1200x630 cover. */
 export function titleLayout(name: string): { lines: string[]; size: number } {
