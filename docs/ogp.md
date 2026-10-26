@@ -1,14 +1,14 @@
-# SNS共有カード（ADR-061 / AC-68〜AC-76）
+# SNS共有カード（ADR-061 / AC-68〜AC-76、曲別画像拡張）
 
 正本：[Notion 第12.13節](https://app.notion.com/p/3ff69357608b800f9731f2ff3f23f1e3)。2026-10-25にADR-060・061、第12.12・12.13節を照合。
 
 ## 配信と設計
 
-`wrangler.jsonc` の `main=src/worker.ts`、`assets.binding=ASSETS`、`run_worker_first=["/"]` により、ルートHTMLだけにWorkerを先行させます。SPA fallback、Custom Domain、Workers Buildsは維持します。JS/CSS/画像/ヘルプは静的配信です。
+`wrangler.jsonc` の `main=src/worker.ts`、`assets.binding=ASSETS`、`run_worker_first=["/","/og/card.png"]` により、ルートHTMLと曲専用OGP画像だけにWorkerを先行させます。SPA fallback、Custom Domain、Workers Buildsは維持します。JS/CSS/共通画像 `/og.png`/ヘルプは静的配信です。`images.binding=IMAGES` と `cache.enabled=true` でCloudflare Imagesを利用します。
 
 WorkerはASSETSのHTMLを取得し、HTMLRewriterでtitle/descriptionを更新してOGPとTwitterタグを1セット挿入します。ブラウザ/Botに同じHTMLを返します。HEADは同じヘッダー・空の本文。他のメソッドは静的配信へ委譲します。ASSETSのセキュリティヘッダーを保持し、書き換えたHTMLは `Cache-Control: no-store`。元HTMLのETag/Last-Modified/Content-Lengthを除き、条件付きGETやRangeで静的シェルの304/206を返さないようにします。クエリを含む共有URLを `og:url` に保持します。
 
-既存パーサーの構文部分を `src/domain/input.ts`、既存のURL v1構文を `src/state/url-syntax.ts`、数値/出典URLの検証を `song-fields.ts` に分離しました。元のエクスポートを維持してアプリ側も同じ処理を使います。WorkerにはフォームDBもTonal辞書も読み込みません。`deploy:check` ではバンドル16 KiB以下と依存混入を検査します。外部fetch、DB、API、認証は追加していません。
+既存パーサーの構文部分を `src/domain/input.ts`、既存のURL v1構文を `src/state/url-syntax.ts`、数値/出典URLの検証を `song-fields.ts` に分離しました。元のエクスポートを維持してアプリ側も同じ処理を使います。WorkerにはフォームDBもTonal辞書も読み込みません。`deploy:check` はバンドル上限と依存混入を検査します。曲譜サイトへの外部fetch、DB、認証は追加していません。画像文字描画は信頼済みの固定フォントURLに依存し、ユーザー入力URLからの取得はしません。
 
 コード数は元表記一致で重複排除。Db/C#を分け、括弧内カンマ・分数コードを保持し、NC/N.C.は別の存在フラグにします。capoはURL値、移調はsourceShift+shift。formsの構文は検証しますが、候補登録・演奏コードへの帰属・同音競合は従来どおりReactで判断します。構文上有効な未登録フォームでOGPを汎用化しません。
 
@@ -16,7 +16,11 @@ WorkerはASSETSのHTMLを取得し、HTMLRewriterでtitle/descriptionを更新�
 
 ## 再生成・検証
 
-`public/og.png` は1200×630 PNG。WindowsのPowerShell 7とYu Gothicで、リポジトリルートから `pwsh -File scripts/generate-og.ps1` を実行して再生成できます。外部サービス不要です。フォントの環境差で文字の描画が多少変化する場合があります。生成画像は目視確認済みです。
+`public/og.png` は1200×630 PNGの共通画像で、曲名なし・入力不正・画像生成失敗時のフォールバックとして維持します。WindowsのPowerShell 7とYu Gothicで `pwsh -File scripts/generate-og.ps1` を実行して再生成できます。曲名ありの正常な共有URLでは `og:image` と `twitter:image` に `/og/card.png?v=1&t=...&n=...&nc=...&c=...&s=...` を設定します。文字列・コード種類数・N.C.有無・カポ・移調合計のみ渡し、元の全コード・押さえ方・出典URL・歌詞は画像URLへ重複転送しません。
+
+`/og/card.png` は共通PNGの左側の既存見出しを無地に覆い、Cloudflare Images Binding `.text()` と `.draw()` で日本語の曲名と主要情報を重ね、PNG 1200×630を返します。長い曲名は2行以内へ収めて省略記号を付けます（テキストメタデータは従来の80コードポイント上限を維持）。固定フォントは [Fontsource Noto Sans JP 5.3.1（OFL 1.1）](https://fontsource.org/fonts/noto-sans-jp/about) をバージョン固定のjsDelivr経由で参照します。フォント取得失敗、Images障害・Free枠超過は共通画像を返し、`Cache-Control: no-store` でフォールバック画像を固定しません。固定フォントの外部配信依存は今後セルフホスト化を検討できます。
+
+同じ曲名・コード数・カポ・移調で画像URLが一定になるため、フォーム調整のたびに新しい画像変換は発生しません。PNG出力は24時間キャッシュ可。Images Freeでは月5,000種類までのユニーク画像変換が無料で、それを超えた新規変換はエラーになり、静的画像へフォールバックします。
 
 ```sh
 pnpm build
@@ -31,14 +35,14 @@ pnpm dev:worker
 |AC-68 タイトル|JSなしHTTP GET、Discord/Twitter/ブラウザUAで同じtitle/OG/Twitter|
 |AC-69 コード数|同名重複、Db/C#、括弧内カンマ、分数、NCのみ、inline/form競合・未登録|
 |AC-70 設定|カポ0/1/12、sourceShift+shift、符号付き合計|
-|AC-71 画像|200、image/png、PNG署名とIHDR 1200×630、絶対HTTPS画像URL|
+|AC-71 画像|曲別画像URLのパラメータと検証、200・PNG・1200×630、タイトルレイアウトと静的フォールバック。文字合成画像の目視確認はremote／本番|
 |AC-72 fallback|必須不足、v、空要素、構文、重複競合、不正UTF-8/パーセント、数値範囲、長さ、src/forms|
 |AC-73 安全性|引用符/HTML/日本語/絵文字、改行・制御除去、80コードポイント|
 |AC-74 URL/キャッシュ|A/B/A連続取得、query保持、条件付き/Range GET、no-store、Workerからブラウザ起動・再読込|
 |AC-75 非回帰|JS/CSS/favicon/仕様書/SPA、CSP/Referrer-Policy等、ルート限定設定、既存URL・全E2E|
 |AC-76 品質ゲート|型、lint、単体、catalog/diff、URL互換/計測、build、Wrangler dry-run、OGP、E2EをCIで実行|
 
-`pnpm test:ogp` の結果は `.cache/ogp-report.json`、GitHub ActionsのArtifactにも保存します。本番への同じHTTP検証は `OGP_BASE_URL=https://chords.kani3camp.com pnpm test:ogp`（PowerShellでは `$env:OGP_BASE_URL='https://chords.kani3camp.com'` を先に設定）。本番URLに対するテストも外部ページ取得や書き込みは行いません。
+`pnpm test:ogp` は画像URLのOGPタグ、画像のHTTP/サイズ、ローカルでの画像生成失敗時フォールバックまでを確認します。ローカルWranglerのImages Bindingは文字合成未対応のため、テキスト位置・フォールバックをモック単体テストでも確認します。**実際に文字を合成したPNGのピクセル・日本語表示は本番／remote Images Bindingで別途検証必須です**。`pnpm test:ogp` の結果は `.cache/ogp-report.json`、GitHub ActionsのArtifactにも保存します。本番への同じHTTP検証は `OGP_BASE_URL=https://chords.kani3camp.com pnpm test:ogp`（PowerShellでは `$env:OGP_BASE_URL='https://chords.kani3camp.com'` を先に設定）。本番URLに対するテストも外部ページ取得や書き込みは行いません。
 
 2026-10-25のローカル結果：型・lint・単体64件・URL互換17件・カタログ3,351フォーム/693和音ID・互換diff・URL長計測・build・Wrangler dry-runが成功。OGP 7件、既存E2E 48件（Chromium PC/タブレット、WebKitタブレット、Edge PC）が成功。Worker生成物は11,509 bytes（gzip約3.95 KiB）で、音楽理論辞書・フォームDBの混入なし。
 
@@ -48,6 +52,12 @@ pnpm dev:worker
 
 PRのQuality checks成功後にmainへマージし、既存Workers Buildsで自動デプロイします。GitHub Actionsから本番デプロイしません。本番HTTPとPNGを確認できた時点で公開検証済みとし、PR/CI/公開結果はNotion第12.13.5節へ記録します。Discord実投稿は投稿先・接続がある場合だけ行います。
 
-静的アセット配信に対して、ルートHTMLはWorker invocationを使います。Freeの100,000要求/日・CPU 10ms/要求が上限で、バンドル縮小は本番CPU計測の代替にはなりません。上限到達時の挙動は実アクセスで負荷をかけて確認していません。SNS側のキャッシュ更新・表示省略、Safari/iPad実機は自動HTTP試験の保証範囲外です。
+静的アセット配信に対して、ルートHTMLと曲別画像はWorker invocationを使います。Freeの100,000要求/日・CPU 10ms/要求が上限で、バンドル縮小は本番CPU計測の代替にはなりません。上限到達時の挙動は実アクセスで負荷をかけて確認していません。SNS側のキャッシュ更新・表示省略、Safari/iPad実機は自動HTTP試験の保証範囲外です。
 
 公式仕様（2026-10-25照合）：[Static Assets binding/routing](https://developers.cloudflare.com/workers/static-assets/binding/)、[headers](https://developers.cloudflare.com/workers/static-assets/headers/)、[HTMLRewriter](https://developers.cloudflare.com/workers/runtime-apis/html-rewriter/)、[limits](https://developers.cloudflare.com/workers/platform/limits/)。
+
+## 曲別画像拡張の検証・公開条件（2026-10-26）
+
+- `pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm deploy:check && pnpm test:ogp` と既存E2EをCIで実行する。旧 `/og.png` のHTTP/寸法/静的配信と、異なる2曲の `og:image` URLが混ざらないことを確認する。
+- Cloudflare Images文字合成はローカルの低忠実度エミュレーターで非対応。Workers Builds後の本番 `/og/card.png?...` を取得し、**単なる共通画像のフォールバックではなく**「虹色letters」等の日本語・コード数を実際に描画できたか確認する。未確認なら完了とは記録しない。
+- DiscordのカードはSNS側のキャッシュの影響を受ける。画像URLの変更は `v` を変えてキャッシュバストする。画像が出なければ共通画像を維持し、アプリ本体のURL復元に影響を及ぼさない。
