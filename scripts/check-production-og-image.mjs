@@ -2,6 +2,11 @@
 // Cloudflare Workers Builds deploys separately, so retry briefly until the
 // production edge serves the new per-song image rather than the old static OG.
 import { createHash } from 'node:crypto';
+import process from 'node:process';
+import { Buffer } from 'node:buffer';
+import { URL, URLSearchParams } from 'node:url';
+import { setTimeout as delay } from 'node:timers/promises';
+const { fetch, AbortSignal, console } = globalThis;
 
 const origin = 'https://chords.kani3camp.com';
 const title = 'OGP画像確認-' + (process.env.GITHUB_SHA ?? 'manual').slice(0, 8);
@@ -45,7 +50,7 @@ for (let attempt = 1; attempt <= 12; attempt++) {
   } catch (caught) {
     error = caught;
     console.log('Production OGP attempt ' + attempt + '/12: ' + String(caught));
-    if (attempt < 12) await new Promise(resolve => setTimeout(resolve, 15000));
+    if (attempt < 12) await delay(15000);
   }
 }
 throw error ?? new Error('Production image smoke check failed');
