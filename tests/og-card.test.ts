@@ -50,9 +50,10 @@ describe('per-song OGP image data', () => {
 
 class MockHandle {
   constructor(private readonly drawn: Array<{left:number;top:number}>) {}
-  transform(_options: {width:number;height:number;fit:'squeeze'}) { return this; }
+  transform(_options: {width:number;height:number;fit:'squeeze'}) { void _options; return this; }
   draw(_overlay: MockHandle, options: {left:number;top:number}) { this.drawn.push(options); return this; }
   async output(_options: {format:'image/png'}) {
+    void _options;
     return { response: ({headers}: {headers?:HeadersInit} = {}) =>
       new Response('mock-png', {headers:{'Content-Type':'image/png', ...Object.fromEntries(new Headers(headers))}}) };
   }
@@ -66,8 +67,9 @@ describe('per-song PNG endpoint', () => {
     const env = {
       ASSETS: { fetch: async () => new Response('static-png', {headers:{'Content-Type':'image/png'}}) },
       IMAGES: {
-        input: (_stream: ReadableStream<Uint8Array>) => new MockHandle(positions),
+        input: (_stream: ReadableStream<Uint8Array>) => { void _stream; return new MockHandle(positions); },
         text: (value: string, _options: {font:{url:string};color:string;size:number}) => {
+          void _options;
           if (failText) throw new Error('Images text unavailable');
           texts.push(value);
           return new MockHandle(positions);
