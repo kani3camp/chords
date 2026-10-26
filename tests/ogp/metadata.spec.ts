@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_ORIGIN } from '../../src/ogp';
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_ORIGIN, cardImageUrl, metadata } from '../../src/ogp';
 const query = (p: Record<string,string> = {}) => '/?' + new URLSearchParams({v:'1',codes:'C,G',mode:'shape',title:'流星群',...p});
 const decode = (s: string) => s.replace(/&quot;/g,'"').replace(/&#(?:39|x27);/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
 function meta(html: string, key: string) {
@@ -20,7 +20,13 @@ test('AC-68/70/71: raw HTTP has one complete metadata set for every user agent',
     const description = '使用コード2種類｜カポ1｜移調−1｜好きな押さえ方でギターコードを一覧表示。';
     for (const key of ['description','og:description','twitter:description']) expect(meta(html,key)).toBe(description);
     expect(meta(html,'og:url')).toBe(new URL(path,SITE_ORIGIN).href);
-    for (const key of ['og:image','twitter:image']) expect(meta(html,key)).toBe(`${SITE_ORIGIN}/og.png`);
+    const image = cardImageUrl(metadata(new URL(path,SITE_ORIGIN).href));
+    expect(new URL(image).pathname).toBe('/og/card.png');
+    expect(new URL(image).searchParams.get('t')).toBe('流星群');
+    expect(new URL(image).searchParams.get('n')).toBe('2');
+    expect(new URL(image).searchParams.get('c')).toBe('1');
+    expect(new URL(image).searchParams.get('s')).toBe('-1');
+    for (const key of ['og:image','twitter:image']) expect(meta(html,key)).toBe(image);
     for (const [key,value] of Object.entries({'og:type':'website','og:site_name':'ギターコード一覧','og:locale':'ja_JP','og:image:width':'1200','og:image:height':'630','twitter:card':'summary_large_image'})) expect(meta(html,key)).toBe(value);
     expect(meta(html,'og:image:alt')).toBe(meta(html,'twitter:image:alt'));
     expect(meta(html,'og:description')).not.toContain('private-source');
@@ -82,10 +88,26 @@ test('AC-74: sequential and conditional requests cannot mix song metadata', asyn
 
 test('AC-71/75: PNG dimensions, assets, SPA and security headers', async ({request}) => {
   const config=JSON.parse(readFileSync('wrangler.jsonc','utf8'));
-  expect(config.assets.run_worker_first).toEqual(['/']);
+  expect(config.assets.run_worker_first).toEqual(['/','/og/card.png']);
+  expect(config.images.binding).toBe('IMAGES');
   expect(config.assets.not_found_handling).toBe('single-page-application');
   const png=await request.get('/og.png');expect(png.status()).toBe(200);expect(png.headers()['content-type']).toContain('image/png');
   const bytes=await png.body();expect(bytes.subarray(0,8).toString('hex')).toBe('89504e470d0a1a0a');expect(bytes.readUInt32BE(16)).toBe(1200);expect(bytes.readUInt32BE(20)).toBe(630);
+  // Local Wrangler Images emulation does not rasterize text. It must at least
+  // provide a 1200x630 PNG fallback; full overlay pixels need remote verification.
+  const dynamicUrl = new URL(cardImageUrl(metadata(new URL(query(),SITE_ORIGIN).href)));
+  const dynamic = await request.get(dynamicUrl.pathname + dynamicUrl.search);
+  expect(dynamic.status()).toBe(200);
+  expect(dynamic.headers()['content-type']).toContain('image/png');
+  const dynamicBytes = await dynamic.body();
+  expect(dynamicBytes.subarray(0,8).toString('hex')).toBe('89504e470d0a1a0a');
+  expect(dynamicBytes.readUInt32BE(16)).toBe(1200);
+  expect(dynamicBytes.readUInt32BE(20)).toBe(630);
+  const invalidCard = await request.get('/og/card.png?t=%3Cscript%3E');
+  expect(invalidCard.status()).toBe(200);
+  expect(invalidCard.headers()['cache-control']).toContain('no-store');
+  const noSongImage = meta(await (await request.get('/')).text(),'og:image');
+  expect(noSongImage).toBe(SITE_ORIGIN + '/og.png');
   const root=await request.get(query());const html=await root.text();
   for (const path of ['/favicon.svg','/url-v1.md','/third-party-notices.txt',...Array.from(html.matchAll(/(?:src|href)="(\/assets\/[^" ]+)"/g),m=>m[1])]) {
     const asset=await request.get(path);expect(asset.status()).toBe(200);
