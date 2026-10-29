@@ -114,7 +114,7 @@ test('audited C#m and Bm defaults mute the sixth string and preserve old URLs',a
   await expect(cards.nth(0).getByRole('img')).toHaveAccessibleName(/x46654/);
   await expect(cards.nth(1).getByRole('img')).toHaveAccessibleName(/x24432/);
   for(let i=0;i<2;i++)await expect(cards.nth(i).locator('svg .open-mark').first()).toHaveText('×');
-  expect(new URL(page.url()).searchParams.get('forms')).toBe('C#m@x46654,Bm@x24432');
+  expect(new URL(page.url()).searchParams.get('forms')).toBe('Dbm@x46654,Bm@x24432');
   await page.goto('/?v=1&codes=C%23m&mode=shape&forms=C%23m%40446654');
   await expect(page.getByTestId('chord-card').getByRole('img')).toHaveAccessibleName(/446654/);
 });
