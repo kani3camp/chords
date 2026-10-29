@@ -1,0 +1,118 @@
+{
+  "updated": "2026-10-29",
+  "note": "Independent DadaGP / mySongBook song-shape counts were compared, and general-position diagrams from teaching references were separately checked. Do not remove legacy forms. User-specific personal-defaults are applied after these defaults.",
+  "additions": [
+    [
+      "Db",
+      "x46664",
+      "012341"
+    ],
+    [
+      "C#m",
+      "x46654",
+      "013421"
+    ],
+    [
+      "Ebm",
+      "x68876",
+      "013421"
+    ],
+    [
+      "Bm",
+      "x24432",
+      "013421"
+    ],
+    [
+      "Bm7",
+      "x20202",
+      "010203"
+    ],
+    [
+      "C9",
+      "x32333",
+      "021333"
+    ],
+    [
+      "Db9",
+      "x43444",
+      "021333"
+    ],
+    [
+      "D9",
+      "x54555",
+      "021333"
+    ],
+    [
+      "Bmaj7",
+      "x24342",
+      "013241"
+    ],
+    [
+      "Ebmaj7",
+      "x68786",
+      "013241"
+    ],
+    [
+      "Dbsus2",
+      "x46644",
+      "013411"
+    ],
+    [
+      "Ebsus2",
+      "x68866",
+      "013411"
+    ],
+    [
+      "Esus2",
+      "024400",
+      "012300"
+    ],
+    [
+      "Bbsus2",
+      "x13311",
+      "013411"
+    ],
+    [
+      "Bsus2",
+      "x24422",
+      "013411"
+    ]
+  ],
+  "preferred": {
+    "Db": "x46664",
+    "C#m": "x46654",
+    "Ebm": "x68876",
+    "Bm": "x24432",
+    "C9": "x32333",
+    "Db9": "x43444",
+    "D9": "x54555",
+    "Bmaj7": "x24342",
+    "Ebmaj7": "x68786",
+    "Dbsus2": "x46644",
+    "Ebsus2": "x68866",
+    "Esus2": "024400",
+    "Bbsus2": "x13311",
+    "Bsus2": "x24422",
+    "C5": "x35xxx",
+    "Cm7": "x35343",
+    "Db5": "x46xxx",
+    "Dbm7": "x46454",
+    "Bb5": "688xxx",
+    "B5": "799xxx",
+    "Bm7": "x24232",
+    "D5": "x57xxx",
+    "Eb": "x68886",
+    "Eb5": "x68xxx",
+    "Eb9": "x65666",
+    "E5": "022xxx",
+    "Esus4": "022200",
+    "F5": "133xxx",
+    "F#5": "244xxx",
+    "G/B": "x20033",
+    "G5": "355xxx",
+    "Ab": "466544",
+    "Ab5": "466xxx",
+    "A5": "577xxx",
+    "Asus4": "x02230"
+  }
+}

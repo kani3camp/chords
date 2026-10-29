@@ -2,7 +2,7 @@
   "upstream": "df06fa7b425cf5fd29485ff6591236b3557e3fac",
   "inputCount": 3283,
   "identities": 693,
-  "active": 3352,
+  "active": 3367,
   "rejectedCount": 659,
   "coverage": [
     {
@@ -67,7 +67,7 @@
     },
     {
       "name": "C9",
-      "count": 3
+      "count": 4
     },
     {
       "name": "C9b5",
@@ -239,11 +239,11 @@
     },
     {
       "name": "Db",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Dbm",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Dbdim",
@@ -259,7 +259,7 @@
     },
     {
       "name": "Dbsus2",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Db7sus4",
@@ -295,7 +295,7 @@
     },
     {
       "name": "Db9",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Db9b5",
@@ -523,7 +523,7 @@
     },
     {
       "name": "D9",
-      "count": 15
+      "count": 16
     },
     {
       "name": "D9b5",
@@ -699,7 +699,7 @@
     },
     {
       "name": "Ebm",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Ebdim",
@@ -715,7 +715,7 @@
     },
     {
       "name": "Ebsus2",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Eb7sus4",
@@ -775,7 +775,7 @@
     },
     {
       "name": "Ebmaj7",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Ebmaj7#5",
@@ -939,7 +939,7 @@
     },
     {
       "name": "Esus2",
-      "count": 3
+      "count": 4
     },
     {
       "name": "E7sus4",
@@ -2295,7 +2295,7 @@
     },
     {
       "name": "Bbsus2",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Bb7sus4",
@@ -2507,7 +2507,7 @@
     },
     {
       "name": "Bm",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Bdim",
@@ -2523,7 +2523,7 @@
     },
     {
       "name": "Bsus2",
-      "count": 4
+      "count": 5
     },
     {
       "name": "B7sus4",
@@ -2587,7 +2587,7 @@
     },
     {
       "name": "Bmaj7",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Bmaj7#5",
@@ -2611,7 +2611,7 @@
     },
     {
       "name": "Bm7",
-      "count": 30
+      "count": 31
     },
     {
       "name": "Bm7b5",
