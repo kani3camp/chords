@@ -4,6 +4,7 @@ import { identity, parseChord, pattern } from '../src/domain/chords';
 import { nameFromKey, validateVoicing } from '../src/catalog/validation';
 import type { Catalog, Voicing } from '../src/catalog/schema';
 import personalDefaults from '../src/catalog/personal-defaults.json';
+import auditedDefaults from '../src/catalog/audited-defaults.json';
 
 const PIN = 'df06fa7b425cf5fd29485ff6591236b3557e3fac';
 const root = '.cache/chords-db';
@@ -84,6 +85,36 @@ for(const [key,forms] of Object.entries(previous))for(const old of forms) {
   if(catalog[key]?.some(v=>v.pattern===old.pattern))continue;
   const reasons=validateVoicing(nameFromKey(key),old);
   (catalog[key]??=[]).push({...old,status:reasons.length?'invalid':'legacy',...(reasons.length?{reason:reasons.join('; ')}:{})});
+}
+// Independently reviewed teaching-chart forms and two-corpus popularity choices.
+// Apply after the old-URL registry so newly audited shapes are active on reimport,
+// including when the last published catalog supplied a legacy copy.
+for (const [name,tab,fingerString] of auditedDefaults.additions) {
+  const c=parseChord(name);
+  if(!c?.known)throw new Error(`Unknown audited chord: ${name}`);
+  if(tab.length!==6 || fingerString.length!==6)throw new Error(`Non-six-string audited form: ${name}@${tab}`);
+  const frets=[...tab].map(f=>f==='x'?-1:Number(f));
+  const fingers=[...fingerString].map(Number);
+  const barres:Voicing['barres']=[];
+  for(const finger of [1,2,3,4]){
+    const ids=fingers.flatMap((f,i)=>f===finger?[i]:[]);
+    if(ids.length>1)barres.push({fret:frets[ids[0]],from:ids[0],to:ids.at(-1)!,finger});
+  }
+  const v:Voicing={frets,fingers,barres,pattern:tab,status:'active',source:'audited-independent-charts-v1'};
+  const errors=validateVoicing(name,v);
+  if(errors.length)throw new Error(`Invalid audited form ${name}@${tab}: ${errors.join(', ')}`);
+  const key=identity(c);
+  catalog[key]=[...(catalog[key]??[]).filter(existing=>existing.pattern!==tab),v];
+}
+for(const [name,tab] of Object.entries(auditedDefaults.preferred)){
+  const c=parseChord(name);
+  if(!c?.known)throw new Error(`Unknown audited default: ${name}`);
+  const key=identity(c),forms=catalog[key]??[];
+  const selected=forms.find(v=>v.pattern===tab&&v.status==='active');
+  if(!selected)throw new Error(`Audited default is not active: ${name}@${tab}`);
+  const errors=validateVoicing(name,selected);
+  if(errors.length)throw new Error(`Invalid audited default ${name}@${tab}: ${errors.join(', ')}`);
+  catalog[key]=[selected,...forms.filter(v=>v.pattern!==tab)];
 }
 // Explicit owner preferences from the 2026-10-25 reference image. Reorder existing
 // audited candidates, preserving every position and its representative fingering.

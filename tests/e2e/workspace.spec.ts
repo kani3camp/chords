@@ -107,6 +107,17 @@ test('B major defaults to muted sixth string and retains explicit six-string voi
   await page.goto('/?v=1&codes=B&mode=shape&forms=B@224442');
   await expect(card.getByRole('img')).toHaveAccessibleName(/B コード図 224442/);
 });
+test('audited C#m and Bm defaults mute the sixth string and preserve old URLs',async({page})=>{
+  await page.goto('/');await apply(page,'C#m,Bm');
+  const cards=page.getByTestId('chord-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0).getByRole('img')).toHaveAccessibleName(/x46654/);
+  await expect(cards.nth(1).getByRole('img')).toHaveAccessibleName(/x24432/);
+  for(let i=0;i<2;i++)await expect(cards.nth(i).locator('svg .open-mark').first()).toHaveText('×');
+  expect(new URL(page.url()).searchParams.get('forms')).toBe('Dbm@x46654,Bm@x24432');
+  await page.goto('/?v=1&codes=C%23m&mode=shape&forms=C%23m%40446654');
+  await expect(page.getByTestId('chord-card').getByRole('img')).toHaveAccessibleName(/446654/);
+});
 test('personal site defaults are available without browser preferences',async({page})=>{
   await page.goto('/');await apply(page,'Gm,Cm,C7sus4');
   const rows=page.getByTestId('chord-card');await expect(rows).toHaveCount(3);

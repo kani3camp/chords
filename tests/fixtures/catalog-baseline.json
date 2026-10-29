@@ -121,7 +121,7 @@
     }
   },
   "0|5|": {
-    "default": "8:10:x:x:x:x",
+    "default": "x35xxx",
     "forms": {
       "8:10:x:x:x:x": "1423e8fe723f12b6c9dc90ff2344879f14edbd2b37dde4aa22793b4c4d0d7a70",
       "x35xxx": "0c23deed1d507cb4a20ee52c6957addd0b873acb1c903587c6d7878cb8e3b49b",
@@ -224,11 +224,12 @@
     }
   },
   "0|9|": {
-    "default": "332333",
+    "default": "x32333",
     "forms": {
       "332333": "7ed7e91862f2e27936755abe0ed4d6a6e09d5af30ae6ec86d3eb868f3ecb7a44",
       "878788": "268c4847fd0097ff06f187d3ae8d5dc0a781fc0b95c12323437fb228e14f5b04",
-      "x:x:10:9:11:10": "8d97c2dbe774804ff3268215daa7522e732e772b320108df21d3d73fd0c25263"
+      "x:x:10:9:11:10": "8d97c2dbe774804ff3268215daa7522e732e772b320108df21d3d73fd0c25263",
+      "x32333": "17b169d1f873f4ac148d580ef959e0ffa70fea5ef2a6bdbd50d7afc717416328"
     }
   },
   "0|9b5|": {
@@ -421,7 +422,7 @@
     }
   },
   "0|m7|": {
-    "default": "8x888x",
+    "default": "x35343",
     "forms": {
       "335343": "ddf6167886dabb3c863aa28cf0bda0b7ece207709aa74568816523b6b474aed4",
       "365343": "f1dc40f609c999a38f3130878a39b26083dbc65db4762801bcc054da936d5189",
@@ -562,7 +563,7 @@
     }
   },
   "1||": {
-    "default": "x43121",
+    "default": "x46664",
     "forms": {
       "143121": "2a381bbb50379ef62c112a0f7485aa3ffa5b3527d730c35c08d424edc8e5d4e0",
       "446664": "d98fe151915f59ccdec29dc5663639a866116ee74503fc9990658331c376cc9a",
@@ -573,7 +574,8 @@
       "xx6669": "28702b9029be89a56bb53b7835048aa094cd9357813eaf04529902d6968aa2d0",
       "x:11:11:10:9:9": "f9c4474c04b45dccee4b1ae186f117d28c29c2b2cedaf803bfb0535692aced1d",
       "xx3121": "d1f71d0492339aec82b64b259cd4e33625450e9d52b3c4371dfc08774e0a1934",
-      "xx3124": "f943ae062cf5065849c4301696d5a1295f34c23087b2d88a75308430e0306cec"
+      "xx3124": "f943ae062cf5065849c4301696d5a1295f34c23087b2d88a75308430e0306cec",
+      "x46664": "79df6c3c547546f01f6476750fcfc7e5e7ae78b794772e84f3c135f247deb280"
     }
   },
   "1||0": {
@@ -681,7 +683,7 @@
     }
   },
   "1|5|": {
-    "default": "9:11:x:x:x:x",
+    "default": "x46xxx",
     "forms": {
       "9:11:x:x:x:x": "f6316b4b2e4cc210a7d9b2e02d157575ae6d100d0973387ac890f1d047206a4b",
       "x46xxx": "9d115d78c5e31906b5dfc4bb8f96487ec079d26b8ec5eb616b092489ad72805c",
@@ -791,12 +793,13 @@
     }
   },
   "1|9|": {
-    "default": "443444",
+    "default": "x43444",
     "forms": {
       "443444": "a2caa2ad420d5c034ec3c45faaf5bef0101d860622ea4e007d31f3704a5c6fb1",
       "9898xx": "7b01a505315b5bb54c4c86f43bb455b6f8797a3f96667c91c0e7569d06d30e4e",
       "9:11:9:10:9:11": "a0f01f8535d0c19cee66966c5eef0b7e5618a5a2580d6f6a88815f1b9216f375",
-      "x:x:11:10:12:11": "8693c1682acd030b7ca6e601e03ca1dd1624b07341500d97f4d7c623647d98df"
+      "x:x:11:10:12:11": "8693c1682acd030b7ca6e601e03ca1dd1624b07341500d97f4d7c623647d98df",
+      "x43444": "331073c2e7eb2c65b1e927449315c9b4f6c0cdd616761cfe276e627deab6c4f7"
     }
   },
   "1|9b5|": {
@@ -842,12 +845,13 @@
     }
   },
   "1|m|": {
-    "default": "x4212x",
+    "default": "x46654",
     "forms": {
       "446654": "fe0c1daf0189cea11858b0a887b5d7c1d990c488a8854e651bc7f6c38e96c1ca",
       "x4212x": "10746f7d5bd3008922023836124076245347eba73233c63af78c0eef375fa2f4",
       "9766x9": "3b9f1e70f4bd85a27a6d5f31905494ea2fe4c6d6f4ba56af97e72ed95f38a068",
-      "9:11:11:9:9:9": "478f91e8aa9ef87d5d7fa474acd5324b6f886ae35db219ab1201dda5cc28b919"
+      "9:11:11:9:9:9": "478f91e8aa9ef87d5d7fa474acd5324b6f886ae35db219ab1201dda5cc28b919",
+      "x46654": "d1a7df849bb637f436dff3af0930e43f6416446691cd2f1fde1a2db3b5f6a241"
     }
   },
   "1|m|0": {
@@ -966,7 +970,7 @@
     }
   },
   "1|m7|": {
-    "default": "9x999x",
+    "default": "x46454",
     "forms": {
       "476454": "712afd90583993824745110f20096b9cad69a1bf13d92258f618e3fd787b8021",
       "779997": "e0d254fcd153e8952d72d805fcda5b66e7421be234091b6379f5d4b47c677a05",
@@ -1128,11 +1132,12 @@
     }
   },
   "1|sus2|": {
-    "default": "446644",
+    "default": "x46644",
     "forms": {
       "446644": "d5f46a06511968a58a6e9ef8a37c86a94eb23496e0a48bb57147341a61fdbe29",
       "9:11:11:x:9:11": "c8a30cb6aa6ff515cf68ff9bcb00dd8abc3ca6edb4cf8d88576cb9a921ce9edb",
-      "11:11:11:13:14:11": "ba526c462c81cdcedda635826b6b10771147d89a6ae51b0cfcd33811a56fac5c"
+      "11:11:11:13:14:11": "ba526c462c81cdcedda635826b6b10771147d89a6ae51b0cfcd33811a56fac5c",
+      "x46644": "fcd325bc5a32400dbb39dd0795c5b9da669afa03e6061b644ea235e0a63eab06"
     }
   },
   "1|sus4|": {
@@ -1270,7 +1275,7 @@
     }
   },
   "10|5|": {
-    "default": "68xxxx",
+    "default": "688xxx",
     "forms": {
       "68xxxx": "0bee72fdfde50020f6ab07f51cb7af7d09f762b13c71721dd69280100568d585",
       "x13xxx": "c38febb494977f2fcc6c69e374ec77cecdbe441a1babd9aa7c9122cdc745ff86",
@@ -1663,12 +1668,13 @@
     }
   },
   "10|sus2|": {
-    "default": "113311",
+    "default": "x13311",
     "forms": {
       "113311": "6cc2407154c656cedceab65cd83b18637fe15944f4813f112bb3f3090e378b6b",
       "63356x": "91141784e41a0f672335c0b6f28bab698ef16062d642560a38b79155eea794ba",
       "8:8:8:10:11:8": "6ca89dbc179cf354649c92dd6e20a15c7520e7ff7cce1d0e753daad9a4704ca8",
-      "x:13:10:10:11:13": "4a385bfa32181877da328425cf0848c9852c51e8fa3ec385c9ec8e0a9b8f07d3"
+      "x:13:10:10:11:13": "4a385bfa32181877da328425cf0848c9852c51e8fa3ec385c9ec8e0a9b8f07d3",
+      "x13311": "b3c4805c3f1af73f683a1fb2d61389992035493f7d79a376bd2c750b49a51fd8"
     }
   },
   "10|sus4|": {
@@ -1804,7 +1810,7 @@
     }
   },
   "11|5|": {
-    "default": "79xxxx",
+    "default": "799xxx",
     "forms": {
       "79xxxx": "30a2a6fd359d401e875c66afec1421ba811ff3c90a0ec7beea88d13d82b67a93",
       "x24xxx": "bd855ca6af11bc9965a31570ad89b50d3a7fa49015b34a8abe9f6b3fbc86e41d",
@@ -1959,12 +1965,13 @@
     }
   },
   "11|m|": {
-    "default": "224432",
+    "default": "x24432",
     "forms": {
       "224432": "6155da5ba901f15e69a0d77b89932f7e6fece37791d24dd382453b72bce7a8a5",
       "799777": "7268943f1054c59841e3629436fe955547b8c9cabe8a5038ea9bf0352e4e3c36",
       "x:x:9:11:12:10": "aca6f97e352b5409475bdf8d4907f3659761d1b28e95e7d56c3146d071f3fae2",
-      "x:x:12:11:12:10": "4fa8fdfc054b7475975a15885102ba5c4a697ac67d8386dd7165415bc79e8b1a"
+      "x:x:12:11:12:10": "4fa8fdfc054b7475975a15885102ba5c4a697ac67d8386dd7165415bc79e8b1a",
+      "x24432": "0415012b26fb77250e9083e44523f841423782feb310297b34cd3b4cea8f0e59"
     }
   },
   "11|m|0": {
@@ -2094,7 +2101,7 @@
     }
   },
   "11|m7|": {
-    "default": "7x777x",
+    "default": "x24232",
     "forms": {
       "224232": "a0781498416f493c9497f952f4044e66f8b33fd09bbed8ff465678445a01cc8d",
       "254232": "7ed2df225d4076c869a4b465d51fb9a704db04c81005507a5ca7a94e8e958069",
@@ -2125,7 +2132,8 @@
       "x04432": "5c53348cf2466b8195c1399080a4f40b4c6f7504e997704a4ea3b6464eece908",
       "x00402": "27634c26bc311e161f25c1e61180d0792042959de92884415cf0a46457ec09cf",
       "x00432": "90bbd5a8682fc59cb71773da4dc51a7584e1097f74689ec0365a7e70d141a8f7",
-      "x04777": "6eb06cbec818d4ff6dbe6a3d565a45fca5cd6dc8f707d6116f318109b1580b21"
+      "x04777": "6eb06cbec818d4ff6dbe6a3d565a45fca5cd6dc8f707d6116f318109b1580b21",
+      "x20202": "2544a91080769870e4b36b6462990c0aa6d8cae7b4b5d43461bc95e3bf328451"
     }
   },
   "11|m7|9": {
@@ -2196,12 +2204,13 @@
     }
   },
   "11|maj7|": {
-    "default": "224342",
+    "default": "x24342",
     "forms": {
       "224342": "ad8090e5c1c9e35ae9aee8461f5279b52911930a2c0a3ab7610dde2ad10ec2a2",
       "798877": "6ccb7934585d756021d1a42196d37c120693bbea997fe8c7b7a40d70f2fcabba",
       "xx4446": "95fca4607168a867f82c731b5f3b7aae568b2596fbae77f357cb2c939554b487",
-      "x:9:9:11:11:11": "a8885d7e98731e837e7ff9af5c44591cf7ef314269c4566c17a79ed8d58e2687"
+      "x:9:9:11:11:11": "a8885d7e98731e837e7ff9af5c44591cf7ef314269c4566c17a79ed8d58e2687",
+      "x24342": "56aa2c6510af853d0948ffebf04bad0e47fc276a9b68d93b805920f42e15dcf3"
     }
   },
   "11|maj9|": {
@@ -2231,12 +2240,13 @@
     }
   },
   "11|sus2|": {
-    "default": "224422",
+    "default": "x24422",
     "forms": {
       "224422": "9eec87d26e98eec4aab8547832d41475bea8ed68bc4a5fc095c1fd89183d1a84",
       "7xx677": "2d96ae9d47afe0938305fe63d073cd04d978abab62724ac5a26ceaf963e9d946",
       "9:9:9:11:12:9": "422cafd6e0fcfa628259002f75d04c83a404a174499b1e1e32253bf777258aa2",
-      "x:14:11:11:12:14": "9f8af73e7131b086fec0167f68650622bd124442af92a0c354f45e3038fad7e0"
+      "x:14:11:11:12:14": "9f8af73e7131b086fec0167f68650622bd124442af92a0c354f45e3038fad7e0",
+      "x24422": "635a5890d03b37b31c107655bc775dc1ef5b26f045cc240125fc47fca9562128"
     }
   },
   "11|sus4|": {
@@ -2373,7 +2383,7 @@
     }
   },
   "2|5|": {
-    "default": "10:12:x:x:x:x",
+    "default": "x57xxx",
     "forms": {
       "10:12:x:x:x:x": "0cfb821cf9ee748005110ad68be5922a7e7bf69216a1fc0c7bbf31bd7207b1f9",
       "x57xxx": "71d1aadf5e53555772820332f13d320a31c9150db8cb184a317b10f3235c0803",
@@ -2490,7 +2500,7 @@
     }
   },
   "2|9|": {
-    "default": "554555",
+    "default": "x54555",
     "forms": {
       "202210": "b7773f598c9f2b7e3a4cd2aee1c781d376695423a75205e837938f862c4fccd0",
       "232255": "a03df5fabd676b17dd9e29063097f8116aad6ea14e62b3f23cee8984f9c5cb3f",
@@ -2506,7 +2516,8 @@
       "x02212": "86fdb5b438a6fa258b8884be756465ad8906613e87d882b179e6eeeac98dcfa9",
       "5x4555": "9cc8403ad47e17d86de0b6e058c71a03dc106b77f18cf04b30c511a58890deb5",
       "x77978": "8ad9ad82d2008195251bad184884061696a9c1a90037430a841e82bb7212b7b9",
-      "xx4210": "835e15bb498d2632747bc1e0a8643984ba470e81f901ada3cd92cca482973f7b"
+      "xx4210": "835e15bb498d2632747bc1e0a8643984ba470e81f901ada3cd92cca482973f7b",
+      "x54555": "f6301d087f82112bf69ba71fb91dcc533c06ff15752e0db4279a572c1edd3199"
     }
   },
   "2|9b5|": {
@@ -2832,7 +2843,7 @@
     }
   },
   "3||": {
-    "default": "xx1343",
+    "default": "x68886",
     "forms": {
       "365343": "f1dc40f609c999a38f3130878a39b26083dbc65db4762801bcc054da936d5189",
       "668886": "a6f07691fa5b1aa656180d4ed18fe76dcc04028ebdb6401eeaa1a1c205994efb",
@@ -2945,7 +2956,7 @@
     }
   },
   "3|5|": {
-    "default": "11:13:x:x:x:x",
+    "default": "x68xxx",
     "forms": {
       "11:13:x:x:x:x": "dce921093a9af91afe31d5ad54000f61a69576aac502c537f4881770a912e025",
       "x68xxx": "3f5d1ddc503b390595245e4c2018d1e53356ddae59e7af20d927a2f46583260f",
@@ -3040,7 +3051,7 @@
     }
   },
   "3|9|": {
-    "default": "xx1021",
+    "default": "x65666",
     "forms": {
       "xx1021": "9fd0bffcb3728a6eeba23418c8ec7b890c68bbe63320668b18dc38c79cb49661",
       "x65666": "2e2489f0a9687025a28bba11cbc13d8bb325d01f5570dd201de67bd7345ca584",
@@ -3093,12 +3104,13 @@
     }
   },
   "3|m|": {
-    "default": "xx1342",
+    "default": "x68876",
     "forms": {
       "668876": "a62d16957247f5636a61a3d3014180f1b0e39cbce63f3c20c560600889292fa8",
       "xx1342": "8a5cf17ad6652b9947f330088e4136afe8dd7ab7bf1d103b76cceb25151d18f8",
       "xx4342": "6d0d735196a45a54cdf4b12d6212440d2bcde324aec6186eeb5cf5f41d4d6302",
-      "11:13:13:11:11:11": "2d5dda64aff375e6cc51bf9c11c05d1a351c330c7d6ee8a9b024d904f093d2db"
+      "11:13:13:11:11:11": "2d5dda64aff375e6cc51bf9c11c05d1a351c330c7d6ee8a9b024d904f093d2db",
+      "x68876": "d028fb2b58293dc5d92615e23855979774e437a5a5b29865cc033f90dbb1ae6d"
     }
   },
   "3|m|0": {
@@ -3329,12 +3341,13 @@
     }
   },
   "3|maj7|": {
-    "default": "x11333",
+    "default": "x68786",
     "forms": {
       "668786": "8f8c605122e308f482a50d405ee7c1634040a032ec5e727c16473f54dd89090e",
       "x11333": "3deea8142d83303119dd5d614ac1f3548cbbb6a3cd9e4fd46fb24456d601fb74",
       "x65333": "a3c592af2831fec8e9ff5970eade9593f9a8ee031e22ad75ca2be17bcc422b66",
-      "x:x:8:8:8:10": "4b298b520f0a7aaa6210cfd97aad9f54f55fc9227d150e9e0b457d2ccf2a7e23"
+      "x:x:8:8:8:10": "4b298b520f0a7aaa6210cfd97aad9f54f55fc9227d150e9e0b457d2ccf2a7e23",
+      "x68786": "88f486814187051021f0001def5e6ade045869cbf2ff8c2930859756af0f510e"
     }
   },
   "3|maj9|": {
@@ -3365,12 +3378,13 @@
     }
   },
   "3|sus2|": {
-    "default": "111341",
+    "default": "x68866",
     "forms": {
       "111341": "7c98927fc4035fc29b3b7ac251f1488c19129538a5b778082c9d9351e42384a6",
       "668866": "bdb85096161ef582fd720084b330484adc2a451c684efc8516250c8f5be72df2",
       "11:8:8:10:11:x": "86b91f40e3977be2dc0e5427dc4fc4690cc57887cef55a2843bb9f6220152618",
-      "11:13:13:x:11:13": "4f0ef33dafbe107420d5dc2884b96856c212f2f069b44d809348ec5c557f3f63"
+      "11:13:13:x:11:13": "4f0ef33dafbe107420d5dc2884b96856c212f2f069b44d809348ec5c557f3f63",
+      "x68866": "19a5159a509d7bc813c6feefee6fee597ae86bf18f922d0df6a49c99f1e16f63"
     }
   },
   "3|sus4|": {
@@ -3502,7 +3516,7 @@
     }
   },
   "4|5|": {
-    "default": "12:14:x:x:x:x",
+    "default": "022xxx",
     "forms": {
       "12:14:x:x:x:x": "66d6f7a5629db7c8c3c31f102e2416b69783d72a4e6f93e32c72155848135494",
       "x79xxx": "71bf7f18fec970b0d428f2f7809dad786232bdaa4f594d65e0b1b3c6abf3afbe",
@@ -3987,15 +4001,16 @@
     }
   },
   "4|sus2|": {
-    "default": "222452",
+    "default": "024400",
     "forms": {
       "222452": "2ecd8d94f47344cd1a0d397057a66f6dfd5de94b736923c55b50ae11456cbb36",
       "079977": "e5101aaf242e0aab472ff9ca03a562c7e61a8b26180d780d641a756fc009af8c",
-      "099900": "68d568ed9e9cd308d87813fd3005f64ed12fcf1538ea5d8fb9efd82f2d183ce8"
+      "099900": "68d568ed9e9cd308d87813fd3005f64ed12fcf1538ea5d8fb9efd82f2d183ce8",
+      "024400": "37e534afb1dacadc3f309f61a72285be9ab43a0f308d82b2317956d1449a3f85"
     }
   },
   "4|sus4|": {
-    "default": "002200",
+    "default": "022200",
     "forms": {
       "002200": "69194bd9b366541e59420bc8e2cd310ff30ab4c3ed05b759f6858bb3b28d4a83",
       "002400": "4b9cab3a20193cdb2ee852e614b5d0e516e7a7e114f125247048a7089f25c33f",
@@ -4123,7 +4138,7 @@
     }
   },
   "5|5|": {
-    "default": "13xxxx",
+    "default": "133xxx",
     "forms": {
       "13xxxx": "86a6c95919dc08955a0e664fdd53436e93c7892adb653e9b99aca14a9fc49a9c",
       "x:8:10:x:x:x": "75f28ee4afaa620c3764900df8b742e4fbc154531fdc734bb6582a2dafa61b57",
@@ -4648,7 +4663,7 @@
     }
   },
   "6|5|": {
-    "default": "24xxxx",
+    "default": "244xxx",
     "forms": {
       "24xxxx": "408ef8ea035cb16fa86595e12ea83537f3a57eb73e43d871eeb5f62e84c93c9a",
       "x:9:11:x:x:x": "0b5857c41efdb7720a5a9f174ef9bbd07c04c216dc42375b0881f6446a48c3ab",
@@ -5155,7 +5170,7 @@
     }
   },
   "7||11": {
-    "default": "x20003",
+    "default": "x20033",
     "forms": {
       "x20003": "df0df466c1f4286aa6e5cba2959a63b3a52390bfc210e95262a654f2473b5af6",
       "x20033": "57ed8c5e1fb1c205d0ea55bd71ca4939952f3664dc84dc0ca1c910e8babf3e02",
@@ -5235,7 +5250,7 @@
     }
   },
   "7|5|": {
-    "default": "35xxxx",
+    "default": "355xxx",
     "forms": {
       "35xxxx": "bb673561e3193dfd4e1b7f7dfc34005872cdd921b633a5a4d11030e7e731ec13",
       "x:10:12:x:x:x": "b3a83a64c8ff4b57638a774a2f4281b6c4f799b632028db3f5235148c2226bd3",
@@ -5649,7 +5664,7 @@
     }
   },
   "8||": {
-    "default": "43111x",
+    "default": "466544",
     "forms": {
       "466544": "967b9534e46648440e4bd82eb073f6d50001d3b6334109c123fb3b955105ab15",
       "43111x": "48593187b04a0703000d3a9bb671ace4466b78107f8a1066336a4618ca696345",
@@ -5762,7 +5777,7 @@
     }
   },
   "8|5|": {
-    "default": "46xxxx",
+    "default": "466xxx",
     "forms": {
       "46xxxx": "5a5df2e05c9869f7ecd30bfe249b65a0d4234aad3737d1faa599f5bde977df96",
       "x:11:13:x:x:x": "e4c2c50161942143e0690aa2f219ac44a7163e2ff1789d35d3ececf6b2b81ffa",
@@ -6319,7 +6334,7 @@
     }
   },
   "9|5|": {
-    "default": "57xxxx",
+    "default": "577xxx",
     "forms": {
       "57xxxx": "6f2247e453502b1de4ae20afc7c1d5715403d8b230e9fee6d028051f8de8a643",
       "x02xxx": "b0d6a74a9a5063706d0a93ab4a1576cbf96b4ec923eef6a6103aa93987f33031",
@@ -6804,7 +6819,7 @@
     }
   },
   "9|sus4|": {
-    "default": "x00230",
+    "default": "x02230",
     "forms": {
       "577755": "d419f765a589575eaa3e87af97bb3fbfdfafe48fb901e6892895ce8a664562cc",
       "x00230": "423b65f7bcca24e9985330d6280300cfb746ae0c2d7513263e355aec9aa0a151",

@@ -6,6 +6,8 @@ import { identity,parseChord,parsePattern } from '../src/domain/chords';
 import { cards,emptySong,fromInput } from '../src/state/song';
 import practice from './fixtures/practice-songs.json';
 import { parseUrl,serialize } from '../src/state/url';
+import auditedDefaults from '../src/catalog/audited-defaults.json';
+import fullAudit from '../docs/default-voicing-audit.json';
 describe('independent music checks',()=>{
   // Fixed pitch sets, no production music helper is used to calculate expectations.
   it.each([
@@ -61,6 +63,49 @@ describe('B major root-position preset',()=>{
     const original=parseUrl('https://chords.kani3camp.com/?v=1&codes=B&mode=shape&forms=B@224442',{})!.song;
     expect(cards(original)[0].voicing?.pattern).toBe('224442');
     expect(parseUrl(serialize(original,'https://chords.kani3camp.com/'),{})!.song).toEqual(original);
+  });
+});
+describe('independently reviewed default forms for the full catalog',()=>{
+  it('covers every known key, including intentionally unsupported forms',()=>{
+    expect(fullAudit.entries).toHaveLength(Object.keys(catalog).length);
+    expect(fullAudit.metrics.totalIdentities).toBe(Object.keys(catalog).length);
+    expect(fullAudit.metrics.noActiveForms).toBe(1);
+    for(const row of fullAudit.entries){
+      const forms=catalog[row.key]??[];
+      const selected=forms.find(v=>v.status==='active');
+      expect(row.default).toBe(selected?.pattern??null);
+      expect(row.activeForms).toBe(forms.filter(v=>v.status==='active').length);
+      expect(row.observedSongs.dadaGP).toBeGreaterThanOrEqual(0);
+      expect(row.observedSongs.mySongBook).toBeGreaterThanOrEqual(0);
+      if(selected)expect(validateVoicing(row.name,selected)).toEqual([]);
+    }
+  });
+  it('applies all new audited defaults while respecting owner-specific choices',()=>{
+    for(const [name,tab] of Object.entries(auditedDefaults.preferred)){
+      const key=identity(parseChord(name)!);
+      expect(defaultForm(key),name).toBe(tab);
+      expect(matchVoicing(key,tab)?.status,name).toBe('active');
+    }
+    for(const [name,tab] of Object.entries({Gm:'355333',Cm:'335543',C7sus4:'335363'})){
+      expect(defaultForm(identity(parseChord(name)!))).toBe(tab);
+    }
+  });
+  it('includes standard muted bass strings for C#m, Bm and their alternative shapes',()=>{
+    for(const [name,tab,old] of [
+      ['C#m','x46654','446654'],['Bm','x24432','224432'],
+      ['Ebm','x68876','xx1342'],['Bmaj7','x24342','224342'],
+      ['Bsus2','x24422','224422'],
+    ]){
+      const key=identity(parseChord(name)!);
+      const fresh=cards(fromInput(name,emptySong(),{}).song)[0];
+      expect(fresh.voicing?.pattern).toBe(tab);
+      expect(fresh.voicing?.frets[0]).toBe(-1);
+      const url=`https://chords.kani3camp.com/?v=1&codes=${encodeURIComponent(name)}&mode=shape&forms=${encodeURIComponent(name+'@'+old)}`;
+      const original=parseUrl(url,{})!.song;
+      expect(cards(original)[0].voicing?.pattern).toBe(old);
+      expect(parseUrl(serialize(original,'https://chords.kani3camp.com/'),{})!.song).toEqual(original);
+      expect(matchVoicing(key,old)).toBeDefined();
+    }
   });
 });
 describe('AC-65 full-song distinct chord fixtures',()=>{
