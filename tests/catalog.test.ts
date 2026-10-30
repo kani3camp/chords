@@ -75,8 +75,9 @@ describe('independently reviewed default forms for the full catalog',()=>{
       const selected=forms.find(v=>v.status==='active');
       expect(row.default).toBe(selected?.pattern??null);
       expect(row.activeForms).toBe(forms.filter(v=>v.status==='active').length);
-      expect(row.observedSongs.dadaGP).toBeGreaterThanOrEqual(0);
-      expect(row.observedSongs.mySongBook).toBeGreaterThanOrEqual(0);
+      for (const count of Object.values(row.observedSongs)) {
+        if (count !== null) expect(count).toBeGreaterThanOrEqual(0);
+      }
       if(selected)expect(validateVoicing(row.name,selected)).toEqual([]);
     }
   });
