@@ -21,17 +21,21 @@
     ]
   },
   "metrics": {
-    "totalIdentities": 693,
-    "reviewedDefaults": 692,
+    "totalIdentities": 747,
+    "reviewedDefaults": 746,
     "noActiveForms": 1,
     "defaultBothCorpora": 105,
-    "defaultOneCorpus": 117,
-    "defaultNeitherCorpus": 470,
+    "defaultOneCorpus": 113,
+    "defaultNeitherCorpus": 468,
     "atLeastOneAlternativeBothCorpora": 122,
     "defaultBassNotLabel": 29,
     "overridesPreserved": 3,
     "changedDefaults": 35,
-    "newForms": 15
+    "newForms": 15,
+    "defaultUnmeasured": 60,
+    "defaultWithSlashEvidence": 95,
+    "slashFormsAdded": 93,
+    "slashDefaultsChanged": 6
   },
   "changedDefaults": [
     {
@@ -504,9 +508,10 @@
         "dadaGP": 3,
         "mySongBook": 2
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "0__11-x22010"
     },
     {
       "key": "0||2",
@@ -519,9 +524,10 @@
         "dadaGP": 5,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "0__2-xx0010"
     },
     {
       "key": "0||3",
@@ -549,9 +555,10 @@
         "dadaGP": 5,
         "mySongBook": 2
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "0__4-032010"
     },
     {
       "key": "0||5",
@@ -594,9 +601,10 @@
         "dadaGP": 26,
         "mySongBook": 9
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "0__7-332010"
     },
     {
       "key": "0||8",
@@ -732,6 +740,38 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "0|7|10",
+      "name": "C7/Bb",
+      "oldDefault": null,
+      "default": "x12010",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_7_10-x12010",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "0|7|4",
+      "name": "C7/E",
+      "oldDefault": null,
+      "default": "032310",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_7_4-032310",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "0|7|7",
@@ -1059,9 +1099,10 @@
         "dadaGP": 3,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "0_m_7-335543"
     },
     {
       "key": "0|m|8",
@@ -1137,6 +1178,54 @@
       "corroboration": "two-corpora",
       "review": "new-reviewed-default",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "0|m7|10",
+      "name": "Cm7/Bb",
+      "oldDefault": null,
+      "default": "x11013",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_m7_10-x11013",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "0|m7|3",
+      "name": "Cm7/Eb",
+      "oldDefault": null,
+      "default": "xx1313",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_m7_3-xx1313",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "0|m7|7",
+      "name": "Cm7/G",
+      "oldDefault": null,
+      "default": "335343",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_m7_7-335343",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "0|m7b5|",
@@ -1241,6 +1330,54 @@
       },
       "corroboration": "one-corpus",
       "review": "unchanged",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "0|maj7|11",
+      "name": "Cmaj7/B",
+      "oldDefault": null,
+      "default": "x22010",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_maj7_11-x22010",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "0|maj7|4",
+      "name": "Cmaj7/E",
+      "oldDefault": null,
+      "default": "022010",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_maj7_4-022010",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "0|maj7|7",
+      "name": "Cmaj7/G",
+      "oldDefault": null,
+      "default": "332000",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "0_maj7_7-332000",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
       "anyActiveCandidateBothCorpora": false
     },
     {
@@ -1434,9 +1571,10 @@
         "dadaGP": 0,
         "mySongBook": 0
       },
-      "corroboration": "not-independently-corroborated",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "1__5-143121"
     },
     {
       "key": "1||6",
@@ -1479,9 +1617,10 @@
         "dadaGP": 0,
         "mySongBook": 0
       },
-      "corroboration": "not-independently-corroborated",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "1__8-446664"
     },
     {
       "key": "1||9",
@@ -2304,9 +2443,10 @@
         "dadaGP": 2,
         "mySongBook": 2
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "10__5-113331"
     },
     {
       "key": "10||6",
@@ -3123,7 +3263,7 @@
       "name": "B/Eb",
       "oldDefault": "xx1402",
       "default": "xx1402",
-      "activeForms": 4,
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
         "dadaGP": 0,
@@ -3174,9 +3314,10 @@
         "dadaGP": 0,
         "mySongBook": 0
       },
-      "corroboration": "not-independently-corroborated",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "11__6-224442"
     },
     {
       "key": "11||7",
@@ -3327,6 +3468,38 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "11|7|3",
+      "name": "B7/Eb",
+      "oldDefault": null,
+      "default": "xx1202",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_7_3-xx1202",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "11|7|9",
+      "name": "B7/A",
+      "oldDefault": null,
+      "default": "x01202",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_7_9-x01202",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "11|7b5|",
@@ -3558,7 +3731,7 @@
       "name": "Bm/D",
       "oldDefault": "xx0402",
       "default": "xx0402",
-      "activeForms": 4,
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
         "dadaGP": 0,
@@ -3624,9 +3797,10 @@
         "dadaGP": 6,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "11_m_6-224432"
     },
     {
       "key": "11|m|7",
@@ -3719,19 +3893,59 @@
       "anyActiveCandidateBothCorpora": true
     },
     {
+      "key": "11|m7|2",
+      "name": "Bm7/D",
+      "oldDefault": null,
+      "default": "xx0202",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_m7_2-xx0202",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "11|m7|6",
+      "name": "Bm7/F#",
+      "oldDefault": null,
+      "default": "224232",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_m7_6-224232",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
       "key": "11|m7|9",
       "name": "Bm7/A",
       "oldDefault": "x00232",
-      "default": "x00232",
-      "activeForms": 8,
+      "default": "x00202",
+      "activeForms": 10,
       "bassMatchesSymbol": true,
       "observedSongs": {
-        "dadaGP": 0,
-        "mySongBook": 0
+        "dadaGP": null,
+        "mySongBook": null
       },
-      "corroboration": "not-independently-corroborated",
-      "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-review",
+      "anyActiveCandidateBothCorpora": false,
+      "previousObservation": {
+        "pattern": "x00232",
+        "observedSongs": {
+          "dadaGP": 0,
+          "mySongBook": 0
+        }
+      },
+      "slashEvidence": "11_m7_9-x00202"
     },
     {
       "key": "11|m7b5|",
@@ -3854,6 +4068,54 @@
       "anyActiveCandidateBothCorpora": false
     },
     {
+      "key": "11|maj7|10",
+      "name": "Bmaj7/Bb",
+      "oldDefault": null,
+      "default": "x11302",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_maj7_10-x11302",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "11|maj7|3",
+      "name": "Bmaj7/Eb",
+      "oldDefault": null,
+      "default": "xx1302",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_maj7_3-xx1302",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "11|maj7|6",
+      "name": "Bmaj7/F#",
+      "oldDefault": null,
+      "default": "22130x",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "11_maj7_6-22130x",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
       "key": "11|maj9|",
       "name": "Bmaj9",
       "oldDefault": "22132x",
@@ -3954,9 +4216,10 @@
         "dadaGP": 6,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "2__0-x30232"
     },
     {
       "key": "2||1",
@@ -3992,16 +4255,24 @@
       "key": "2||11",
       "name": "D/B",
       "oldDefault": "x24232",
-      "default": "x24232",
-      "activeForms": 4,
+      "default": "x20232",
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
-        "dadaGP": 6,
-        "mySongBook": 0
+        "dadaGP": null,
+        "mySongBook": null
       },
-      "corroboration": "one-corpus",
-      "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-review",
+      "anyActiveCandidateBothCorpora": false,
+      "previousObservation": {
+        "pattern": "x24232",
+        "observedSongs": {
+          "dadaGP": 6,
+          "mySongBook": 0
+        }
+      },
+      "slashEvidence": "2__11-x20232"
     },
     {
       "key": "2||3",
@@ -4052,16 +4323,24 @@
       "key": "2||6",
       "name": "D/F#",
       "oldDefault": "254232",
-      "default": "254232",
-      "activeForms": 3,
+      "default": "200232",
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
-        "dadaGP": 0,
-        "mySongBook": 0
+        "dadaGP": null,
+        "mySongBook": null
       },
-      "corroboration": "not-independently-corroborated",
-      "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-review",
+      "anyActiveCandidateBothCorpora": true,
+      "previousObservation": {
+        "pattern": "254232",
+        "observedSongs": {
+          "dadaGP": 0,
+          "mySongBook": 0
+        }
+      },
+      "slashEvidence": "2__6-200232"
     },
     {
       "key": "2||7",
@@ -4104,9 +4383,10 @@
         "dadaGP": 22,
         "mySongBook": 10
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "2__9-x00232"
     },
     {
       "key": "2|13|",
@@ -4227,6 +4507,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "2|7|0",
+      "name": "D7/C",
+      "oldDefault": null,
+      "default": "x30212",
+      "activeForms": 3,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_7_0-x30212",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "2|7|6",
+      "name": "D7/F#",
+      "oldDefault": null,
+      "default": "200212",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_7_6-200212",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "2|7|9",
+      "name": "D7/A",
+      "oldDefault": null,
+      "default": "x00212",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_7_9-x00212",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "2|7b5|",
@@ -4419,9 +4747,10 @@
         "dadaGP": 4,
         "mySongBook": 2
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "2_m_0-x30231"
     },
     {
       "key": "2|m|1",
@@ -4464,9 +4793,10 @@
         "dadaGP": 1,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "2_m_11-x20231"
     },
     {
       "key": "2|m|3",
@@ -4509,9 +4839,10 @@
         "dadaGP": 2,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "2_m_5-xx3231"
     },
     {
       "key": "2|m|6",
@@ -4569,9 +4900,10 @@
         "dadaGP": 2,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "2_m_9-x00231"
     },
     {
       "key": "2|m11|",
@@ -4617,6 +4949,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "2|m7|0",
+      "name": "Dm7/C",
+      "oldDefault": null,
+      "default": "x30211",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_m7_0-x30211",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "2|m7|5",
+      "name": "Dm7/F",
+      "oldDefault": null,
+      "default": "100211",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_m7_5-100211",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "2|m7|9",
+      "name": "Dm7/A",
+      "oldDefault": null,
+      "default": "x00211",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_m7_9-x00211",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "2|m7b5|",
@@ -4722,6 +5102,38 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "2|maj7|6",
+      "name": "Dmaj7/F#",
+      "oldDefault": null,
+      "default": "200222",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_maj7_6-200222",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "2|maj7|9",
+      "name": "Dmaj7/A",
+      "oldDefault": null,
+      "default": "x00222",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "2_maj7_9-x00222",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "2|maj9|",
@@ -5724,9 +6136,10 @@
         "dadaGP": 2,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "4__11-x22100"
     },
     {
       "key": "4||2",
@@ -5754,9 +6167,10 @@
         "dadaGP": 1,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "4__3-xx1100"
     },
     {
       "key": "4||5",
@@ -5922,6 +6336,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "4|7|11",
+      "name": "E7/B",
+      "oldDefault": null,
+      "default": "x20100",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_7_11-x20100",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "4|7|2",
+      "name": "E7/D",
+      "oldDefault": null,
+      "default": "xx0100",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_7_2-xx0100",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "4|7|8",
+      "name": "E7/Ab",
+      "oldDefault": null,
+      "default": "xxx130",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_7_8-xxx130",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "4|7b5|",
@@ -6189,9 +6651,10 @@
         "dadaGP": 2,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "4_m_11-x22000"
     },
     {
       "key": "4|m|2",
@@ -6204,9 +6667,10 @@
         "dadaGP": 0,
         "mySongBook": 0
       },
-      "corroboration": "not-independently-corroborated",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "4_m_2-xx0000"
     },
     {
       "key": "4|m|3",
@@ -6264,9 +6728,10 @@
         "dadaGP": 4,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "4_m_7-322000"
     },
     {
       "key": "4|m|8",
@@ -6342,6 +6807,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "4|m7|11",
+      "name": "Em7/B",
+      "oldDefault": null,
+      "default": "x22030",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_m7_11-x22030",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "4|m7|2",
+      "name": "Em7/D",
+      "oldDefault": null,
+      "default": "xx0000",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_m7_2-xx0000",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "4|m7|7",
+      "name": "Em7/G",
+      "oldDefault": null,
+      "default": "322030",
+      "activeForms": 3,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_m7_7-322030",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "4|m7b5|",
@@ -6431,6 +6944,38 @@
       },
       "corroboration": "not-independently-corroborated",
       "review": "unchanged",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "4|maj7|11",
+      "name": "Emaj7/B",
+      "oldDefault": null,
+      "default": "x21100",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_maj7_11-x21100",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "4|maj7|3",
+      "name": "Emaj7/Eb",
+      "oldDefault": null,
+      "default": "xx1100",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "4_maj7_3-xx1100",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
       "anyActiveCandidateBothCorpora": false
     },
     {
@@ -6534,9 +7079,10 @@
         "dadaGP": 10,
         "mySongBook": 3
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "5__0-x33211"
     },
     {
       "key": "5||1",
@@ -6617,16 +7163,24 @@
       "key": "5||4",
       "name": "F/E",
       "oldDefault": "003211",
-      "default": "003211",
+      "default": "xx2211",
       "activeForms": 4,
       "bassMatchesSymbol": true,
       "observedSongs": {
-        "dadaGP": 1,
-        "mySongBook": 0
+        "dadaGP": null,
+        "mySongBook": null
       },
-      "corroboration": "one-corpus",
-      "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-review",
+      "anyActiveCandidateBothCorpora": false,
+      "previousObservation": {
+        "pattern": "003211",
+        "observedSongs": {
+          "dadaGP": 1,
+          "mySongBook": 0
+        }
+      },
+      "slashEvidence": "5__4-xx2211"
     },
     {
       "key": "5||6",
@@ -6647,16 +7201,24 @@
       "key": "5||7",
       "name": "F/G",
       "oldDefault": "303211",
-      "default": "303211",
-      "activeForms": 4,
+      "default": "3x321x",
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
-        "dadaGP": 2,
-        "mySongBook": 0
+        "dadaGP": null,
+        "mySongBook": null
       },
-      "corroboration": "one-corpus",
-      "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-review",
+      "anyActiveCandidateBothCorpora": false,
+      "previousObservation": {
+        "pattern": "303211",
+        "observedSongs": {
+          "dadaGP": 2,
+          "mySongBook": 0
+        }
+      },
+      "slashEvidence": "5__7-3x321x"
     },
     {
       "key": "5||8",
@@ -6684,9 +7246,10 @@
         "dadaGP": 3,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "5__9-x03211"
     },
     {
       "key": "5|5|",
@@ -6777,6 +7340,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "5|7|0",
+      "name": "F7/C",
+      "oldDefault": null,
+      "default": "x31241",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_7_0-x31241",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "5|7|3",
+      "name": "F7/Eb",
+      "oldDefault": null,
+      "default": "xx1211",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_7_3-xx1211",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "5|7|9",
+      "name": "F7/A",
+      "oldDefault": null,
+      "default": "567565",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_7_9-567565",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "5|7b5|",
@@ -6969,9 +7580,10 @@
         "dadaGP": 0,
         "mySongBook": 0
       },
-      "corroboration": "not-independently-corroborated",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "5_m_0-x33111"
     },
     {
       "key": "5|m|1",
@@ -7169,6 +7781,54 @@
       "anyActiveCandidateBothCorpora": true
     },
     {
+      "key": "5|m7|0",
+      "name": "Fm7/C",
+      "oldDefault": null,
+      "default": "x31111",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_m7_0-x31111",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "5|m7|3",
+      "name": "Fm7/Eb",
+      "oldDefault": null,
+      "default": "xx1111",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_m7_3-xx1111",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "5|m7|8",
+      "name": "Fm7/Ab",
+      "oldDefault": null,
+      "default": "431111",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_m7_8-431111",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
       "key": "5|m7b5|",
       "name": "Fm7b5",
       "oldDefault": "1x110x",
@@ -7287,6 +7947,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "5|maj7|0",
+      "name": "Fmaj7/C",
+      "oldDefault": null,
+      "default": "x33210",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_maj7_0-x33210",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "5|maj7|4",
+      "name": "Fmaj7/E",
+      "oldDefault": null,
+      "default": "003210",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_maj7_4-003210",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "5|maj7|9",
+      "name": "Fmaj7/A",
+      "oldDefault": null,
+      "default": "x03210",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "5_maj7_9-x03210",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "5|maj9|",
@@ -7419,9 +8127,10 @@
         "dadaGP": 0,
         "mySongBook": 1
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "6__10-698676"
     },
     {
       "key": "6||11",
@@ -8298,15 +9007,16 @@
       "name": "G/B",
       "oldDefault": "x20003",
       "default": "x20033",
-      "activeForms": 4,
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
         "dadaGP": 18,
         "mySongBook": 10
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "new-reviewed-default",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "7__11-x20033"
     },
     {
       "key": "7||2",
@@ -8319,9 +9029,10 @@
         "dadaGP": 2,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "7__2-xx0003"
     },
     {
       "key": "7||3",
@@ -8379,9 +9090,10 @@
         "dadaGP": 2,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "7__6-220003"
     },
     {
       "key": "7||8",
@@ -8517,6 +9229,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "7|7|11",
+      "name": "G7/B",
+      "oldDefault": null,
+      "default": "x20031",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_7_11-x20031",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "7|7|2",
+      "name": "G7/D",
+      "oldDefault": null,
+      "default": "xx0001",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_7_2-xx0001",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "7|7|5",
+      "name": "G7/F",
+      "oldDefault": null,
+      "default": "120001",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_7_5-120001",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "7|7b5|",
@@ -8769,9 +9529,10 @@
         "dadaGP": 5,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "7_m_2-xx0333"
     },
     {
       "key": "7|m|3",
@@ -8909,6 +9670,22 @@
       "anyActiveCandidateBothCorpora": true
     },
     {
+      "key": "7|m7|10",
+      "name": "Gm7/Bb",
+      "oldDefault": null,
+      "default": "x10031",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_m7_10-x10031",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
       "key": "7|m7b5|",
       "name": "Gm7b5",
       "oldDefault": "3xx321",
@@ -8996,6 +9773,54 @@
       },
       "corroboration": "one-corpus",
       "review": "unchanged",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "7|maj7|11",
+      "name": "Gmaj7/B",
+      "oldDefault": null,
+      "default": "x20032",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_maj7_11-x20032",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "7|maj7|2",
+      "name": "Gmaj7/D",
+      "oldDefault": null,
+      "default": "xx0002",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_maj7_2-xx0002",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "7|maj7|6",
+      "name": "Gmaj7/F#",
+      "oldDefault": null,
+      "default": "220002",
+      "activeForms": 3,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "7_maj7_6-220002",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
       "anyActiveCandidateBothCorpora": false
     },
     {
@@ -9992,16 +10817,24 @@
       "key": "9||1",
       "name": "A/Db",
       "oldDefault": "x42225",
-      "default": "x42225",
-      "activeForms": 3,
+      "default": "x42220",
+      "activeForms": 5,
       "bassMatchesSymbol": true,
       "observedSongs": {
-        "dadaGP": 1,
-        "mySongBook": 0
+        "dadaGP": null,
+        "mySongBook": null
       },
-      "corroboration": "one-corpus",
-      "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-review",
+      "anyActiveCandidateBothCorpora": false,
+      "previousObservation": {
+        "pattern": "x42225",
+        "observedSongs": {
+          "dadaGP": 1,
+          "mySongBook": 0
+        }
+      },
+      "slashEvidence": "9__1-x42220"
     },
     {
       "key": "9||10",
@@ -10074,9 +10907,10 @@
         "dadaGP": 4,
         "mySongBook": 1
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "9__4-002220"
     },
     {
       "key": "9||5",
@@ -10104,9 +10938,10 @@
         "dadaGP": 1,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "9__6-202220"
     },
     {
       "key": "9||7",
@@ -10119,9 +10954,10 @@
         "dadaGP": 3,
         "mySongBook": 0
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "9__7-302220"
     },
     {
       "key": "9||8",
@@ -10227,6 +11063,54 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "9|7|1",
+      "name": "A7/Db",
+      "oldDefault": null,
+      "default": "x42223",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_7_1-x42223",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "9|7|4",
+      "name": "A7/E",
+      "oldDefault": null,
+      "default": "002020",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_7_4-002020",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "9|7|7",
+      "name": "A7/G",
+      "oldDefault": null,
+      "default": "302020",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_7_7-302020",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "9|7b5|",
@@ -10399,7 +11283,7 @@
       "oldDefault": null,
       "default": null,
       "activeForms": 0,
-      "bassMatchesSymbol": null,
+      "bassMatchesSymbol": false,
       "observedSongs": {
         "dadaGP": 0,
         "mySongBook": 0
@@ -10434,9 +11318,10 @@
         "dadaGP": 0,
         "mySongBook": 0
       },
-      "corroboration": "not-independently-corroborated",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "9_m_0-x32210"
     },
     {
       "key": "9|m|1",
@@ -10524,9 +11409,10 @@
         "dadaGP": 0,
         "mySongBook": 4
       },
-      "corroboration": "one-corpus",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": false
+      "anyActiveCandidateBothCorpora": false,
+      "slashEvidence": "9_m_4-002210"
     },
     {
       "key": "9|m|5",
@@ -10569,9 +11455,10 @@
         "dadaGP": 12,
         "mySongBook": 2
       },
-      "corroboration": "two-corpora",
+      "corroboration": "two-independent-shape-references",
       "review": "unchanged",
-      "anyActiveCandidateBothCorpora": true
+      "anyActiveCandidateBothCorpora": true,
+      "slashEvidence": "9_m_7-302210"
     },
     {
       "key": "9|m|8",
@@ -10632,6 +11519,38 @@
       "corroboration": "two-corpora",
       "review": "unchanged",
       "anyActiveCandidateBothCorpora": true
+    },
+    {
+      "key": "9|m7|4",
+      "name": "Am7/E",
+      "oldDefault": null,
+      "default": "002010",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_m7_4-002010",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "9|m7|7",
+      "name": "Am7/G",
+      "oldDefault": null,
+      "default": "302010",
+      "activeForms": 2,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_m7_7-302010",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
     },
     {
       "key": "9|m7b5|",
@@ -10754,6 +11673,22 @@
       "anyActiveCandidateBothCorpora": false
     },
     {
+      "key": "9|maj7|1",
+      "name": "Amaj7/Db",
+      "oldDefault": null,
+      "default": "x42224",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_maj7_1-x42224",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
       "key": "9|maj7|11",
       "name": "Amaj7/B",
       "oldDefault": "x22120",
@@ -10766,6 +11701,22 @@
       },
       "corroboration": "not-independently-corroborated",
       "review": "unchanged",
+      "anyActiveCandidateBothCorpora": false
+    },
+    {
+      "key": "9|maj7|4",
+      "name": "Amaj7/E",
+      "oldDefault": null,
+      "default": "002120",
+      "activeForms": 1,
+      "bassMatchesSymbol": true,
+      "observedSongs": {
+        "dadaGP": null,
+        "mySongBook": null
+      },
+      "slashEvidence": "9_maj7_4-002120",
+      "corroboration": "two-independent-shape-references",
+      "review": "slash-reference-addition",
       "anyActiveCandidateBothCorpora": false
     },
     {
@@ -10843,5 +11794,13 @@
       "review": "new-reviewed-default",
       "anyActiveCandidateBothCorpora": true
     }
-  ]
+  ],
+  "catalogUpdatedAt": "2026-10-30",
+  "observationNote": "null means the current default was not measured in the historical corpora. Counts are not transferred between shapes. Slash evidence confirms shape agreement and teaching use, not occurrence frequency.",
+  "metricScopes": {
+    "changedDefaults": "Initial 2026-10-29 review",
+    "newForms": "Initial 2026-10-29 review",
+    "slashFormsAdded": "2026-10-30 slash review",
+    "slashDefaultsChanged": "2026-10-30 slash review"
+  }
 }

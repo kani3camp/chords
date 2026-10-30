@@ -5,6 +5,8 @@ import { nameFromKey, validateVoicing } from '../src/catalog/validation';
 import type { Catalog, Voicing } from '../src/catalog/schema';
 import personalDefaults from '../src/catalog/personal-defaults.json';
 import auditedDefaults from '../src/catalog/audited-defaults.json';
+import slashAuditData from '../src/catalog/audited-slash-forms.json';
+import { applySlashAudit, slashReport, synchronizeDefaultAudit, type SlashAudit, type DefaultAuditSnapshot } from './lib/slash-audit';
 
 const PIN = 'df06fa7b425cf5fd29485ff6591236b3557e3fac';
 const root = '.cache/chords-db';
@@ -16,6 +18,7 @@ const db = JSON.parse(readFileSync(`${root}/lib/guitar.json`, 'utf8')) as { chor
 const aliases: Record<string, string> = { major:'', minor:'m', sus:'sus4', '69':'6/9', m69:'m6/9', mmaj7:'mMaj7', mmaj9:'mMaj9', mmaj11:'mMaj11', aug7:'7#5', aug9:'9#5' };
 const catalog: Catalog = {}; const rejected: { name: string; pattern: string; reasons: string[] }[] = [];
 const previous: Catalog = existsSync('src/catalog/generated/guitar.json') ? JSON.parse(readFileSync('src/catalog/generated/guitar.json','utf8')) : {};
+const hasPublishedCatalog = Object.keys(previous).length > 0;
 let inputCount = 0;
 for (const entries of Object.values(db.chords)) for (const e of entries) {
   const name = e.key + (aliases[e.suffix] ?? e.suffix);
@@ -75,6 +78,9 @@ for(const p of songs)for(const {name} of parseInput(p.codes)) {
   const key=identity(c);const list=catalog[key]??=[];
   for(const candidate of pool) {
     if(list.some(v=>v.pattern===candidate.pattern))continue;
+    // New exact-name mappings need an explicit audit, rather than appearing as
+    // a side effect of unrelated changes to the candidate pool on reimport.
+    if(hasPublishedCatalog && !previous[key]?.some(v=>v.pattern===candidate.pattern))continue;
     const v={...candidate,source:candidate.source+'; exact-name reclassification'};
     if(validateVoicing(name,v).length===0)list.push(v);
   }
@@ -116,6 +122,9 @@ for(const [name,tab] of Object.entries(auditedDefaults.preferred)){
   if(errors.length)throw new Error(`Invalid audited default ${name}@${tab}: ${errors.join(', ')}`);
   catalog[key]=[selected,...forms.filter(v=>v.pattern!==tab)];
 }
+// Exact-shape evidence is checked before publishing new slash forms or defaults.
+const slashAudit = slashAuditData as SlashAudit;
+applySlashAudit(catalog, slashAudit);
 // Explicit owner preferences from the 2026-10-25 reference image. Reorder existing
 // audited candidates, preserving every position and its representative fingering.
 for(const [name,tab] of Object.entries(personalDefaults)) {
@@ -131,6 +140,9 @@ for(const [name,tab] of Object.entries(personalDefaults)) {
 const sorted = Object.fromEntries(Object.entries(catalog).sort(([a],[b])=>a.localeCompare(b)));
 mkdirSync('src/catalog/generated',{recursive:true}); mkdirSync('licenses',{recursive:true});
 writeFileSync('src/catalog/generated/guitar.json', JSON.stringify(sorted));
-writeFileSync('docs/catalog-report.json', JSON.stringify({upstream:PIN,inputCount,identities:Object.keys(catalog).length,active:Object.values(catalog).flat().length,rejectedCount:rejected.length,coverage:Object.entries(catalog).map(([key,v])=>({name:nameFromKey(key),count:v.length})),rejected},null,2));
+writeFileSync('docs/slash-chord-audit.json', JSON.stringify(slashReport(sorted, slashAudit), null, 2) + '\n');
+const defaultAudit = JSON.parse(readFileSync('docs/default-voicing-audit.json', 'utf8')) as DefaultAuditSnapshot;
+writeFileSync('docs/default-voicing-audit.json', JSON.stringify(synchronizeDefaultAudit(sorted, defaultAudit, slashAudit), null, 2) + '\n');
+writeFileSync('docs/catalog-report.json', JSON.stringify({upstream:PIN,inputCount,identities:Object.keys(sorted).length,active:Object.values(sorted).flat().length,rejectedCount:rejected.length,coverage:Object.entries(sorted).map(([key,v])=>({name:nameFromKey(key),count:v.length})),rejected},null,2));
 copyFileSync(`${root}/LICENSE`,'licenses/chords-db-MIT.txt');
 console.log({inputCount,active:Object.values(catalog).flat().length,identities:Object.keys(catalog).length,rejected:rejected.length});

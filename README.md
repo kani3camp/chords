@@ -47,6 +47,8 @@ GitHub Actionsの「Quality checks」は `main` へのpush、pull request、手�
 
 実行結果・検証の範囲は `docs/verification.md`、収録範囲は `docs/coverage.json`、全フォームの監査・隔離結果は `docs/catalog-report.json`。フォームDBの再生成方法は `docs/data-provenance.md`。
 
+分数コードの定番形の出典照合・初期値変更・未確認一覧は [分数コードの監査記録](docs/slash-chord-review.md)。追加フォームはそれぞれ独立した2出典以上で押弦位置を確認しています。
+
 SNS共有カードはルートHTMLのWorkerで生成します。`pnpm build && pnpm dev:worker` でローカル確認、`pnpm test:ogp` でWrangler実ランタイムのHTTP・PNG・安全性・URL復元を自動検証します。Vite previewでは動的OGPを生成しません。設計、AC-68〜76対応、共通画像の再生成・本番確認手順は `docs/ogp.md` を参照してください。
 
 ## Cloudflareへデプロイする場合

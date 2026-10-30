@@ -26,6 +26,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+Independently reviewed slash-chord fret positions (2026-10-30)
+Exact source URLs, diagram locations, review dates and fingering decisions: src/catalog/audited-slash-forms.json in the source repository.
+Bell & Co Music: https://bellandcomusic.com/
+David Southwick — Guitar & Piano Lessons: https://guitar.davidsouthwick.net/
+Garret’s Guitar Lessons: https://garretsguitarlessons.com/
+Guitar-Chord.org: https://guitar-chord.org/
+JGuitar: https://jguitar.com/
+Tabs4Acoustic: https://tabs4acoustic.com/
+Fret positions are recorded as factual review data. Lesson text and diagram artwork remain the property of the respective publishers. JGuitar corroborates shapes; teaching references support practical usage.
+
 @tonaljs/chord-type 5.2.1
 The MIT License (MIT)
 
