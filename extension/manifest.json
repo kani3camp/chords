@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "chordsで開く",
+  "version": "0.2.0",
+  "description": "U-FRET・ChordWikiの曲ページに、表示中のコードをchords.kani3camp.comで開くリンクを追加します。",
+  "permissions": ["contextMenus"],
+  "action": {
+    "default_title": "chordsで開く",
+    "default_popup": "popup.html"
+  },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ufret.jp/song.php*",
+        "https://www.ufret.jp/song.php*",
+        "https://chordwiki.org/wiki/*",
+        "https://chordwiki.org/wiki.cgi*",
+        "https://ja.chordwiki.org/wiki/*",
+        "https://ja.chordwiki.org/wiki.cgi*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

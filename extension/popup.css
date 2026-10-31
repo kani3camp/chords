@@ -1,0 +1,13 @@
+:root { color-scheme: light; font: 13px/1.6 system-ui, sans-serif; color: #17241e; background: #f7faf8; }
+body { margin: 0; width: 320px; }
+main { padding: 20px; }
+.eyebrow { color: #596c60; font-size: 11px; margin: 0 0 2px; }
+h1 { font-size: 20px; margin: 0 0 16px; letter-spacing: -.02em; }
+.song-title { font-weight: 650; margin: 0 0 6px; overflow-wrap: anywhere; }
+.song-title:empty { display: none; }
+#status { color: #596c60; margin: 0 0 16px; overflow-wrap: anywhere; }
+.primary { display: block; padding: 10px 12px; background: #1b6142; color: white; border-radius: 8px; text-align: center; font-weight: 700; text-decoration: none; }
+.primary[aria-disabled="true"] { background: #e3e9e5; color: #536259; cursor: default; }
+button { display: block; margin: 10px auto 16px; background: transparent; border: 0; color: #375f49; font: inherit; cursor: pointer; }
+.home { display: block; padding-top: 14px; border-top: 1px solid #dce6df; color: #375f49; text-align: center; text-decoration: none; }
+a:focus-visible,button:focus-visible { outline: 3px solid #eba83b; outline-offset: 3px; }

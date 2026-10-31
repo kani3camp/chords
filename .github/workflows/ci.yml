@@ -34,6 +34,8 @@ jobs:
         env:
           CLOUDFLARE_SEND_METRICS: 'false'
       - run: pnpm exec playwright install --with-deps chromium webkit msedge
+      - name: Verify browser extension links and app handoff
+        run: pnpm test:extension
       - name: Verify OGP HTTP responses in the local Workers runtime
         run: pnpm test:ogp
       - run: pnpm test:e2e --workers 2
