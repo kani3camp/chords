@@ -1,6 +1,17 @@
 import { describe,expect,it } from 'vitest';
-import { identity,parseChord,parseInput,parsePattern,pattern,splitTokens,transpose } from '../src/domain/chords';
+import { chordLabel,identity,parseChord,parseInput,parsePattern,pattern,splitTokens,transpose } from '../src/domain/chords';
 import { cards,emptySong,fromInput,resolve } from '../src/state/song';
+describe('enharmonic display names preserve chord meaning',()=>{
+  it.each([
+    ['Ab','A♭ (G♯)'], ['G#','G♯ (A♭)'], ['C#m','C♯m (D♭m)'],
+    ['EbM7','E♭M7 (D♯M7)'], ['F#7','F♯7 (G♭7)'], ['Bb','B♭ (A♯)'],
+    ['A♭m','A♭m (G♯m)'], ['E/G#','E/G♯ (E/A♭)'],
+    ['Dbmaj7/Ab','D♭maj7/A♭ (C♯maj7/G♯)'],
+    ['C7(b9,#11)','C7(♭9,♯11)'], ['Ab7(b9,#11)','A♭7(♭9,♯11) (G♯7(♭9,♯11))'],
+    ['C6/9','C6/9'], ['F#m6/9','F♯m6/9 (G♭m6/9)'],
+    ['C','C'], ['N.C.','N.C.'], ['Cb','C♭ (B)'], ['B#','B♯ (C)'],
+  ])('%s → %s',(raw,label)=>{expect(chordLabel(raw)).toBe(label);});
+});
 describe('R-01, Q-33, Q-53 input grammar',()=>{
   it('retains complex names, top-level commas, slash extensions, and all first occurrences',()=>{
     expect(splitTokens('C7(b9,#11),E/G#,C6/9')).toEqual(['C7(b9,#11)','E/G#','C6/9']);
