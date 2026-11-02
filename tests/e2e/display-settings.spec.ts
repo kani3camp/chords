@@ -26,7 +26,7 @@ test('details default off, persist across songs and reloads, and stay out of sha
   } finally {await other.close();}
   await page.locator('summary').filter({hasText:'表示設定'}).click();
   await toggle.uncheck();await expect(details).toHaveCount(0);
-  await page.reload();await expect(details).toHaveCount(0);
+  await page.reload();await expect(page.getByTestId('chord-card')).toHaveCount(1);await expect(details).toHaveCount(0);
 });
 
 test('invalid saved settings default off and unavailable storage still allows toggling',async({page})=>{
@@ -41,6 +41,6 @@ test('invalid saved settings default off and unavailable storage still allows to
   await page.locator('summary').filter({hasText:'表示設定'}).click();
   await page.getByRole('checkbox',{name:label,exact:true}).check();
   await expect(details).toHaveCount(1);
-  await expect(page.getByRole('status')).toContainText('表示設定をこのブラウザに保存できませんでした');
-  await page.reload();await expect(details).toHaveCount(0);
+  await expect(page.locator('.notice')).toContainText('表示設定をこのブラウザに保存できませんでした');
+  await page.reload();await expect(page.getByTestId('chord-card')).toHaveCount(1);await expect(details).toHaveCount(0);
 });
