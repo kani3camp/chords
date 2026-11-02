@@ -4,11 +4,13 @@ import { cards,emptySong,fromInput,resolve } from '../src/state/song';
 import { audibleTranspose, shiftForAudibleTranspose, shiftForCapoChange, type CapoBehavior } from '../src/state/transposition';
 describe('enharmonic display names preserve chord meaning',()=>{
   it.each([
-    ['Ab','A♭ (G♯)'], ['G#','G♯ (A♭)'], ['C#m','C♯m (D♭m)'],
-    ['EbM7','E♭M7 (D♯M7)'], ['F#7','F♯7 (G♭7)'], ['Bb','B♭ (A♯)'],
-    ['A♭m','A♭m (G♯m)'], ['E/G#','E/G♯ (E/A♭)'],
-    ['Dbmaj7/Ab','D♭maj7/A♭ (C♯maj7/G♯)'],
-    ['C7(b9,#11)','C7(♭9,♯11)'], ['Ab7(b9,#11)','A♭7(♭9,♯11) (G♯7(♭9,♯11))'],
+    ['Ab','G♯ (A♭)'], ['G#','G♯ (A♭)'], ['C#m','C♯m (D♭m)'],
+    ['EbM7','D♯M7 (E♭M7)'], ['F#7','F♯7 (G♭7)'], ['Bb','A♯ (B♭)'],
+    ['A♭m','G♯m (A♭m)'], ['E/G#','E/G♯ (E/A♭)'],
+    ['Gb7','F♯7 (G♭7)'], ['E/Ab','E/G♯ (E/A♭)'],
+    ['Abm7b5/Db','G♯m7♭5/C♯ (A♭m7♭5/D♭)'],
+    ['Dbmaj7/Ab','C♯maj7/G♯ (D♭maj7/A♭)'],
+    ['C7(b9,#11)','C7(♭9,♯11)'], ['Ab7(b9,#11)','G♯7(♭9,♯11) (A♭7(♭9,♯11))'],
     ['C6/9','C6/9'], ['F#m6/9','F♯m6/9 (G♭m6/9)'],
     ['C','C'], ['N.C.','N.C.'], ['Cb','C♭ (B)'], ['B#','B♯ (C)'],
   ])('%s → %s',(raw,label)=>{expect(chordLabel(raw)).toBe(label);});
@@ -50,7 +52,6 @@ describe('G01–G06 transposition and capo (independent fixed expectations)',()=
     const s=fromInput('Db,C#',emptySong(),{}).song;expect(cards(s)).toHaveLength(2);expect(Object.keys(s.forms)).toHaveLength(1);
   });
 });
-
 describe('ADR-063: audible transposition and capo behavior',()=>{
   it('keeps the original sounding pitch when changing capo 4 to no capo',()=>{
     const a={...emptySong(),codes:['F','E/G#'],mode:'shape' as const,sourceShift:4,shift:-4,capo:4};

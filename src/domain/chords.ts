@@ -42,16 +42,25 @@ const ENHARMONIC: Record<string, string> = {
   'G#':'Ab', Ab:'G#', 'A#':'Bb', Bb:'A#',
   'B#':'C', Cb:'B', 'E#':'F', Fb:'E',
 };
-export function enharmonicName(raw: string): string | null {
+const SHARP_NAMES: Record<string, string> = { Db:'C#', Eb:'D#', Gb:'F#', Ab:'G#', Bb:'A#' };
+function respellChordNotes(raw: string, names: Record<string, string>): string {
   const s = normalizeSymbols(raw);
   const m = s.match(/^([A-G][#b]?)(.*)$/);
-  if (!m) return null;
-  const alternate = (ENHARMONIC[m[1]] ?? m[1]) + m[2].replace(/\/([A-G][#b]?)$/, (_, note: string) => `/${ENHARMONIC[note] ?? note}`);
+  if (!m) return s;
+  return (names[m[1]] ?? m[1]) + m[2].replace(/\/([A-G][#b]?)$/, (_, note: string) => `/${names[note] ?? note}`);
+}
+export function enharmonicName(raw: string): string | null {
+  const s = normalizeSymbols(raw);
+  const alternate = respellChordNotes(s, ENHARMONIC);
   return alternate === s ? null : alternate;
 }
+export function chordDisplayNames(raw: string): { primary: string; alternate: string | null } {
+  const primary = respellChordNotes(raw, SHARP_NAMES);
+  return { primary, alternate: enharmonicName(primary) };
+}
 export function chordLabel(raw: string): string {
-  const alternate = enharmonicName(raw);
-  return pretty(raw) + (alternate ? ` (${pretty(alternate)})` : '');
+  const { primary, alternate } = chordDisplayNames(raw);
+  return pretty(primary) + (alternate ? ` (${pretty(alternate)})` : '');
 }
 
 export { splitTokens, parsePattern, pattern, parseInput, type Token } from './input';

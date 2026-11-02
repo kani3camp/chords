@@ -46,7 +46,7 @@ test('capo modes, source shift and total display',async({page})=>{
   await page.goto('/?v=1&codes=Db&mode=sound&capo=1&sourceShift=-1');
   const card=page.getByTestId('chord-card');await expect(card.getByRole('heading')).toHaveText('C');
   await expect(page.getByLabel('実音の移調')).toHaveText('-1');
-  await page.getByRole('button',{name:'半音上げる',exact:true}).click();await expect(card.getByRole('heading')).toHaveText('D♭ (C♯)');
+  await page.getByRole('button',{name:'半音上げる',exact:true}).click();await expect(card.getByRole('heading')).toHaveText('C♯ (D♭)');
   await expect(page.getByLabel('実音の移調')).toHaveText('0');
   await page.getByLabel('カポ',{exact:true}).selectOption('0');await expect(card.getByRole('heading')).toHaveText('D');
   await page.getByRole('button',{name:'元サイトの移調を半音下げる',exact:true}).click();await expect(card.getByRole('heading')).toHaveText('D');
@@ -55,7 +55,7 @@ test('capo modes, source shift and total display',async({page})=>{
 test('AC-77/79/82: capo-only change preserves audible pitch and the displayed transposition',async({page})=>{
   await page.goto('/?v=1&codes=F&mode=shape&sourceShift=4&shift=-4&capo=4');
   const card=page.getByTestId('chord-card');
-  await expect(card.getByRole('heading')).toHaveText('D♭ (C♯)');
+  await expect(card.getByRole('heading')).toHaveText('C♯ (D♭)');
   await expect(card).toContainText('実音: F');
   await expect(page.getByLabel('実音の移調')).toHaveText('+4');
   await page.getByLabel('カポ',{exact:true}).selectOption('0');
@@ -85,7 +85,7 @@ test('AC-78/80: browser-only preference persists; switching does not alter song 
   await expect(page.getByRole('dialog').getByRole('radio',{name:/押さえるコードを維持/})).toBeChecked();
   await page.getByRole('dialog').getByRole('button',{name:'閉じる',exact:true}).click();
   await page.getByLabel('カポ',{exact:true}).selectOption('0');
-  await expect(page.getByTestId('chord-card').getByRole('heading')).toHaveText('D♭ (C♯)');
+  await expect(page.getByTestId('chord-card').getByRole('heading')).toHaveText('C♯ (D♭)');
   await expect(page.getByLabel('実音の移調')).toHaveText('0');
   expect(new URL(page.url()).searchParams.get('shift')).toBe('-4');
 });
@@ -121,22 +121,24 @@ test('enharmonic cards share changes without collapsing the original spelling',a
   await page.getByRole('button',{name:'この押さえ方を使う'}).click();
   const images=page.getByTestId('chord-card').getByRole('img');const a=await images.nth(0).getAttribute('aria-labelledby');expect(a).toBeTruthy();
   const form=new URL(page.url()).searchParams.get('forms');expect(form?.split(',')).toHaveLength(1);
-  await expect(page.getByTestId('chord-card').nth(0).getByRole('heading')).toHaveText('D♭ (C♯)');await expect(page.getByTestId('chord-card').nth(1).getByRole('heading')).toHaveText('C♯ (D♭)');
+  await expect(page.getByTestId('chord-card').nth(0).getByRole('heading')).toHaveText('C♯ (D♭)');await expect(page.getByTestId('chord-card').nth(1).getByRole('heading')).toHaveText('C♯ (D♭)');
+  expect(new URL(page.url()).searchParams.get('codes')).toBe('Db,C#');
 });
 test('enharmonic labels cover roots and slash basses through reload, transposition and picker',async({page})=>{
   await page.goto('/');await apply(page,'Ab,G#,E/G#,C7(b9,#11),N.C.');
   const headings=page.getByTestId('chord-card').getByRole('heading');
-  await expect(headings).toHaveText(['A♭ (G♯)','G♯ (A♭)','E/G♯ (E/A♭)','C7(♭9,♯11)','N.C.']);
+  await expect(headings).toHaveText(['G♯ (A♭)','G♯ (A♭)','E/G♯ (E/A♭)','C7(♭9,♯11)','N.C.']);
+  expect(await headings.locator('.chord-alternate').evaluateAll(elements=>elements.every(e=>getComputedStyle(e).fontSize===getComputedStyle(e.parentElement!).fontSize))).toBe(true);
   const url=page.url();expect(new URL(url).searchParams.get('codes')).toBe('Ab,G#,E/G#,C7(b9,#11),N.C.');
-  await page.reload();await expect(headings).toHaveText(['A♭ (G♯)','G♯ (A♭)','E/G♯ (E/A♭)','C7(♭9,♯11)','N.C.']);
+  await page.reload();await expect(headings).toHaveText(['G♯ (A♭)','G♯ (A♭)','E/G♯ (E/A♭)','C7(♭9,♯11)','N.C.']);
   expect(page.url()).toBe(url);
   await page.getByTestId('chord-card').first().getByRole('button').click();
-  await expect(page.getByRole('dialog').getByRole('heading')).toHaveText('A♭ (G♯) の押さえ方を選ぶ');
+  await expect(page.getByRole('dialog').getByRole('heading')).toHaveText('G♯ (A♭) の押さえ方を選ぶ');
   await page.keyboard.press('Escape');
   await page.getByRole('button',{name:'半音上げる',exact:true}).click();
   await expect(headings.nth(0)).toHaveText('A');
   await page.getByRole('button',{name:'半音下げる',exact:true}).click();
-  await expect(headings.nth(0)).toHaveText('A♭ (G♯)');
+  await expect(headings.nth(0)).toHaveText('G♯ (A♭)');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });
 test('keyboard dialog closure restores focus; no horizontal overflow; artifact screenshots',async({page},testInfo)=>{
