@@ -24,8 +24,12 @@ describe('browser display settings independent of song and voicing persistence',
     expect(h.controller.snapshot().song).toBe(song);
     expect(h.href()).toBe(url);
     expect(h.data.has(STORAGE_KEY)).toBe(false);
+    h.controller.setCapoBehavior('keep-shape');
+    expect(h.reload().snapshot().showChordDetails).toBe(true);
+    expect(h.reload().snapshot().capoBehavior).toBe('keep-shape');
     h.controller.setShowChordDetails(false);
     expect(h.reload().snapshot().showChordDetails).toBe(false);
+    expect(h.reload().snapshot().capoBehavior).toBe('keep-shape');
   });
 
   it.each(['broken JSON','null','{}','{"version":2,"showChordDetails":true}','{"version":1,"showChordDetails":"true"}'])(

@@ -10,7 +10,7 @@ WorkerはASSETSのHTMLを取得し、HTMLRewriterでtitle/descriptionを更新�
 
 既存パーサーの構文部分を `src/domain/input.ts`、既存のURL v1構文を `src/state/url-syntax.ts`、数値/出典URLの検証を `song-fields.ts` に分離しました。元のエクスポートを維持してアプリ側も同じ処理を使います。WorkerにはフォームDBもTonal辞書も読み込みません。`deploy:check` はバンドル上限と依存混入を検査します。曲譜サイトへの外部fetch、DB、認証は追加していません。画像文字描画は信頼済みの固定フォントURLに依存し、ユーザー入力URLからの取得はしません。
 
-コード数は元表記一致で重複排除。Db/C#を分け、括弧内カンマ・分数コードを保持し、NC/N.C.は別の存在フラグにします。capoはURL値、移調はsourceShift+shift。formsの構文は検証しますが、候補登録・演奏コードへの帰属・同音競合は従来どおりReactで判断します。構文上有効な未登録フォームでOGPを汎用化しません。
+コード数は元表記一致で重複排除。Db/C#を分け、括弧内カンマ・分数コードを保持し、NC/N.C.は別の存在フラグにします。capoはURL値、移調は実音の原譜比 `sourceShift + shift + (mode === 'shape' ? capo : 0)`。formsの構文は検証しますが、候補登録・演奏コードへの帰属・同音競合は従来どおりReactで判断します。構文上有効な未登録フォームでOGPを汎用化しません。
 
 無効URLは汎用メタデータに戻し、HTTP 200の既存アプリを配信します。タイトルの制御/書式文字・改行を除去し、80 Unicodeコードポイント超は末尾に「…」。HTML/属性は安全にエスケープします。元の曲名・共有URL・Reactのタブ名は切り詰めません。
 
@@ -34,7 +34,7 @@ pnpm dev:worker
 |---|---|
 |AC-68 タイトル|JSなしHTTP GET、Discord/Twitter/ブラウザUAで同じtitle/OG/Twitter|
 |AC-69 コード数|同名重複、Db/C#、括弧内カンマ、分数、NCのみ、inline/form競合・未登録|
-|AC-70 設定|カポ0/1/12、sourceShift+shift、符号付き合計|
+|AC-70／83 設定|カポ0/1/12、原譜比の実音移調 `sourceShift + shift + (mode === 'shape' ? capo : 0)`、符号付き表示。画像パラメータsは−48〜+60|
 |AC-71 画像|曲別画像URLのパラメータと検証、200・PNG・1200×630、タイトルレイアウトと静的フォールバック。文字合成画像の目視確認はremote／本番|
 |AC-72 fallback|必須不足、v、空要素、構文、重複競合、不正UTF-8/パーセント、数値範囲、長さ、src/forms|
 |AC-73 安全性|引用符/HTML/日本語/絵文字、改行・制御除去、80コードポイント|
@@ -46,7 +46,7 @@ pnpm dev:worker
 
 2026-10-25のローカル結果：型・lint・単体64件・URL互換17件・カタログ3,351フォーム/693和音ID・互換diff・URL長計測・build・Wrangler dry-runが成功。OGP 7件、既存E2E 48件（Chromium PC/タブレット、WebKitタブレット、Edge PC）が成功。Worker生成物は11,509 bytes（gzip約3.95 KiB）で、音楽理論辞書・フォームDBの混入なし。
 
-例：`codes=C,G,C,Db,C#,C7(b9,#11),N.C.&capo=1&sourceShift=-1&shift=0` なら「使用コード5種類 + N.C.｜カポ1｜移調−1｜好きな押さえ方でギターコードを一覧表示。」。
+例：`codes=C,G,C,Db,C#,C7(b9,#11),N.C.&mode=shape&capo=1&sourceShift=-1&shift=0` なら「使用コード5種類 + N.C.｜カポ1｜移調0｜好きな押さえ方でギターコードを一覧表示。」（元譜比の実音移調）。同じURLを表示するアプリとメタデータ・画像内の値を一致させます。
 
 ## 運用と確認範囲
 

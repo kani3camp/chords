@@ -7,11 +7,12 @@ test('details default off, persist across songs and reloads, and stay out of sha
   const details=page.getByTestId('chord-card').locator('.card-status small');
   await expect(page.getByTestId('chord-card')).toHaveCount(3);
   await expect(details).toHaveCount(0);
-  await page.locator('summary').filter({hasText:'表示設定'}).click();
+  await page.getByRole('button',{name:'設定',exact:true}).click();
   const toggle=page.getByRole('checkbox',{name:label,exact:true});
   await expect(toggle).not.toBeChecked();
   const url=page.url();
   await toggle.check();
+  await page.getByRole('dialog').getByRole('button',{name:'閉じる',exact:true}).click();
   await expect(details).toHaveText(['元: C ／ 実音: D','元: G ／ 実音: A','元: N.C. ／ 実音: N.C.']);
   expect(page.url()).toBe(url);
   await page.reload();
@@ -24,8 +25,10 @@ test('details default off, persist across songs and reloads, and stay out of sha
     await expect(second.getByTestId('chord-card')).toHaveCount(1);
     await expect(second.getByTestId('chord-card').locator('.card-status small')).toHaveCount(0);
   } finally {await other.close();}
-  await page.locator('summary').filter({hasText:'表示設定'}).click();
-  await toggle.uncheck();await expect(details).toHaveCount(0);
+  await page.getByRole('button',{name:'設定',exact:true}).click();
+  await toggle.uncheck();
+  await page.getByRole('dialog').getByRole('button',{name:'閉じる',exact:true}).click();
+  await expect(details).toHaveCount(0);
   await page.reload();await expect(page.getByTestId('chord-card')).toHaveCount(1);await expect(details).toHaveCount(0);
 });
 
@@ -38,9 +41,9 @@ test('invalid saved settings default off and unavailable storage still allows to
   const details=page.getByTestId('chord-card').locator('.card-status small');
   await expect(page.getByTestId('chord-card')).toHaveCount(1);
   await expect(details).toHaveCount(0);
-  await page.locator('summary').filter({hasText:'表示設定'}).click();
+  await page.getByRole('button',{name:'設定',exact:true}).click();
   await page.getByRole('checkbox',{name:label,exact:true}).check();
   await expect(details).toHaveCount(1);
-  await expect(page.locator('.notice')).toContainText('表示設定をこのブラウザに保存できませんでした');
+  await expect(page.getByRole('dialog').getByRole('status')).toContainText('表示設定をこのブラウザに保存できませんでした');
   await page.reload();await expect(page.getByTestId('chord-card')).toHaveCount(1);await expect(details).toHaveCount(0);
 });

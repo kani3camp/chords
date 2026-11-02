@@ -15,9 +15,9 @@ describe('per-song OGP image data', () => {
     expect(url.searchParams.get('n')).toBe('3');
     expect(url.searchParams.get('nc')).toBe('0');
     expect(url.searchParams.get('c')).toBe('1');
-    expect(url.searchParams.get('s')).toBe('1');
+    expect(url.searchParams.get('s')).toBe('2');
     expect(url.search).not.toContain('codes');
-    expect(readCardImageQuery(image)).toEqual({ name:'虹色letters', count:3, nc:false, capo:1, shift:1 });
+    expect(readCardImageQuery(image)).toEqual({ name:'虹色letters', count:3, nc:false, capo:1, shift:2 });
   });
 
   it('uses the brand image when no safe song title can be extracted', () => {
@@ -32,6 +32,13 @@ describe('per-song OGP image data', () => {
     for (const suffix of ['&t=duplicate', '&unexpected=1', '&c=13', '&c=-1', '&n=-1', '&n=201', '&s=49', '&nc=2', '&t=%0Ainjected']) {
       expect(readCardImageQuery(good + suffix), suffix).toBeNull();
     }
+    const bound=new URL(good);
+    bound.searchParams.set('s','60');
+    expect(readCardImageQuery(bound.href)?.shift).toBe(60);
+    bound.searchParams.set('s','61');
+    expect(readCardImageQuery(bound.href)).toBeNull();
+    bound.searchParams.set('s','-49');
+    expect(readCardImageQuery(bound.href)).toBeNull();
     expect(readCardImageQuery(SITE_ORIGIN + '/og/card.png')).toBeNull();
     expect(readCardImageQuery(SITE_ORIGIN + '/og/card.png?v=1&t=hello&n=0&nc=0&c=0&s=0')).toBeNull();
     expect(readCardImageQuery(SITE_ORIGIN + '/og/card.png?v=1&t=' + 'A'.repeat(100) + '&n=1&nc=0&c=0&s=0')).toBeNull();
