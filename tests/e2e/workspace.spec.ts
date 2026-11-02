@@ -150,7 +150,7 @@ for(const fixture of practice)test(`full practice-song input and form selection:
   page.on('request',r=>{if(r.url().startsWith('https://ja.chordwiki.org'))externalRequests.push(r.url());});
   await page.goto('/');
   await page.getByLabel('曲名（任意）',{exact:true}).fill(fixture.title);
-  await page.getByLabel('出典URL（任意・記録のみ）',{exact:true}).fill(fixture.source);
+  await page.getByLabel('出典URL（任意）',{exact:true}).fill(fixture.source);
   await apply(page,fixture.codes);
   await expect(page.getByTestId('chord-card')).toHaveCount(fixture.codes.split(/,(?![^()]*\))/).length);
   await expect(page.getByRole('heading',{level:1})).toHaveText(fixture.title);
