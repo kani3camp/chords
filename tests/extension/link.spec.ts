@@ -91,7 +91,9 @@ test('real extension injects a U-FRET link and opens the app with the same chord
   await expect(popup.getByTestId('chord-card')).toHaveCount(3);
   await expect(popup.getByTestId('chord-card').first().getByRole('heading')).toHaveText('C♯ (D♭)');
   await expect(popup.getByLabel('カポ', { exact: true })).toHaveValue('2');
-  await expect(popup.getByLabel('合計移調')).toHaveText('+3');
+  // U-FRET's shape chords with capo 2 and source shift +3 sound +5 from the original score.
+  expect(params.get('mode')).toBe('shape');
+  await expect(popup.getByLabel('実音の移調')).toHaveText('+5');
 });
 
 test('ChordWiki reads chord elements, capo, and transpose, and follows DOM updates', async ({ extensionContext: context }) => {
