@@ -36,4 +36,22 @@ export function transpose(raw: string, semitones: number): string {
 export function shifted(raw: string, delta: number): ParsedChord | null { return parseChord(transpose(raw, delta)); }
 export const pretty = (raw: string) => raw.replace(/#/g, '♯').replace(/b/g, '♭');
 
+// Only note spellings change; quality alterations (b5, #11, etc.) stay intact.
+const ENHARMONIC: Record<string, string> = {
+  'C#':'Db', Db:'C#', 'D#':'Eb', Eb:'D#', 'F#':'Gb', Gb:'F#',
+  'G#':'Ab', Ab:'G#', 'A#':'Bb', Bb:'A#',
+  'B#':'C', Cb:'B', 'E#':'F', Fb:'E',
+};
+export function enharmonicName(raw: string): string | null {
+  const s = normalizeSymbols(raw);
+  const m = s.match(/^([A-G][#b]?)(.*)$/);
+  if (!m) return null;
+  const alternate = (ENHARMONIC[m[1]] ?? m[1]) + m[2].replace(/\/([A-G][#b]?)$/, (_, note: string) => `/${ENHARMONIC[note] ?? note}`);
+  return alternate === s ? null : alternate;
+}
+export function chordLabel(raw: string): string {
+  const alternate = enharmonicName(raw);
+  return pretty(raw) + (alternate ? ` (${pretty(alternate)})` : '');
+}
+
 export { splitTokens, parsePattern, pattern, parseInput, type Token } from './input';

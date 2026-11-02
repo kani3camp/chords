@@ -89,7 +89,7 @@ test('real extension injects a U-FRET link and opens the app with the same chord
   await link.click();
   const popup = await popupPromise;
   await expect(popup.getByTestId('chord-card')).toHaveCount(3);
-  await expect(popup.getByTestId('chord-card').first().getByRole('heading')).toHaveText('C♯');
+  await expect(popup.getByTestId('chord-card').first().getByRole('heading')).toHaveText('C♯ (D♭)');
   await expect(popup.getByLabel('カポ', { exact: true })).toHaveValue('2');
   await expect(popup.getByLabel('合計移調')).toHaveText('+3');
 });
