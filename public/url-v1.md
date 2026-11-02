@@ -20,11 +20,27 @@
 正規化するキー順は`v,codes,mode,capo,sourceShift,shift,sort,forms,title,src`。
 正規URLは既定値もmode/capo/sourceShift/shift/sortに明示し、空のforms/title/srcは省略します。
 
+## カポ変更と画面の「移調（実音）」
+
+URL v1の `shift` は**入力コードへの追加変換量**であり、画面で示す「実音の移調量」とは別物です。既存URLの意味・演奏用コード・実際に鳴るコードは変更しません。
+
+- **押さえるコード** = `transpose(raw, shift - (mode === 'sound' ? capo : 0))`
+- **実際に鳴るコード** = `transpose(raw, shift + (mode === 'shape' ? capo : 0))`
+- **画面・OGPの移調** = `sourceShift + shift + (mode === 'shape' ? capo : 0)` （元サイトの移調前の譜面に対する実音変化）
+
+画面の「移調（実音）」を変更したとき、内部的には `shift = 表示したい移調量 - sourceShift - (mode === 'shape' ? capo : 0)` となります。
+
+カポを変更すると、**初期設定では鳴る実音を維持**するため、必要に応じて`shift`を自動調整します（フォーム入力のときは `shift += 変更前カポ - 変更後カポ`）。設定画面で「押さえるコードを維持」を選ぶと実音のキーがカポ差分だけ変わります。入力モード`shape/sound`は元コードの意味を示すもので、カポ操作時の保持対象とは独立です。
+
+例：`codes=F&mode=shape&sourceShift=4&shift=-4&capo=4` ならDbフォームで実音F・移調表示+4。カポを0にすると`shift=0`となってFフォームで実音F・表示+4のままです。URLを開いただけでは自動変換しません。カポ変更時の挙動設定はブラウザ内にのみ保存され、URLへは含めません。
+
+元サイトで適用済みの移調量`sourceShift`は、正しく申告されたときに元譜に対する移調値を示すためのメタ情報です。入力に再加算しません。値が不明・誤っている場合は原譜比の移調表示も正確ではありません。
+
 ## 検証済みの例
 
 `https://chords.kani3camp.com/?v=1&codes=C%2CAm7%2CG&mode=shape&capo=1&sourceShift=-1&shift=0&sort=first&forms=C%40x32010%2CAm7%40x02010%2CG%40320003`
 
-この例の合計移調は−1。元の入力はすでに移調済みなので、押さえるC/Am7/Gにさらに−1を足しません。
+この例の画面の「移調（実音）」は **0**（`sourceShift=-1`、`shift=0`、フォーム入力かつ`capo=1`）です。元の入力はすでに−1半音移調済みなので、押さえるC/Am7/Gにその−1を再加算しません。カポ1で実音が1半音上がり、元譜比の実音移調は0になります。
 
 実音Dbをカポ1で弾く場合: `codes=Db&mode=sound&capo=1&forms=C%40x32010`（v=1も必要）。
 

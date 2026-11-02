@@ -37,6 +37,16 @@ describe('Q-23/24/32/47/48 URL v1 compatibility',()=>{
     const s=resolve({...emptySong(),codes:names,title:'60コードの検証'},{});const u=serialize(s,base);
     expect(byteLength(u)).toBeLessThan(MAX_URL_BYTES);expect(parseUrl(u,{})!.song).toEqual(s);
   });
+  it('restores old v1 capo/shift/forms exactly, independent of new browser capo settings',()=>{
+    const old=base+'?v=1&codes=F%2CE%2FG%23&mode=shape&capo=4&sourceShift=4&shift=-4&forms=Db%40x46664';
+    const incoming=parseUrl(old,{})!;
+    expect(incoming.song.codes).toEqual(['F','E/G#']);
+    expect(incoming.song.capo).toBe(4);
+    expect(incoming.song.shift).toBe(-4);
+    expect(incoming.song.sourceShift).toBe(4);
+    const rebuilt=parseUrl(serialize(incoming.song,base),{})!.song;
+    expect(rebuilt).toEqual(incoming.song);
+  });
   it('enforces full UTF-8 URL bytes, including title and hostname',()=>{
     expect(()=>serialize({...emptySong(),codes:['C'],title:'あ'.repeat(2000)},base)).toThrow('上限');
     expect(byteLength('あ')).toBe(3);

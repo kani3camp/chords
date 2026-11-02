@@ -17,7 +17,7 @@ test('AC-68/70/71: raw HTTP has one complete metadata set for every user agent',
     expect(response.status()).toBe(200);
     const html = await response.text();
     for (const t of [title(html),meta(html,'og:title'),meta(html,'twitter:title')]) expect(t).toBe('流星群｜ギターコード一覧');
-    const description = '使用コード2種類｜カポ1｜移調−1｜好きな押さえ方でギターコードを一覧表示。';
+    const description = '使用コード2種類｜カポ1｜移調0｜好きな押さえ方でギターコードを一覧表示。';
     for (const key of ['description','og:description','twitter:description']) expect(meta(html,key)).toBe(description);
     expect(meta(html,'og:url')).toBe(new URL(path,SITE_ORIGIN).href);
     const image = cardImageUrl(metadata(new URL(path,SITE_ORIGIN).href));
@@ -25,7 +25,7 @@ test('AC-68/70/71: raw HTTP has one complete metadata set for every user agent',
     expect(new URL(image).searchParams.get('t')).toBe('流星群');
     expect(new URL(image).searchParams.get('n')).toBe('2');
     expect(new URL(image).searchParams.get('c')).toBe('1');
-    expect(new URL(image).searchParams.get('s')).toBe('-1');
+    expect(new URL(image).searchParams.get('s')).toBe('0');
     for (const key of ['og:image','twitter:image']) expect(meta(html,key)).toBe(image);
     for (const [key,value] of Object.entries({'og:type':'website','og:site_name':'ギターコード一覧','og:locale':'ja_JP','og:image:width':'1200','og:image:height':'630','twitter:card':'summary_large_image'})) expect(meta(html,key)).toBe(value);
     expect(meta(html,'og:image:alt')).toBe(meta(html,'twitter:image:alt'));
@@ -44,6 +44,21 @@ test('AC-69/70: exact spelling, slash/tension syntax, NC, forms and total shift'
   }
 });
 
+test('AC-83: OGP uses audible transposition and accepts the full +60 semitone bound',async({request})=>{
+  const url=query({codes:'F',mode:'shape',capo:'4',sourceShift:'4',shift:'-4'});
+  const html=await (await request.get(url)).text();
+  expect(meta(html,'og:description')).toContain('カポ4｜移調+4');
+  const image=new URL(cardImageUrl(metadata(new URL(url,SITE_ORIGIN).href)));
+  expect(image.searchParams.get('s')).toBe('4');
+  const max=query({mode:'shape',capo:'12',sourceShift:'24',shift:'24'});
+  const page=await (await request.get(max)).text();
+  expect(meta(page,'og:description')).toContain('移調+60');
+  const maxImage=cardImageUrl(metadata(new URL(max,SITE_ORIGIN).href));
+  expect(new URL(maxImage).searchParams.get('s')).toBe('60');
+  const png=await request.get(maxImage);
+  expect(png.status()).toBe(200);
+  expect(png.headers()['content-type']).toContain('image/png');
+});
 test('AC-72: invalid URLs safely return generic HTML', async ({request}) => {
   const invalid = [
     '/', '/?title=ignored', query({v:'2'}), query({codes:''}), '/?v=1&mode=shape', '/?v=1&codes=C',
