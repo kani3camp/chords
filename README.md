@@ -1,6 +1,6 @@
 # ギターコード一覧
 
-曲に登場するコードを、選んだ押さえ方で一画面に並べる練習用アプリです。曲はクエリURLだけで保存・復元・共有し、ブラウザにはコードごとの好みだけを保存します。アカウント・API・DBは不要です。
+曲に登場するコードを、選んだ押さえ方で一画面に並べる練習用アプリです。曲はクエリURLだけで保存・復元・共有し、ブラウザにはコードごとの好みと表示設定を保存します。アカウント・API・DBは不要です。
 
 仕様は [Notion](https://app.notion.com/p/3ff69357608b800f9731f2ff3f23f1e3)、視覚デザインは [Claude Design](https://claude.ai/chat/1eac386c-aa62-4893-b52d-b6a6c94ef241?artifact=35c7675d-9688-48c5-95b1-5147e9a77245)。参照版・実装差分は `docs/design/reference.md`。
 
@@ -72,6 +72,8 @@ Workers Buildsで自動配信する場合はGitHub `kani3camp/chords` の `main`
 ブランチ保護でCI成功を必須とする設定とCloudflare Git連携は、リモートサービス側で実施する残作業です。ローカルの `_headers` はWrangler / Cloudflare配信時に適用され、Vite previewはヘッダー適用を模擬しません。独自ドメインでの実アクセスとSafari実機の最終確認は公開時に行ってください。
 
 ## URLと操作
+
+各カードの「元・実音」は初期状態では非表示です。サイドバーの「表示設定」→「各コードの元・実音を常に表示する」で切り替えられます。ONでは元コードと演奏コードが同じ場合も表示します。設定はこのブラウザの全曲で共通し、再読込後も保持され、共有URLには含まれません。保存できない環境でも今回の画面では切り替えられます。
 
 U-FRET・ChordWikiの曲ページに「chordsで開く」リンクを追加するChrome／Edge用拡張機能もあります。`pnpm build:extension` で生成される `dist-extension` をブラウザへ読み込んでください。対応範囲・導入・検証方法は [extension/README.md](extension/README.md) を参照してください。
 
