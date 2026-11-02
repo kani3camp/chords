@@ -80,7 +80,7 @@ function mount() {
     if (timer !== undefined) return;
     timer = setTimeout(() => { timer = undefined; refresh(); }, 200);
   }
-  const roots = '.musical-sheet, .main, #key, .p-detail-head__ttl, .p-detail-head__artist, input[name="key_scrollbar"], input[name="key_capo"]';
+  const roots = '#original_box, select[name="keyselect"], .musical-sheet, .main, #key, .p-detail-head__ttl, .p-detail-head__artist, input[name="key_scrollbar"], input[name="key_capo"]';
   const observer = new MutationObserver(records => {
     if (records.some(record => {
       const parent = record.target instanceof Element ? record.target : record.target.parentElement;
