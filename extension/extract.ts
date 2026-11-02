@@ -49,10 +49,15 @@ export function extractSong(doc: Document, url: URL): ExtractedSong | null {
   let sourceShift: number;
   if (site === 'ufret') {
     const sheet = [...doc.querySelectorAll<HTMLElement>('.musical-sheet')].find(e => !e.hidden && !e.classList.contains('d-none') && e.style.display !== 'none');
-    nodes = sheet ? [...sheet.querySelectorAll('.chord rt')] : [];
+    // Video Plus uses the legacy score container and randomized inner classes.
+    // Read the complete score, not the playback strip (which shows only a few chords).
+    const videoSheet = doc.querySelector<HTMLElement>('#original_box');
+    nodes = sheet ? [...sheet.querySelectorAll('.chord rt')] :
+      videoSheet ? [...videoSheet.querySelectorAll('ruby rt')] : [];
     title = [cleanText(doc.querySelector('h1')?.textContent), cleanText(doc.querySelector('.p-detail-head__artist')?.textContent)].filter(Boolean).join(' / ');
-    const setting = doc.querySelector<HTMLInputElement>('input[name="key_scrollbar"]');
-    // U-FRET stores both slider values with the opposite sign of their labels.
+    const setting = doc.querySelector<HTMLInputElement | HTMLSelectElement>(sheet ? 'input[name="key_scrollbar"]' : 'select[name="keyselect"]');
+    // U-FRET stores capo/transpose sliders and the Video Plus capo select
+    // with the opposite sign of the capo position.
     const rawCapo = integer(setting?.value ?? sheet?.getAttribute('capo'), 0, -12, 2);
     if (rawCapo > 0) throw new Error('半音下げ・全音下げチューニングには未対応です。標準チューニングを選んでください。');
     capo = -rawCapo;

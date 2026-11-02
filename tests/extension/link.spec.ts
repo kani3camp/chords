@@ -28,6 +28,18 @@ const chordwiki = `<!doctype html><html lang="ja"><meta charset="utf-8"><title>�
 <p class="line"><span class="chord">Intro</span><span class="chord">D</span><span class="word">歌詞の代わりの文字列</span><span class="chord">A/C♯</span><span class="chord">D</span><span class="chord">(N.C)</span></p></div>
 <div class="chord">F</div></html>`;
 
+// Video Plus DOM observed on 2026-11-03. Inner classes are site-generated.
+const ufretVideo = `<!doctype html><html lang="ja"><meta charset="utf-8">
+<h1 class="p-detail-head__ttl">動画の練習曲 <span>動画プラス</span></h1><a class="p-detail-head__artist">テスト奏者</a>
+<select name="keyselect"><option value="-2" selected>Capo 2</option><option value="-4">Capo 4</option><option value="+1">半音下げ</option></select>
+<div id="chord_area"><ruby><rt>B</rt></ruby></div>
+<div class="musical-sheet d-none"><p class="chord"><ruby><rt>F</rt></ruby></p></div>
+<div id="original_box"><div id="blyodnijb">
+<p class="atfolhyds"><span class="krijcheug"><ruby><img><rt>F#m</rt></ruby></span><span>歌詞の代わりの文字列</span></p>
+<p class="atfolhyds"><span class="krijcheug"><ruby><img><rt>A/E</rt></ruby></span><ruby><img><rt>C7(b9,#11)</rt></ruby></p>
+<p class="atfolhyds"><ruby><img><rt>F#m</rt></ruby><ruby><img><rt>N.C.</rt></ruby></p>
+</div></div></html>`;
+
 async function fixture(context: BrowserContext, url: string, html: string) {
   await context.route(url, route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: html }));
   const page = await context.newPage();
@@ -94,6 +106,43 @@ test('real extension injects a U-FRET link and opens the app with the same chord
   // U-FRET's shape chords with capo 2 and source shift +3 sound +5 from the original score.
   expect(params.get('mode')).toBe('shape');
   await expect(popup.getByLabel('実音の移調')).toHaveText('+5');
+});
+
+for (const host of ['www.ufret.jp', 'ufret.jp']) test(`Video Plus reads the whole score and capo on ${host}`, async ({ extensionContext: context }) => {
+  const page = await fixture(context, `https://${host}/song.php?data=105443&tracking=discard`, ufretVideo);
+  const link = page.getByRole('link', { name: 'chordsで開く' });
+  await expect(link).toHaveAttribute('href', /v=1/);
+  const params = new URL((await link.getAttribute('href'))!).searchParams;
+  expect(params.get('codes')).toBe('F#m,A/E,C7(b9,#11),N.C.');
+  expect(params.get('capo')).toBe('2');
+  expect(params.get('sourceShift')).toBe('0');
+  expect(params.get('src')).toBe(`https://${host}/song.php?data=105443`);
+  expect(params.get('title')).toBe('動画の練習曲 動画プラス / テスト奏者');
+  expect(params.get('mode')).toBe('shape');
+  expect(params.toString()).not.toContain(encodeURIComponent('歌詞'));
+  await page.selectOption('select[name="keyselect"]', '-4');
+  await expect(link).toHaveAttribute('href', /capo=4/);
+  // DOM-only replacement must refresh too; the extension cannot rely on fixed inner classes.
+  await page.locator('#blyodnijb').evaluate(e => { e.innerHTML = '<p class="changed"><ruby><rt>D#m/F#</rt></ruby></p>'; });
+  await expect.poll(async () => new URL((await link.getAttribute('href'))!).searchParams.get('codes')).toBe('D#m/F#');
+  await page.bringToFront();
+  const popup = await toolbarPopup(context);
+  await expect(popup.getByRole('link', { name: 'この曲をchordsで開く' })).toHaveAttribute('href', (await link.getAttribute('href'))!);
+  await page.selectOption('select[name="keyselect"]', '+1');
+  await expect(link).not.toHaveAttribute('href');
+  await expect(page.getByRole('status')).toContainText('チューニングには未対応');
+});
+
+test('Video Plus waits for a delayed complete score and follows its replacement', async ({ extensionContext: context }) => {
+  const page = await fixture(context, 'https://www.ufret.jp/song.php?data=53811', '<html><body><h1>遅延読み込み</h1></body></html>');
+  const link = page.getByRole('link', { name: 'chordsで開く' });
+  await expect(link).not.toHaveAttribute('href');
+  await page.evaluate(html => { document.body.insertAdjacentHTML('beforeend', html); }, ufretVideo);
+  await expect(link).toHaveAttribute('href', /capo=2/);
+  await page.locator('#original_box').evaluate(e => { e.remove(); });
+  await expect(link).not.toHaveAttribute('href');
+  await page.evaluate(() => { document.body.insertAdjacentHTML('beforeend', '<div id="original_box"><ruby><rt>G/B</rt></ruby></div>'); });
+  await expect(link).toHaveAttribute('href', /codes=G%2FB/);
 });
 
 test('ChordWiki reads chord elements, capo, and transpose, and follows DOM updates', async ({ extensionContext: context }) => {

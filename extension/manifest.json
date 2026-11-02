@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "chordsで開く",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "U-FRET・ChordWikiの曲ページに、表示中のコードをchords.kani3camp.comで開くリンクを追加します。",
   "permissions": ["contextMenus"],
   "action": {
