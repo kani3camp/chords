@@ -54,6 +54,9 @@ test('capo modes, source shift and total display',async({page})=>{
 });
 test('AC-77/79/82: capo-only change preserves audible pitch and the displayed transposition',async({page})=>{
   await page.goto('/?v=1&codes=F&mode=shape&sourceShift=4&shift=-4&capo=4');
+  await page.getByRole('button',{name:'設定',exact:true}).click();
+  await page.getByRole('checkbox',{name:'各コードの元・実音を常に表示する',exact:true}).check();
+  await page.getByRole('dialog').getByRole('button',{name:'閉じる',exact:true}).click();
   const card=page.getByTestId('chord-card');
   await expect(card.getByRole('heading')).toHaveText('C♯ (D♭)');
   await expect(card).toContainText('実音: F');
@@ -109,7 +112,10 @@ test('unsupported names and patterns stay visible and never receive fabricated d
   await expect(rows.nth(4)).toContainText('N.C.');
 });
 test('browser history separates songs and keeps same-song edits in place',async({page})=>{
-  await page.goto('/');await page.getByLabel('曲名（任意）',{exact:true}).fill('最初の曲');await apply(page,'C,G');
+  await page.goto('/');
+  await page.getByRole('button',{name:'設定',exact:true}).click();
+  await page.getByRole('checkbox',{name:'各コードの元・実音を常に表示する',exact:true}).check();
+  await page.getByRole('dialog').getByRole('button',{name:'閉じる',exact:true}).click();await page.getByLabel('曲名（任意）',{exact:true}).fill('最初の曲');await apply(page,'C,G');
   await page.getByRole('button',{name:'別の曲を入力する',exact:false}).click();
   await expect(page).toHaveTitle('最初の曲｜ギターコード一覧');
   await apply(page,'Am,Dm');await expect(page).toHaveTitle('ギターコード一覧｜練習ワークスペース');

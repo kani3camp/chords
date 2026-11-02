@@ -2,22 +2,24 @@ import { defaultForm, matchVoicing } from '../catalog';
 import { differences, emptySong, fromInput, keysOf, resolve, type Incoming, type Preferences, type Song } from '../state/song';
 import { parseUrl, serialize } from '../state/url';
 import { readPreferences, writePreferences } from '../state/preferences';
+import { readShowChordDetails, writeShowChordDetails } from '../state/display-settings';
 import { readCapoBehavior, writeCapoBehavior } from '../state/ui-settings';
 import { DEFAULT_CAPO_BEHAVIOR, shiftForAudibleTranspose, shiftForCapoChange, type CapoBehavior } from '../state/transposition';
 
 export type Draft = { input: string; title: string; src: string; mode: Song['mode']; sourceShift: number };
 type Pending = { incoming: Incoming; previous: Song | null; previousUrl: string; push: boolean };
-export type Snapshot = { song: Song | null; prefs: Preferences; capoBehavior: CapoBehavior; pending: Pending | null; draft: Draft; error: string; notice: string; newSong: boolean };
+export type Snapshot = { song: Song | null; prefs: Preferences; capoBehavior: CapoBehavior; pending: Pending | null; draft: Draft; error: string; notice: string; newSong: boolean; showChordDetails: boolean };
 const draftOf = (s: Song): Draft => ({input:s.codes.join(','),title:s.title,src:s.src,mode:s.mode,sourceShift:s.sourceShift});
 export interface Environment { href:()=>string; history:(url:string,push:boolean)=>void; storage:()=>Storage; }
 export class Controller {
   private listeners = new Set<()=>void>();
-  private state: Snapshot = {song:null,prefs:{},capoBehavior:DEFAULT_CAPO_BEHAVIOR,pending:null,draft:draftOf(emptySong()),error:'',notice:'',newSong:false};
+  private state: Snapshot = {song:null,prefs:{},capoBehavior:DEFAULT_CAPO_BEHAVIOR,pending:null,draft:draftOf(emptySong()),error:'',notice:'',newSong:false,showChordDetails:false};
   constructor(private env: Environment) {
     try {
       const storage=env.storage();
       const stored=readPreferences(storage);
       const capo=readCapoBehavior(storage);
+      this.state.showChordDetails=readShowChordDetails(storage);
       this.state.prefs=stored.forms;
       this.state.capoBehavior=capo.behavior;
       this.state.notice=[stored.warning,capo.warning].filter(Boolean).join(' ');
@@ -32,6 +34,12 @@ export class Controller {
   snapshot=()=>this.state;
   private update(next: Partial<Snapshot>) { this.state={...this.state,...next}; this.listeners.forEach(f=>f()); }
   private fail(e:unknown) { this.update({error:e instanceof Error?e.message:String(e)}); }
+  setShowChordDetails=(showChordDetails:boolean)=>{
+    let notice='表示設定をこのブラウザに保存しました。';
+    try { writeShowChordDetails(this.env.storage(),showChordDetails); }
+    catch { notice='表示設定をこのブラウザに保存できませんでした。今回の表示には反映しています。'; }
+    this.update({showChordDetails,notice});
+  };
   private commit(song: Song, opts: { push?:boolean; prefs?:Preferences; syncDraft?:boolean; notice?:string }={}): boolean {
     try {
       const url=serialize(song,this.env.href()); // Must finish before history, storage, or visible state.
