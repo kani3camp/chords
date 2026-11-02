@@ -23,7 +23,10 @@ export class Controller {
       this.state.notice=[stored.warning,capo.warning].filter(Boolean).join(' ');
     }
     catch { this.state.notice='ブラウザの保存機能が利用できません。カポ変更は実音を維持し、共有リンクは利用できます。'; }
+    const initialWarning=this.state.notice;
     this.load();
+    // URL normalization must not hide warnings about corrupted or unavailable storage.
+    if(initialWarning && !this.state.error) this.state.notice=initialWarning;
   }
   subscribe=(f:()=>void)=>{this.listeners.add(f);return()=>this.listeners.delete(f);};
   snapshot=()=>this.state;
