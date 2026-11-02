@@ -45,12 +45,61 @@ test('input failure and long URL keep the last valid page and query',async({page
 test('capo modes, source shift and total display',async({page})=>{
   await page.goto('/?v=1&codes=Db&mode=sound&capo=1&sourceShift=-1');
   const card=page.getByTestId('chord-card');await expect(card.getByRole('heading')).toHaveText('C');
-  await expect(page.getByLabel('合計移調')).toHaveText('-1');
+  await expect(page.getByLabel('実音の移調')).toHaveText('-1');
   await page.getByRole('button',{name:'半音上げる',exact:true}).click();await expect(card.getByRole('heading')).toHaveText('C♯ (D♭)');
-  await expect(page.getByLabel('合計移調')).toHaveText('0');
+  await expect(page.getByLabel('実音の移調')).toHaveText('0');
   await page.getByLabel('カポ',{exact:true}).selectOption('0');await expect(card.getByRole('heading')).toHaveText('D');
   await page.getByRole('button',{name:'元サイトの移調を半音下げる',exact:true}).click();await expect(card.getByRole('heading')).toHaveText('D');
-  await expect(page.getByLabel('合計移調')).toHaveText('-1');
+  await expect(page.getByLabel('実音の移調')).toHaveText('-1');
+});
+test('AC-77/79/82: capo-only change preserves audible pitch and the displayed transposition',async({page})=>{
+  await page.goto('/?v=1&codes=F&mode=shape&sourceShift=4&shift=-4&capo=4');
+  const card=page.getByTestId('chord-card');
+  await expect(card.getByRole('heading')).toHaveText('C♯ (D♭)');
+  await expect(card).toContainText('実音: F');
+  await expect(page.getByLabel('実音の移調')).toHaveText('+4');
+  await page.getByLabel('カポ',{exact:true}).selectOption('0');
+  await expect(card.getByRole('heading')).toHaveText('F');
+  await expect(page.getByLabel('実音の移調')).toHaveText('+4');
+  expect(new URL(page.url()).searchParams.get('shift')).toBe('0');
+  await page.reload();
+  await expect(card.getByRole('heading')).toHaveText('F');
+  await expect(page.getByLabel('実音の移調')).toHaveText('+4');
+  await page.getByRole('button',{name:'半音上げる',exact:true}).click();
+  await expect(page.getByLabel('実音の移調')).toHaveText('+5');
+  await expect(card.getByRole('heading')).toHaveText('F♯ (G♭)');
+});
+test('AC-78/80: browser-only preference persists; switching does not alter song or URL',async({page})=>{
+  const original='/?v=1&codes=F&mode=shape&sourceShift=4&shift=-4&capo=4';
+  await page.goto(original);
+  await expect(page).toHaveURL(/forms=/);
+  await expect(page.getByTestId('chord-card')).toHaveCount(1);
+  const url=page.url();
+  await page.getByRole('button',{name:'設定',exact:true}).click();
+  const dialog=page.getByRole('dialog');
+  await expect(dialog.getByRole('radio',{name:/鳴る音の高さを維持/})).toBeChecked();
+  await dialog.getByRole('radio',{name:/押さえるコードを維持/}).check();
+  expect(page.url()).toBe(url);
+  expect(await page.evaluate(()=>localStorage.getItem('guitar-chords:ui-settings:v1'))).toContain('keep-shape');
+  await dialog.getByRole('button',{name:'閉じる',exact:true}).click();
+  await page.reload();
+  await page.getByRole('button',{name:'設定',exact:true}).click();
+  await expect(page.getByRole('dialog').getByRole('radio',{name:/押さえるコードを維持/})).toBeChecked();
+  await page.getByRole('dialog').getByRole('button',{name:'閉じる',exact:true}).click();
+  await page.getByLabel('カポ',{exact:true}).selectOption('0');
+  await expect(page.getByTestId('chord-card').getByRole('heading')).toHaveText('C♯ (D♭)');
+  await expect(page.getByLabel('実音の移調')).toHaveText('0');
+  expect(new URL(page.url()).searchParams.get('shift')).toBe('-4');
+});
+test('AC-81: an out-of-range derived shift never partially changes capo or URL',async({page})=>{
+  await page.goto('/?v=1&codes=C&mode=shape&shift=-24&capo=0');
+  await expect(page).toHaveURL(/forms=/);
+  await expect(page.getByTestId('chord-card')).toHaveCount(1);
+  const before=page.url();
+  await page.getByLabel('カポ',{exact:true}).selectOption('1');
+  await expect(page.getByRole('alert')).toContainText('−24');
+  await expect(page.getByLabel('カポ',{exact:true})).toHaveValue('0');
+  expect(page.url()).toBe(before);
 });
 test('unsupported names and patterns stay visible and never receive fabricated diagrams',async({page})=>{
   await page.goto('/');await apply(page,'C@x:10:12:12:11:10,G,C7(b9,#11),C6/9,N.C.');
@@ -67,7 +116,9 @@ test('browser history separates songs and keeps same-song edits in place',async(
   await page.getByLabel('カポ',{exact:true}).selectOption('2');
   await page.goBack();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('C');
   await expect(page).toHaveTitle('最初の曲｜ギターコード一覧');
-  await page.goForward();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('Am');await expect(page.getByLabel('カポ',{exact:true})).toHaveValue('2');
+  await page.goForward();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('Gm');await expect(page.getByLabel('カポ',{exact:true})).toHaveValue('2');
+  expect(new URL(page.url()).searchParams.get('shift')).toBe('-2');
+  await expect(page.getByTestId('chord-card').first()).toContainText('実音: Am');
   await expect(page).toHaveTitle('ギターコード一覧｜練習ワークスペース');
 });
 test('enharmonic cards share changes without collapsing the original spelling',async({page})=>{

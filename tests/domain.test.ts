@@ -1,6 +1,7 @@
 import { describe,expect,it } from 'vitest';
 import { chordLabel,identity,parseChord,parseInput,parsePattern,pattern,splitTokens,transpose } from '../src/domain/chords';
 import { cards,emptySong,fromInput,resolve } from '../src/state/song';
+import { audibleTranspose, shiftForAudibleTranspose, shiftForCapoChange, type CapoBehavior } from '../src/state/transposition';
 describe('enharmonic display names preserve chord meaning',()=>{
   it.each([
     ['Ab','G♯ (A♭)'], ['G#','G♯ (A♭)'], ['C#m','C♯m (D♭m)'],
@@ -49,5 +50,41 @@ describe('G01–G06 transposition and capo (independent fixed expectations)',()=
     expect(key('DbM7')).toBe(key('C#maj7'));expect(key('Db')).not.toBe(key('Db/F'));
     expect(key('Db')).not.toBe(key('Dbm'));expect(key('C#')).toBe(key('D♭'));
     const s=fromInput('Db,C#',emptySong(),{}).song;expect(cards(s)).toHaveLength(2);expect(Object.keys(s.forms)).toHaveLength(1);
+  });
+});
+describe('ADR-063: audible transposition and capo behavior',()=>{
+  it('keeps the original sounding pitch when changing capo 4 to no capo',()=>{
+    const a={...emptySong(),codes:['F','E/G#'],mode:'shape' as const,sourceShift:4,shift:-4,capo:4};
+    const b={...a,capo:0,shift:shiftForCapoChange(a,0,'keep-sound')};
+    expect(cards(a).map(c=>c.playing)).toEqual(['Db','C/E']);
+    expect(cards(a).map(c=>c.sounding)).toEqual(cards(b).map(c=>c.sounding));
+    expect(cards(b).map(c=>c.playing)).toEqual(['F','E/G#']);
+    expect(audibleTranspose(a)).toBe(4);
+    expect(audibleTranspose(b)).toBe(4);
+  });
+  it('derives the extra URL-v1 shift from an audible target in both input modes',()=>{
+    for(const mode of ['shape','sound'] as const){
+      const a={...emptySong(),mode,shift:2,sourceShift:-3,capo:4};
+      const desired=audibleTranspose(a)+1;
+      const b={...a,shift:shiftForAudibleTranspose(a,desired)};
+      expect(b.shift).toBe(3);
+      expect(audibleTranspose(b)).toBe(desired);
+    }
+  });
+  it('preserves sounding pitch or playing shape across supported capo positions, even with a slash chord',()=>{
+    for(const mode of ['shape','sound'] as const)
+    for(const behavior of ['keep-sound','keep-shape'] as CapoBehavior[])
+    for(const oldCapo of [0,1,4,12])for(const nextCapo of [0,1,4,12]){
+      const a=resolve({...emptySong(),codes:['E/G#'],mode,capo:oldCapo,sourceShift:3,shift:0},{});
+      const b=resolve({...a,capo:nextCapo,shift:shiftForCapoChange(a,nextCapo,behavior),forms:{}},{});
+      const before=cards(a)[0], after=cards(b)[0];
+      if(behavior==='keep-sound'){
+        expect(after.sounding).toBe(before.sounding);
+        expect(audibleTranspose(b)).toBe(audibleTranspose(a));
+      }else{
+        expect(after.playing).toBe(before.playing);
+        expect(audibleTranspose(b)-audibleTranspose(a)).toBe(nextCapo-oldCapo);
+      }
+    }
   });
 });

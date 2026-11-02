@@ -2,19 +2,31 @@ import { defaultForm, matchVoicing } from '../catalog';
 import { differences, emptySong, fromInput, keysOf, resolve, type Incoming, type Preferences, type Song } from '../state/song';
 import { parseUrl, serialize } from '../state/url';
 import { readPreferences, writePreferences } from '../state/preferences';
+import { readCapoBehavior, writeCapoBehavior } from '../state/ui-settings';
+import { DEFAULT_CAPO_BEHAVIOR, shiftForAudibleTranspose, shiftForCapoChange, type CapoBehavior } from '../state/transposition';
 
 export type Draft = { input: string; title: string; src: string; mode: Song['mode']; sourceShift: number };
 type Pending = { incoming: Incoming; previous: Song | null; previousUrl: string; push: boolean };
-export type Snapshot = { song: Song | null; prefs: Preferences; pending: Pending | null; draft: Draft; error: string; notice: string; newSong: boolean };
+export type Snapshot = { song: Song | null; prefs: Preferences; capoBehavior: CapoBehavior; pending: Pending | null; draft: Draft; error: string; notice: string; newSong: boolean };
 const draftOf = (s: Song): Draft => ({input:s.codes.join(','),title:s.title,src:s.src,mode:s.mode,sourceShift:s.sourceShift});
 export interface Environment { href:()=>string; history:(url:string,push:boolean)=>void; storage:()=>Storage; }
 export class Controller {
   private listeners = new Set<()=>void>();
-  private state: Snapshot = {song:null,prefs:{},pending:null,draft:draftOf(emptySong()),error:'',notice:'',newSong:false};
+  private state: Snapshot = {song:null,prefs:{},capoBehavior:DEFAULT_CAPO_BEHAVIOR,pending:null,draft:draftOf(emptySong()),error:'',notice:'',newSong:false};
   constructor(private env: Environment) {
-    try { const stored = readPreferences(env.storage()); this.state.prefs=stored.forms; this.state.notice=stored.warning??''; }
-    catch { this.state.notice='ブラウザの保存機能が利用できません。共有リンクは利用できます。'; }
+    try {
+      const storage=env.storage();
+      const stored=readPreferences(storage);
+      const capo=readCapoBehavior(storage);
+      this.state.prefs=stored.forms;
+      this.state.capoBehavior=capo.behavior;
+      this.state.notice=[stored.warning,capo.warning].filter(Boolean).join(' ');
+    }
+    catch { this.state.notice='ブラウザの保存機能が利用できません。カポ変更は実音を維持し、共有リンクは利用できます。'; }
+    const initialWarning=this.state.notice;
     this.load();
+    // URL normalization must not hide warnings about corrupted or unavailable storage.
+    if(initialWarning && !this.state.error) this.state.notice=initialWarning;
   }
   subscribe=(f:()=>void)=>{this.listeners.add(f);return()=>this.listeners.delete(f);};
   snapshot=()=>this.state;
@@ -67,9 +79,29 @@ export class Controller {
     if(this.state.pending)return;
     const s=this.state.song;
     if(!s || this.state.newSong) {if(next.mode)this.draft({mode:next.mode}); if(next.sourceShift!==undefined)this.draft({sourceShift:next.sourceShift});return;}
+    const shift=next.shift??(next.capo!==undefined
+      ?shiftForCapoChange(s,next.capo,this.state.capoBehavior)
+      :s.shift);
     const rederive=next.capo!==undefined||next.shift!==undefined||next.mode!==undefined;
-    const candidate=resolve({...s,...next,forms:rederive?{}:s.forms},this.state.prefs,rederive?s.forms:{});
-    if(this.commit(candidate) && (next.mode!==undefined||next.sourceShift!==undefined)) this.draft({...(next.mode?{mode:next.mode}:{}),...(next.sourceShift!==undefined?{sourceShift:next.sourceShift}:{})});
+    const candidate=resolve({...s,...next,shift,forms:rederive?{}:s.forms},this.state.prefs,rederive?s.forms:{});
+    const notice=next.capo!==undefined
+      ?this.state.capoBehavior==='keep-sound'
+        ?'カポと押さえるコードを更新しました。鳴る音の高さは変わりません。'
+        :'カポを変更しました。押さえるコードは変わらず、鳴る音の高さが変わります。'
+      :undefined;
+    if(this.commit(candidate,{notice}) && (next.mode!==undefined||next.sourceShift!==undefined)) this.draft({...(next.mode?{mode:next.mode}:{}),...(next.sourceShift!==undefined?{sourceShift:next.sourceShift}:{})});
+  };
+  setAudibleTranspose=(value:number)=>{
+    const song=this.state.song;
+    if(!song || this.state.pending || this.state.newSong)return;
+    this.edit({shift:shiftForAudibleTranspose(song,value)});
+  };
+  setCapoBehavior=(behavior:CapoBehavior)=>{
+    if(this.state.pending || this.state.capoBehavior===behavior)return;
+    let warning: string | undefined;
+    try {warning=writeCapoBehavior(this.env.storage(),behavior);}
+    catch {warning='カポ変更時の設定をブラウザに保存できませんでした。この画面では選択した設定を使用します。';}
+    this.update({capoBehavior:behavior,error:'',notice:warning??'カポ変更時の動作を設定しました。現在の曲と共有リンクは変わりません。'});
   };
   choose=(key:string,form:string)=>{
     const s=this.state.song;if(!s||this.state.pending)return false;
