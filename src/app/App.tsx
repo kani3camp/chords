@@ -17,6 +17,13 @@ function Icon({name}:{name:'book'|'help'|'settings'|'link'|'out'}) {
     {name==='book'?<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>:name==='help'?<><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></>:name==='settings'?<><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></>:name==='out'?<><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></>:<><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></>}
   </svg>;
 }
+function sourceLink(value:string):string|undefined {
+  try {
+    const url=new URL(value);
+    if(['https:','http:'].includes(url.protocol)&&!url.username&&!url.password)return url.href;
+  } catch { /* An incomplete draft is not a navigable source. */ }
+  return undefined;
+}
 export default function App({controller}:{controller:Controller}) {
   const st=useSyncExternalStore(controller.subscribe,controller.snapshot);
   const [panel,setPanel]=useState<'prefs'|'help'|'settings'|null>(null);
@@ -28,6 +35,8 @@ export default function App({controller}:{controller:Controller}) {
   const [confirmDelete,setConfirmDelete]=useState(false);
   const [copyFallback,setCopyFallback]=useState(false);
   const [loading,setLoading]=useState(false);
+  const [sidebarOpen,setSidebarOpen]=useState(true);
+  const draftSource=sourceLink(st.draft.src);
   const s=st.pending?.incoming.song??st.song;
   const songTitle=s?.title.trim();
   useEffect(()=>{
@@ -53,11 +62,11 @@ export default function App({controller}:{controller:Controller}) {
   return <>
     <a href="#workspace" className="skip-link">コード一覧へ移動</a>
     <header className="app-header">
-      <div className="brand"><img src="/favicon.svg" alt="" width="23" height="28"/><strong>ギターコード一覧</strong><span className="brand-sub">練習ワークスペース</span></div>
+      <div className="header-start"><button className="sidebar-toggle" aria-controls="input-sidebar" aria-expanded={sidebarOpen} aria-label={sidebarOpen?'入力・設定を折りたたむ':'入力・設定を開く'} onClick={()=>setSidebarOpen(open=>!open)}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/>{sidebarOpen?<path d="m16 9-3 3 3 3"/>:<path d="m13 9 3 3-3 3"/>}</svg><span>入力・設定</span></button><div className="brand"><img src="/favicon.svg" alt="" width="23" height="28"/><strong>ギターコード一覧</strong><span className="brand-sub">練習ワークスペース</span></div></div>
       <nav aria-label="アプリ"><button onClick={()=>setPanel('prefs')} disabled={locked||loading}><Icon name="book"/>好みの押さえ方 <span className="count">{Object.keys(st.prefs).length}</span></button><button onClick={()=>setPanel('settings')} disabled={locked||loading}><Icon name="settings"/>設定</button><button onClick={()=>setPanel('help')}><Icon name="help"/>ヘルプ</button></nav>
     </header>
-    <div className="workspace">
-      <aside className="sidebar" aria-label="入力と設定">
+    <div className={`workspace${sidebarOpen?'':' sidebar-collapsed'}`}>
+      <aside id="input-sidebar" className="sidebar" aria-label="入力と設定" hidden={!sidebarOpen}>
         <form onSubmit={e=>{e.preventDefault();apply();}}>
           <div className="field"><label htmlFor="chord-input">コード一覧を貼り付け</label><input id="chord-input" className="mono" type="text" autoComplete="off" spellCheck={false} placeholder="C,Am7,G,Fmaj7" value={st.draft.input} onChange={e=>controller.draft({input:e.target.value})} aria-describedby="chord-hint" disabled={locked||loading}/><p id="chord-hint">カンマ区切り・1行。例 <code>C,Am7,G,Fmaj7</code><br/><button className="text-button" type="button" onClick={()=>setPanel('help')}>入力形式・フォーム指定について</button></p></div>
           <fieldset disabled={locked||loading}><legend>貼り付けたコードの意味</legend>{(['shape','sound'] as const).map(mode=><label key={mode} className={`mode-option ${st.draft.mode===mode?'active':''}`}><input type="radio" name="mode" value={mode} checked={st.draft.mode===mode} onChange={()=>{controller.edit({mode});}}/><span><strong>{mode==='shape'?'押さえるコード（フォーム）':'鳴らしたいコード（実音）'}</strong><small>{mode==='shape'?'入力コードを押さえるフォームとして解釈':'入力コードを鳴らしたい実音として解釈'}</small></span></label>)}</fieldset>
@@ -65,7 +74,7 @@ export default function App({controller}:{controller:Controller}) {
           {dirty&&!locked&&<p className="small dirty">入力が変更されています。反映するまで一覧とリンクは前のままです。</p>}
           <details className="advanced" open><summary>詳細設定<small>曲名・出典URL・元サイトの移調</small></summary><div className="details-body">
             <div className="field"><label htmlFor="song-title">曲名（任意）</label><input id="song-title" value={st.draft.title} onChange={e=>controller.draft({title:e.target.value})} disabled={locked||loading}/></div>
-            <div className="field"><label htmlFor="song-src">出典URL（任意・記録のみ）</label><input id="song-src" type="url" value={st.draft.src} onChange={e=>controller.draft({src:e.target.value})} placeholder="https://…" disabled={locked||loading}/><p>自動取得はしません。出典URL全文が共有リンクに含まれます。</p></div>
+            <div className="field"><label htmlFor="song-src">出典URL（任意）</label><input id="song-src" type="url" value={st.draft.src} onChange={e=>controller.draft({src:e.target.value})} placeholder="https://…" disabled={locked||loading}/>{draftSource&&<a className="source-link" href={draftSource} target="_blank" rel="noopener noreferrer">入力した出典を開く <Icon name="out"/></a>}<p>自動取得はしません。出典URL全文が共有リンクに含まれます。</p></div>
             <div className="field"><span id="source-shift-label" className="label">元サイトで適用済みの移調</span><div className="stepper" role="group" aria-labelledby="source-shift-label"><button type="button" aria-label="元サイトの移調を半音下げる" disabled={locked||st.draft.sourceShift<=-24} onClick={()=>{controller.edit({sourceShift:st.draft.sourceShift-1});}}>−</button><output>{signed(st.draft.sourceShift)}</output><button type="button" aria-label="元サイトの移調を半音上げる" disabled={locked||st.draft.sourceShift>=24} onClick={()=>{controller.edit({sourceShift:st.draft.sourceShift+1});}}>＋</button><span className="small">半音</span></div><p>元サイトで移調してから貼った場合だけ入力（省略時 0）。元のキーを基準にした移調表示に使います。入力したコードへ二重には足しません。</p></div>
           </div></details>
         </form>
