@@ -72,6 +72,8 @@ test('AC-77/79/82: capo-only change preserves audible pitch and the displayed tr
 test('AC-78/80: browser-only preference persists; switching does not alter song or URL',async({page})=>{
   const original='/?v=1&codes=F&mode=shape&sourceShift=4&shift=-4&capo=4';
   await page.goto(original);
+  await expect(page).toHaveURL(/forms=/);
+  await expect(page.getByTestId('chord-card')).toHaveCount(1);
   const url=page.url();
   await page.getByRole('button',{name:'設定',exact:true}).click();
   const dialog=page.getByRole('dialog');
@@ -91,6 +93,8 @@ test('AC-78/80: browser-only preference persists; switching does not alter song 
 });
 test('AC-81: an out-of-range derived shift never partially changes capo or URL',async({page})=>{
   await page.goto('/?v=1&codes=C&mode=shape&shift=-24&capo=0');
+  await expect(page).toHaveURL(/forms=/);
+  await expect(page.getByTestId('chord-card')).toHaveCount(1);
   const before=page.url();
   await page.getByLabel('カポ',{exact:true}).selectOption('1');
   await expect(page.getByRole('alert')).toContainText('−24');
@@ -112,7 +116,9 @@ test('browser history separates songs and keeps same-song edits in place',async(
   await page.getByLabel('カポ',{exact:true}).selectOption('2');
   await page.goBack();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('C');
   await expect(page).toHaveTitle('最初の曲｜ギターコード一覧');
-  await page.goForward();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('Am');await expect(page.getByLabel('カポ',{exact:true})).toHaveValue('2');
+  await page.goForward();await expect(page.getByTestId('chord-card').first().getByRole('heading')).toHaveText('Gm');await expect(page.getByLabel('カポ',{exact:true})).toHaveValue('2');
+  expect(new URL(page.url()).searchParams.get('shift')).toBe('-2');
+  await expect(page.getByTestId('chord-card').first()).toContainText('実音: Am');
   await expect(page).toHaveTitle('ギターコード一覧｜練習ワークスペース');
 });
 test('enharmonic cards share changes without collapsing the original spelling',async({page})=>{
