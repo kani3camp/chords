@@ -142,7 +142,7 @@ test('Video Plus waits for a delayed complete score and follows its replacement'
   await page.locator('#original_box').evaluate(e => { e.remove(); });
   await expect(link).not.toHaveAttribute('href');
   await page.evaluate(() => { document.body.insertAdjacentHTML('beforeend', '<div id="original_box"><ruby><rt>G/B</rt></ruby></div>'); });
-  await expect.poll(async () => new URL((await link.getAttribute('href'))!).searchParams.get('codes')).toBe('G/B');
+  await expect(link).toHaveAttribute('href', /codes=G%2FB/);
 });
 
 test('ChordWiki reads chord elements, capo, and transpose, and follows DOM updates', async ({ extensionContext: context }) => {
