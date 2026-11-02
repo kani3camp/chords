@@ -1,5 +1,6 @@
 import { readSongUrl } from './state/url-syntax';
 import { validateSong } from './state/song-fields';
+import { audibleTranspose } from './state/transposition';
 
 export const SITE_ORIGIN = 'https://chords.kani3camp.com';
 export const DEFAULT_TITLE = 'ギターコード一覧｜練習ワークスペース';
@@ -36,7 +37,7 @@ export function metadata(url: string): SocialMetadata {
     const nc = [...names].some(isNC);
     const summary = count ? '使用コード' + count + '種類' + (nc ? ' + N.C.' : '') : 'N.C.のみ';
     const name = cleanTitle(song.title);
-    const shift = song.sourceShift + song.shift;
+    const shift = audibleTranspose(song);
     return {
       title: name ? name + '｜ギターコード一覧' : DEFAULT_TITLE,
       description: summary + '｜' + (song.capo ? 'カポ' + song.capo : 'カポなし') + '｜移調' + signed(shift) + '｜好きな押さえ方でギターコードを一覧表示。',
@@ -71,7 +72,7 @@ export function readCardImageQuery(url: string): CardImageData | null {
     };
     const count = integer('n', 0, 200);
     const capo = integer('c', 0, 12);
-    const shift = integer('s', -48, 48);
+    const shift = integer('s', -48, 60);
     const nc = params.get('nc');
     if (count === null || capo === null || shift === null || (count === 0 && nc !== '1') || !['0', '1'].includes(nc!)) return null;
     return { name, count, nc: nc === '1', capo, shift };
